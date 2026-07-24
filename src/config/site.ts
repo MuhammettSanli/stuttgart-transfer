@@ -1,18 +1,30 @@
 /**
  * Central site configuration — company contact details and static data used
- * across components, SEO/JSON-LD and emails. Update these to the real values.
+ * across components, SEO/JSON-LD and emails.
+ *
+ * NOTE: These are the real details of "Airport Taxi Limousinen Service GbR"
+ * (stuttgartflughafentransfer.de), for whom this site is being built as a draft
+ * for client approval. Confirm all values with the client before going live.
  */
 export const siteConfig = {
+  // Display brand (shown in header/footer)
   name: 'Stuttgart Flughafen Transfer',
   shortName: 'Stuttgart Transfer',
-  phone: '+49 711 000 000 00',
-  phoneHref: 'tel:+4971100000000',
-  whatsapp: '+49 711 000 000 00',
-  email: 'info@example.de',
+
+  // Legal entity (Impressum)
+  legalName: 'Airport Taxi Limousinen Service GbR',
+  owners: 'Ramazan Yapıcı, Gülizar Yapıcı',
+  vatId: 'DE353351515',
+  taxNumber: '97112/30126',
+
+  phone: '+49 711 997 712 13',
+  phoneHref: 'tel:+4971199771213',
+  whatsapp: '+49 711 997 712 13',
+  email: 'info@stuttgartflughafentransfer.de',
   address: {
-    street: 'Musterstraße 1',
-    postalCode: '70629',
-    city: 'Stuttgart',
+    street: 'Karlsruher Straße 11/1',
+    postalCode: '70771',
+    city: 'Leinfelden-Echterdingen',
     country: 'DE',
   },
   coverageCities: [

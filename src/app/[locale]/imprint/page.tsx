@@ -22,16 +22,20 @@ function Imprint() {
   return (
     <div className="container-page max-w-3xl py-16">
       <h1 className="text-3xl font-bold text-brand">{t('imprintTitle')}</h1>
-      <p className="mt-2 text-sm text-amber-600">{t('placeholderNote')}</p>
 
       <div className="mt-8 space-y-6 text-gray-700">
         <section>
           <h2 className="font-semibold text-brand">Angaben gemäß § 5 TMG</h2>
           <p className="mt-2">
-            {siteConfig.name}<br />
+            {siteConfig.legalName}<br />
             {siteConfig.address.street}<br />
             {siteConfig.address.postalCode} {siteConfig.address.city}
           </p>
+        </section>
+
+        <section>
+          <h2 className="font-semibold text-brand">Vertreten durch</h2>
+          <p className="mt-2">{siteConfig.owners}</p>
         </section>
 
         <section>
@@ -42,17 +46,10 @@ function Imprint() {
           </p>
         </section>
 
-        <section>
-          <h2 className="font-semibold text-brand">{t('responsible')}</h2>
-          <p className="mt-2">
-            [Vor- und Nachname]<br />
-            {siteConfig.address.street}, {siteConfig.address.postalCode} {siteConfig.address.city}
-          </p>
-        </section>
-
         <section className="text-sm text-gray-500">
-          <p>USt-IdNr.: [DE… – falls vorhanden]</p>
-          <p>Handelsregister / Registergericht: [falls vorhanden]</p>
+          <p>Umsatzsteuer-ID (§ 27a UStG): {siteConfig.vatId}</p>
+          <p>Steuernummer: {siteConfig.taxNumber}</p>
+          <p>Rechtsform: Gesellschaft bürgerlichen Rechts (GbR)</p>
         </section>
       </div>
     </div>
