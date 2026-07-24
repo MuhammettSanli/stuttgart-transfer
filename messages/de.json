@@ -102,7 +102,8 @@
     "successTitle": "Buchung erhalten!",
     "successDesc": "Vielen Dank. Wir bestätigen Ihre Fahrt in Kürze per E-Mail.",
     "errorGeneric": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
-    "errorRoute": "Für diese Route konnte kein Preis berechnet werden."
+    "errorRoute": "Für diese Route konnte kein Preis berechnet werden.",
+    "errorValidation": "Bitte prüfen Sie Ihre Eingaben (gültige Telefonnummer und E-Mail erforderlich)."
   },
   "ContactForm": {
     "title": "Schreiben Sie uns",

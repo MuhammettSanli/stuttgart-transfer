@@ -25,15 +25,28 @@ export function AddressInput({ id, value, onChange, placeholder, ariaInvalid }: 
     if (!g?.maps?.places) return;
 
     const autocomplete = new g.maps.places.Autocomplete(inputRef.current, {
-      fields: ['formatted_address', 'name'],
+      fields: ['formatted_address', 'name', 'geometry'],
       componentRestrictions: { country: ['de', 'ch', 'at'] },
     });
     const listener = autocomplete.addListener('place_changed', () => {
       const place = autocomplete.getPlace();
-      const text = place.formatted_address ?? place.name ?? '';
+      // Fall back to whatever the widget wrote into the input so a selection
+      // always syncs into React state, even if place details are sparse.
+      const text = place.formatted_address ?? place.name ?? inputRef.current?.value ?? '';
       if (text) onChangeRef.current(text);
     });
-    return () => listener.remove();
+
+    // Selecting a suggestion with Enter shouldn't submit the surrounding form.
+    const keydown = (e: KeyboardEvent) => {
+      if (e.key === 'Enter') e.preventDefault();
+    };
+    const el = inputRef.current;
+    el.addEventListener('keydown', keydown);
+
+    return () => {
+      listener.remove();
+      el.removeEventListener('keydown', keydown);
+    };
   }, [mapsReady]);
 
   return (

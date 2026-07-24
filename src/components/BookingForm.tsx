@@ -99,7 +99,11 @@ export function BookingForm() {
         }),
       });
       if (!res.ok) {
-        setSubmitError(res.status === 422 ? t('errorRoute') : t('errorGeneric'));
+        // Distinguish input-validation failures from a genuine no-route result.
+        const data = (await res.json().catch(() => null)) as { error?: string } | null;
+        if (data?.error === 'VALIDATION') setSubmitError(t('errorValidation'));
+        else if (data?.error === 'NO_ROUTE') setSubmitError(t('errorRoute'));
+        else setSubmitError(t('errorGeneric'));
       } else {
         setSuccess(true);
       }
@@ -202,7 +206,7 @@ export function BookingForm() {
           </div>
           <div>
             <label htmlFor="phone" className="field-label">{t('phone')}</label>
-            <input id="phone" type="tel" className="field-input" value={phone} onChange={(e) => setPhone(e.target.value)} required />
+            <input id="phone" type="tel" minLength={6} className="field-input" value={phone} onChange={(e) => setPhone(e.target.value)} required />
           </div>
         </div>
         <div>

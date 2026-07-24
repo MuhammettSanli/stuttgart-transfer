@@ -14,6 +14,12 @@ body {
   @apply bg-white text-brand antialiased;
 }
 
+/* Google Places autocomplete dropdown — keep it above the sticky header and
+   floating buttons, and ensure clicks land on suggestions. */
+.pac-container {
+  z-index: 10000 !important;
+}
+
 @layer components {
   .container-page {
     @apply container mx-auto px-4;

@@ -102,7 +102,8 @@
     "successTitle": "Booking received!",
     "successDesc": "Thank you. We will confirm your ride shortly by email.",
     "errorGeneric": "Something went wrong. Please try again.",
-    "errorRoute": "We couldn't calculate a price for this route."
+    "errorRoute": "We couldn't calculate a price for this route.",
+    "errorValidation": "Please check your entries (a valid phone number and email are required)."
   },
   "ContactForm": {
     "title": "Write to us",
