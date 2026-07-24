@@ -43,13 +43,13 @@ async function main() {
   const existingRule = await prisma.pricingRule.findFirst({ where: { name: 'default' } });
   const ruleData = {
     name: 'default',
-    baseFareCents: 1500, // €15 base
-    perKmRateCents: 200, // €2.00 / km (before vehicle multiplier)
+    baseFareCents: 2000, // €20 base
+    perKmRateCents: 180, // €1.80 / km (before vehicle multiplier)
     airportFeeCents: 500, // €5 airport handling
     nightSurchargeCents: 1000, // €10 night surcharge
     nightStartHour: 22,
     nightEndHour: 6,
-    minFareCents: 4900, // €49 minimum fare
+    minFareCents: 3900, // €39 minimum fare
     currency: 'EUR',
     active: true,
   };
