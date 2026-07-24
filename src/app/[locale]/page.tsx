@@ -2,6 +2,7 @@ import { useTranslations } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 import { Hero } from '@/components/Hero';
 import { FaqAccordion } from '@/components/FaqAccordion';
+import { Reveal } from '@/components/Reveal';
 import { Link } from '@/i18n/navigation';
 import { serviceSlugs } from '@/config/site';
 
@@ -45,10 +46,12 @@ function ServicesSection() {
   return (
     <section className="bg-gray-50 py-16">
       <div className="container-page">
+        <Reveal>
         <div className="mb-10 text-center">
           <h2 className="text-3xl font-bold text-brand">{t('sectionTitle')}</h2>
           <p className="mt-2 text-gray-600">{t('sectionSubtitle')}</p>
         </div>
+        </Reveal>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {serviceSlugs.map((slug) => (
             <Link
@@ -76,6 +79,7 @@ function ProcessSection() {
   return (
     <section className="bg-white py-16">
       <div className="container-page">
+        <Reveal>
         <h2 className="mb-10 text-center text-3xl font-bold text-brand">{t('sectionTitle')}</h2>
         <div className="grid gap-8 md:grid-cols-3">
           {STEPS.map((n) => (
@@ -88,6 +92,7 @@ function ProcessSection() {
             </div>
           ))}
         </div>
+        </Reveal>
       </div>
     </section>
   );
@@ -98,10 +103,12 @@ function FleetSection() {
   return (
     <section className="bg-gray-50 py-16">
       <div className="container-page">
+        <Reveal>
         <div className="mb-10 text-center">
           <h2 className="text-3xl font-bold text-brand">{t('sectionTitle')}</h2>
           <p className="mt-2 text-gray-600">{t('sectionSubtitle')}</p>
         </div>
+        </Reveal>
         <div className="grid gap-6 md:grid-cols-3">
           {FLEET.map((slug) => (
             <div key={slug} className="rounded-2xl bg-white p-6 shadow-sm">
@@ -122,11 +129,13 @@ function CoverageSection() {
   const t = useTranslations('Coverage');
   return (
     <section className="bg-brand py-16 text-white">
+      <Reveal>
       <div className="container-page text-center">
         <h2 className="text-3xl font-bold">{t('sectionTitle')}</h2>
         <p className="mt-2 text-white/80">{t('sectionSubtitle')}</p>
         <p className="mx-auto mt-6 max-w-2xl text-lg text-gold">{t('cities')}</p>
       </div>
+      </Reveal>
     </section>
   );
 }
