@@ -38,6 +38,21 @@ export const routing = defineRouting({
       en: '/contact',
       tr: '/iletisim',
     },
+    '/imprint': {
+      de: '/impressum',
+      en: '/imprint',
+      tr: '/kunye',
+    },
+    '/privacy': {
+      de: '/datenschutz',
+      en: '/privacy',
+      tr: '/gizlilik',
+    },
+    '/terms': {
+      de: '/agb',
+      en: '/terms',
+      tr: '/sartlar',
+    },
     '/admin': '/admin',
   },
 });

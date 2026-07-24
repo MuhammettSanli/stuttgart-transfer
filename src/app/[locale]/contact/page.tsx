@@ -2,6 +2,7 @@ import { useTranslations } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import type { Metadata } from 'next';
 import { siteConfig } from '@/config/site';
+import { ContactForm } from '@/components/ContactForm';
 
 export async function generateMetadata({
   params: { locale },
@@ -35,10 +36,7 @@ function Contact() {
             {siteConfig.address.postalCode} {siteConfig.address.city}
           </p>
         </div>
-        <div className="rounded-2xl bg-gray-100 p-6 text-sm text-gray-500">
-          {/* Placeholder for an embedded map / contact form */}
-          {siteConfig.address.city}, {siteConfig.address.country}
-        </div>
+        <ContactForm />
       </div>
     </div>
   );

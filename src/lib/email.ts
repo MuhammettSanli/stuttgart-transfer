@@ -41,6 +41,38 @@ function buildSummaryTable(b: BookingEmailData): string {
   </table>`;
 }
 
+interface ContactEmailData {
+  name: string;
+  email: string;
+  phone?: string;
+  message: string;
+}
+
+/** Forward a contact-form message to the operator inbox. Never throws. */
+export async function sendContactEmail(c: ContactEmailData): Promise<void> {
+  const from = process.env.BOOKING_FROM_EMAIL ?? 'no-reply@example.de';
+  const notify = process.env.BOOKING_NOTIFY_EMAIL ?? siteConfig.email;
+
+  if (!resend) {
+    console.info('[email] RESEND_API_KEY missing — skipping contact email from', c.email);
+    return;
+  }
+
+  try {
+    await resend.emails.send({
+      from,
+      to: notify,
+      replyTo: c.email,
+      subject: `Kontaktanfrage von ${c.name}`,
+      html: `<h2>Neue Kontaktanfrage</h2>
+        <p><strong>${c.name}</strong> · ${c.email}${c.phone ? ` · ${c.phone}` : ''}</p>
+        <p style="white-space:pre-wrap">${c.message}</p>`,
+    });
+  } catch (err) {
+    console.error('[email] Failed to send contact email from', c.email, err);
+  }
+}
+
 /** Notify the operator and confirm to the customer. Never throws to the caller. */
 export async function sendBookingEmails(b: BookingEmailData): Promise<void> {
   const from = process.env.BOOKING_FROM_EMAIL ?? 'no-reply@example.de';

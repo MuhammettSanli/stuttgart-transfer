@@ -104,6 +104,26 @@
     "errorGeneric": "Bir şeyler ters gitti. Lütfen tekrar deneyin.",
     "errorRoute": "Bu güzergâh için fiyat hesaplanamadı."
   },
+  "ContactForm": {
+    "title": "Bize yazın",
+    "name": "Ad Soyad",
+    "email": "E-posta",
+    "phone": "Telefon (opsiyonel)",
+    "message": "Mesaj",
+    "submit": "Mesaj gönder",
+    "submitting": "Gönderiliyor …",
+    "successTitle": "Mesaj gönderildi!",
+    "successDesc": "Teşekkürler. En kısa sürede size döneriz.",
+    "error": "Bir şeyler ters gitti. Lütfen tekrar deneyin."
+  },
+  "Legal": {
+    "imprintTitle": "Künye (Impressum)",
+    "privacyTitle": "Gizlilik Politikası (Datenschutz)",
+    "termsTitle": "Genel Şartlar (AGB)",
+    "responsible": "İçerikten sorumlu",
+    "contactHeading": "İletişim",
+    "placeholderNote": "Lütfen bu örnek bilgileri gerçek bilgilerinizle değiştirin."
+  },
   "Faq": {
     "sectionTitle": "Sık sorulan sorular",
     "q1": "Uçuşum gecikirse ne olur?",

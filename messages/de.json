@@ -104,6 +104,26 @@
     "errorGeneric": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
     "errorRoute": "Für diese Route konnte kein Preis berechnet werden."
   },
+  "ContactForm": {
+    "title": "Schreiben Sie uns",
+    "name": "Name",
+    "email": "E-Mail",
+    "phone": "Telefon (optional)",
+    "message": "Nachricht",
+    "submit": "Nachricht senden",
+    "submitting": "Wird gesendet …",
+    "successTitle": "Nachricht gesendet!",
+    "successDesc": "Vielen Dank. Wir melden uns in Kürze bei Ihnen.",
+    "error": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut."
+  },
+  "Legal": {
+    "imprintTitle": "Impressum",
+    "privacyTitle": "Datenschutzerklärung",
+    "termsTitle": "Allgemeine Geschäftsbedingungen (AGB)",
+    "responsible": "Verantwortlich für den Inhalt",
+    "contactHeading": "Kontakt",
+    "placeholderNote": "Bitte ersetzen Sie diese Platzhalter durch Ihre echten Angaben."
+  },
   "Faq": {
     "sectionTitle": "Häufige Fragen",
     "q1": "Was passiert, wenn mein Flug Verspätung hat?",

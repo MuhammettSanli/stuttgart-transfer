@@ -13,6 +13,16 @@ export const quoteSchema = z.object({
 
 export type QuoteRequest = z.infer<typeof quoteSchema>;
 
+export const contactSchema = z.object({
+  name: z.string().min(2),
+  email: z.string().email(),
+  phone: z.string().min(6).optional().or(z.literal('')),
+  message: z.string().min(10).max(2000),
+  locale: z.enum(['de', 'en', 'tr']).default('de'),
+});
+
+export type ContactRequest = z.infer<typeof contactSchema>;
+
 export const bookingSchema = quoteSchema.extend({
   firstName: z.string().min(2),
   lastName: z.string().min(2),

@@ -104,6 +104,26 @@
     "errorGeneric": "Something went wrong. Please try again.",
     "errorRoute": "We couldn't calculate a price for this route."
   },
+  "ContactForm": {
+    "title": "Write to us",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone (optional)",
+    "message": "Message",
+    "submit": "Send message",
+    "submitting": "Sending …",
+    "successTitle": "Message sent!",
+    "successDesc": "Thank you. We will get back to you shortly.",
+    "error": "Something went wrong. Please try again."
+  },
+  "Legal": {
+    "imprintTitle": "Imprint",
+    "privacyTitle": "Privacy Policy",
+    "termsTitle": "Terms and Conditions",
+    "responsible": "Responsible for the content",
+    "contactHeading": "Contact",
+    "placeholderNote": "Please replace these placeholders with your real details."
+  },
   "Faq": {
     "sectionTitle": "Frequently asked questions",
     "q1": "What happens if my flight is delayed?",
