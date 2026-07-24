@@ -2,8 +2,6 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-> **Status: greenfield.** As of this writing the repository is empty — no code has been scaffolded yet. This file documents the *intended* architecture agreed with the owner so that the first implementation stays consistent. Update it to reflect reality once code exists, and remove this notice.
-
 ## What this project is
 
 An airport transfer / VIP chauffeur booking website for the Stuttgart region (modeled on the structure of stuttgartflughafentransfer.de, but built from scratch as a custom app rather than WordPress). Core user flow: visitor enters pickup + destination + date/time + vehicle, gets an **instant calculated price**, and submits a booking.
@@ -72,14 +70,26 @@ The four services (all in scope) are: **airport transfer** (primary), **event / 
 - **Secrets:** Google Maps keys, Supabase keys, Resend key, and the admin credential all live in `.env.local` (never committed). The Maps *browser* key (Places autocomplete) is restricted by HTTP referrer; the *server* key (Distance Matrix) is separate and unrestricted-by-referrer but IP/API-restricted.
 - **Fixed routes vs. metered:** if a `routes` row matches the pickup/destination pair, use its fixed price instead of the metered `distanceKm` calculation.
 
+## Project layout
+
+Source lives under `src/` (path alias `@/*` → `src/*`):
+
+- `src/app/[locale]/` — localized pages; `src/app/api/` — route handlers
+- `src/lib/` — `pricing.ts` (pure engine), `maps.ts` (Distance Matrix), `quote-service.ts` (DB + route + distance orchestration), `email.ts` (Resend), `auth.ts` (admin session), `validation.ts` (shared zod schemas), `prisma.ts` (client singleton)
+- `src/components/` — UI; `src/i18n/` — next-intl routing/request/navigation
+- `messages/{de,en,tr}.json` — translation catalogs
+- `prisma/schema.prisma` + `prisma/seed.ts`
+- `src/config/site.ts` — company contact details & service slugs (edit to real values)
+
+The client `BookingForm` gets its live price by calling `/api/quote` (debounced), so there is one authoritative price path — the pure `pricing.ts` runs server-side only.
+
 ## Commands
 
-_None yet — project is not scaffolded. Once created with `create-next-app`, expect the standard:_
-
-- `npm run dev` — local dev server
+- `npm run dev` — local dev server (http://localhost:3000, redirects to `/de`)
 - `npm run build` / `npm run start` — production build & serve
-- `npm run lint` — ESLint
-- `npx prisma migrate dev` — apply DB migrations locally
-- `npx prisma studio` — inspect the database
+- `npm run lint` — ESLint · `npm run typecheck` — `tsc --noEmit`
+- `npm run db:migrate` — apply Prisma migrations locally (needs `DATABASE_URL`)
+- `npm run db:seed` — seed vehicles, pricing rule, sample routes
+- `npm run db:studio` — inspect the database
 
-Fill in the real test command here once a test runner is added.
+**Setup before first run:** copy `.env.example` → `.env.local` and fill the Supabase, Google Maps, Resend and admin values. Without `DATABASE_URL` the app builds and renders, but `/api/quote` and `/api/booking` fail at runtime. No test runner is configured yet.
