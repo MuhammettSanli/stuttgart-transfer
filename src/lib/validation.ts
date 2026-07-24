@@ -1,0 +1,27 @@
+import { z } from 'zod';
+
+// Shared validation schemas for the quote and booking flows. Used by both the
+// client forms (via @hookform/resolvers) and the API routes.
+
+export const quoteSchema = z.object({
+  pickup: z.string().min(3),
+  dropoff: z.string().min(3),
+  vehicleSlug: z.enum(['business', 'van', 'sprinter']),
+  // ISO date-time string of the pickup moment (local time from the form).
+  pickupAt: z.string().min(1),
+});
+
+export type QuoteRequest = z.infer<typeof quoteSchema>;
+
+export const bookingSchema = quoteSchema.extend({
+  firstName: z.string().min(2),
+  lastName: z.string().min(2),
+  email: z.string().email(),
+  phone: z.string().min(6),
+  passengers: z.coerce.number().int().min(1).max(16),
+  luggage: z.coerce.number().int().min(0).max(30),
+  notes: z.string().max(1000).optional().or(z.literal('')),
+  locale: z.enum(['de', 'en', 'tr']).default('de'),
+});
+
+export type BookingRequest = z.infer<typeof bookingSchema>;

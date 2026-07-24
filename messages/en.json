@@ -1,0 +1,132 @@
+{
+  "Nav": {
+    "home": "Home",
+    "about": "About us",
+    "services": "Services",
+    "fleet": "Fleet",
+    "blog": "Blog",
+    "contact": "Contact",
+    "bookNow": "Book now"
+  },
+  "Hero": {
+    "badge": "24/7 Stuttgart Airport Transfer",
+    "title": "We're already there before you land",
+    "subtitle": "Reliable chauffeur service with flight tracking, 60 minutes of free waiting time and fixed prices – no hidden costs.",
+    "cta": "Calculate price"
+  },
+  "Trust": {
+    "flightTracking": "Flight tracking",
+    "flightTrackingDesc": "We monitor your flight and adjust the pickup time automatically.",
+    "freeWaiting": "60 min waiting included",
+    "freeWaitingDesc": "Free waiting time at the airport, even for delays.",
+    "fixedPrice": "Fixed-price guarantee",
+    "fixedPriceDesc": "Transparent price upfront – no hidden costs.",
+    "payInCar": "Pay conveniently in the car",
+    "payInCarDesc": "Pay cash or by card directly with the driver."
+  },
+  "Services": {
+    "sectionTitle": "Our services",
+    "sectionSubtitle": "From airport transfers to VIP limousines.",
+    "airport": {
+      "title": "Airport transfer",
+      "desc": "Punctual pickup and drop-off to all airports in the region."
+    },
+    "event": {
+      "title": "Event & VIP limousine",
+      "desc": "Stylish arrival for weddings, galas and special occasions."
+    },
+    "corporate": {
+      "title": "Trade show & business",
+      "desc": "Reliable transport for companies, trade shows and business trips."
+    },
+    "hourly": {
+      "title": "Hourly chauffeur",
+      "desc": "Flexible chauffeur by the hour – you set the itinerary."
+    },
+    "learnMore": "Learn more"
+  },
+  "Process": {
+    "sectionTitle": "Booked in 3 steps",
+    "step1Title": "Enter your route",
+    "step1Desc": "Enter pickup and destination, date and time.",
+    "step2Title": "Get your price",
+    "step2Desc": "Choose a vehicle and see the fixed price instantly.",
+    "step3Title": "Ride relaxed",
+    "step3Desc": "Your chauffeur is waiting – get in and enjoy the ride."
+  },
+  "Fleet": {
+    "sectionTitle": "Our fleet",
+    "sectionSubtitle": "The right vehicle for every occasion.",
+    "passengers": "passengers",
+    "luggage": "luggage",
+    "business": {
+      "name": "Business (E-Class)",
+      "desc": "Elegant sedan for up to 3 passengers."
+    },
+    "van": {
+      "name": "Van (V-Class)",
+      "desc": "Spacious van for up to 7 passengers."
+    },
+    "sprinter": {
+      "name": "Sprinter",
+      "desc": "Minibus for groups of up to 16 passengers."
+    }
+  },
+  "Coverage": {
+    "sectionTitle": "Our coverage area",
+    "sectionSubtitle": "Stuttgart and beyond – across Germany and into Switzerland.",
+    "cities": "Stuttgart, Frankfurt, Munich, Berlin, Düsseldorf, Hamburg, Cologne, Zurich"
+  },
+  "Booking": {
+    "title": "Calculate price & book",
+    "pickup": "Pickup location",
+    "pickupPlaceholder": "Enter address or airport",
+    "dropoff": "Destination",
+    "dropoffPlaceholder": "Enter destination address",
+    "date": "Date",
+    "time": "Time",
+    "vehicle": "Vehicle",
+    "passengers": "Passengers",
+    "luggage": "Luggage items",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "email": "Email",
+    "phone": "Phone",
+    "notes": "Notes (optional)",
+    "calculate": "Calculate price",
+    "calculating": "Calculating …",
+    "estimatedPrice": "Your fixed price",
+    "priceNote": "Pay cash or by card in the car.",
+    "submit": "Submit booking",
+    "submitting": "Sending …",
+    "successTitle": "Booking received!",
+    "successDesc": "Thank you. We will confirm your ride shortly by email.",
+    "errorGeneric": "Something went wrong. Please try again.",
+    "errorRoute": "We couldn't calculate a price for this route."
+  },
+  "Faq": {
+    "sectionTitle": "Frequently asked questions",
+    "q1": "What happens if my flight is delayed?",
+    "a1": "We monitor your flight and adjust the pickup time automatically. 60 minutes of waiting time are included.",
+    "q2": "How do I pay?",
+    "a2": "Payment is made conveniently in the car – cash or card. No online payment is required.",
+    "q3": "Is the price really fixed?",
+    "a3": "Yes. The displayed price is a fixed price with no hidden costs.",
+    "q4": "How many passengers can travel?",
+    "a4": "Depending on the vehicle, 3 to 16 passengers. Just choose the right vehicle."
+  },
+  "Footer": {
+    "tagline": "Your reliable airport transfer in Stuttgart and the surrounding area.",
+    "quickLinks": "Quick links",
+    "legal": "Legal",
+    "imprint": "Imprint",
+    "privacy": "Privacy policy",
+    "terms": "Terms",
+    "contact": "Contact",
+    "rights": "All rights reserved."
+  },
+  "Meta": {
+    "homeTitle": "Stuttgart Airport Transfer | VIP Chauffeur Service",
+    "homeDescription": "Reliable airport transfer and chauffeur service in Stuttgart. Fixed prices, flight tracking, 60 min free waiting. Book online now."
+  }
+}

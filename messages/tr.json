@@ -1,0 +1,132 @@
+{
+  "Nav": {
+    "home": "Ana Sayfa",
+    "about": "Hakkımızda",
+    "services": "Hizmetler",
+    "fleet": "Araç Filosu",
+    "blog": "Blog",
+    "contact": "İletişim",
+    "bookNow": "Hemen Rezervasyon"
+  },
+  "Hero": {
+    "badge": "7/24 Stuttgart Havalimanı Transferi",
+    "title": "Siz inmeden biz oradayız",
+    "subtitle": "Uçuş takibi, 60 dakika ücretsiz bekleme ve sabit fiyat garantisiyle güvenilir şoför hizmeti – gizli ücret yok.",
+    "cta": "Fiyat hesapla"
+  },
+  "Trust": {
+    "flightTracking": "Uçuş takibi",
+    "flightTrackingDesc": "Uçuşunuzu izler, karşılama saatini otomatik ayarlarız.",
+    "freeWaiting": "60 dk bekleme dahil",
+    "freeWaitingDesc": "Gecikmelerde bile havalimanında ücretsiz bekleme.",
+    "fixedPrice": "Sabit fiyat garantisi",
+    "fixedPriceDesc": "Önceden şeffaf fiyat – gizli maliyet yok.",
+    "payInCar": "Araçta rahatça ödeyin",
+    "payInCarDesc": "Doğrudan şoföre nakit veya kartla ödeme."
+  },
+  "Services": {
+    "sectionTitle": "Hizmetlerimiz",
+    "sectionSubtitle": "Havalimanı transferinden VIP limuzine kadar.",
+    "airport": {
+      "title": "Havalimanı transferi",
+      "desc": "Bölgedeki tüm havalimanlarına dakik karşılama ve bırakma."
+    },
+    "event": {
+      "title": "Etkinlik & VIP limuzin",
+      "desc": "Düğün, gala ve özel anlar için şık ulaşım."
+    },
+    "corporate": {
+      "title": "Fuar & kurumsal",
+      "desc": "Şirketler, fuarlar ve iş seyahatleri için güvenilir ulaşım."
+    },
+    "hourly": {
+      "title": "Saatlik şoför",
+      "desc": "Saat bazında esnek şoför – programı siz belirlersiniz."
+    },
+    "learnMore": "Daha fazla"
+  },
+  "Process": {
+    "sectionTitle": "3 adımda rezervasyon",
+    "step1Title": "Güzergâhı girin",
+    "step1Desc": "Alış ve varış noktası, tarih ve saati girin.",
+    "step2Title": "Fiyatı görün",
+    "step2Desc": "Aracı seçin, sabit fiyatı anında görün.",
+    "step3Title": "Rahatça seyahat edin",
+    "step3Desc": "Şoförünüz bekliyor – binin ve yolculuğun tadını çıkarın."
+  },
+  "Fleet": {
+    "sectionTitle": "Araç filomuz",
+    "sectionSubtitle": "Her ihtiyaca uygun araç.",
+    "passengers": "kişi",
+    "luggage": "bagaj",
+    "business": {
+      "name": "Business (E-Serisi)",
+      "desc": "3 kişiye kadar şık sedan."
+    },
+    "van": {
+      "name": "Van (V-Serisi)",
+      "desc": "7 kişiye kadar geniş van."
+    },
+    "sprinter": {
+      "name": "Sprinter",
+      "desc": "16 kişiye kadar gruplar için minibüs."
+    }
+  },
+  "Coverage": {
+    "sectionTitle": "Hizmet bölgemiz",
+    "sectionSubtitle": "Stuttgart ve çevresi – Almanya geneli ve İsviçre.",
+    "cities": "Stuttgart, Frankfurt, Münih, Berlin, Düsseldorf, Hamburg, Köln, Zürih"
+  },
+  "Booking": {
+    "title": "Fiyat hesapla & rezervasyon",
+    "pickup": "Alış noktası",
+    "pickupPlaceholder": "Adres veya havalimanı girin",
+    "dropoff": "Varış noktası",
+    "dropoffPlaceholder": "Varış adresini girin",
+    "date": "Tarih",
+    "time": "Saat",
+    "vehicle": "Araç",
+    "passengers": "Kişi sayısı",
+    "luggage": "Bagaj sayısı",
+    "firstName": "Ad",
+    "lastName": "Soyad",
+    "email": "E-posta",
+    "phone": "Telefon",
+    "notes": "Notlar (opsiyonel)",
+    "calculate": "Fiyat hesapla",
+    "calculating": "Hesaplanıyor …",
+    "estimatedPrice": "Sabit fiyatınız",
+    "priceNote": "Araçta nakit veya kartla ödeme.",
+    "submit": "Rezervasyonu gönder",
+    "submitting": "Gönderiliyor …",
+    "successTitle": "Rezervasyon alındı!",
+    "successDesc": "Teşekkürler. Yolculuğunuzu kısa süre içinde e-posta ile onaylayacağız.",
+    "errorGeneric": "Bir şeyler ters gitti. Lütfen tekrar deneyin.",
+    "errorRoute": "Bu güzergâh için fiyat hesaplanamadı."
+  },
+  "Faq": {
+    "sectionTitle": "Sık sorulan sorular",
+    "q1": "Uçuşum gecikirse ne olur?",
+    "a1": "Uçuşunuzu izler, karşılama saatini otomatik ayarlarız. 60 dakika bekleme dahildir.",
+    "q2": "Nasıl ödeme yaparım?",
+    "a2": "Ödeme araçta rahatça yapılır – nakit veya kart. Online ödeme gerekmez.",
+    "q3": "Fiyat gerçekten sabit mi?",
+    "a3": "Evet. Gösterilen fiyat gizli maliyeti olmayan sabit bir fiyattır.",
+    "q4": "Kaç kişi seyahat edebilir?",
+    "a4": "Araca göre 3 ila 16 kişi. Uygun aracı seçmeniz yeterli."
+  },
+  "Footer": {
+    "tagline": "Stuttgart ve çevresinde güvenilir havalimanı transferiniz.",
+    "quickLinks": "Hızlı bağlantılar",
+    "legal": "Yasal",
+    "imprint": "Künye",
+    "privacy": "Gizlilik",
+    "terms": "Şartlar",
+    "contact": "İletişim",
+    "rights": "Tüm hakları saklıdır."
+  },
+  "Meta": {
+    "homeTitle": "Stuttgart Havalimanı Transferi | VIP Şoför Hizmeti",
+    "homeDescription": "Stuttgart'ta güvenilir havalimanı transferi ve şoför hizmeti. Sabit fiyat, uçuş takibi, 60 dk ücretsiz bekleme. Hemen online rezervasyon."
+  }
+}

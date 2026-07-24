@@ -1,0 +1,106 @@
+// Prisma schema for the Stuttgart airport-transfer booking app.
+// Money is ALWAYS stored in integer cents (EUR) — never floats. See CLAUDE.md.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+/// Fleet tiers. `multiplier` is stored ×1000 (an integer) to avoid floats:
+/// e.g. 1.0 => 1000, 1.4 => 1400, 1.8 => 1800.
+model Vehicle {
+  id             String    @id @default(cuid())
+  slug           String    @unique // "business" | "van" | "sprinter"
+  name           String // "Business (E-Class)"
+  maxPassengers  Int
+  maxLuggage     Int
+  multiplierMilli Int      // price multiplier ×1000
+  imageUrl       String?
+  sortOrder      Int       @default(0)
+  active         Boolean   @default(true)
+  bookings       Booking[]
+
+  @@map("vehicles")
+}
+
+/// Global pricing parameters. A single active row drives the metered formula.
+/// All amounts in integer cents (EUR). Night window is [nightStartHour, nightEndHour).
+model PricingRule {
+  id                String   @id @default(cuid())
+  name              String   @default("default")
+  baseFareCents     Int
+  perKmRateCents    Int      // per-km rate BEFORE the vehicle multiplier
+  airportFeeCents   Int      @default(0)
+  nightSurchargeCents Int    @default(0)
+  nightStartHour    Int      @default(22) // inclusive
+  nightEndHour      Int      @default(6)  // exclusive
+  minFareCents      Int      @default(0)
+  currency          String   @default("EUR")
+  active            Boolean  @default(true)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  @@map("pricing_rules")
+}
+
+/// Optional fixed-price city pairs. If a route matches the pickup/destination,
+/// its fixedPriceCents (× vehicle multiplier) overrides the metered distance calc.
+model Route {
+  id             String  @id @default(cuid())
+  fromCity       String
+  toCity         String
+  fixedPriceCents Int    // base price for the Business tier; multiplied per vehicle
+  bidirectional  Boolean @default(true)
+  active         Boolean @default(true)
+
+  @@unique([fromCity, toCity])
+  @@map("routes")
+}
+
+enum BookingStatus {
+  NEW
+  CONFIRMED
+  DONE
+  CANCELLED
+}
+
+/// A submitted booking. priceCents is the authoritative server-quoted fare.
+model Booking {
+  id             String        @id @default(cuid())
+  status         BookingStatus @default(NEW)
+
+  // Customer
+  firstName      String
+  lastName       String
+  email          String
+  phone          String
+
+  // Trip
+  pickupAddress  String
+  dropoffAddress String
+  pickupAt       DateTime
+  passengers     Int
+  luggage        Int
+  notes          String?
+
+  // Pricing snapshot (all cents)
+  vehicle        Vehicle       @relation(fields: [vehicleId], references: [id])
+  vehicleId      String
+  distanceMeters Int?
+  durationSeconds Int?
+  priceCents     Int
+  currency       String        @default("EUR")
+  locale         String        @default("de")
+
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+
+  @@index([status])
+  @@index([pickupAt])
+  @@map("bookings")
+}

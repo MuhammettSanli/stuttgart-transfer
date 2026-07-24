@@ -1,0 +1,132 @@
+{
+  "Nav": {
+    "home": "Startseite",
+    "about": "Über uns",
+    "services": "Leistungen",
+    "fleet": "Fahrzeuge",
+    "blog": "Blog",
+    "contact": "Kontakt",
+    "bookNow": "Jetzt buchen"
+  },
+  "Hero": {
+    "badge": "24/7 Flughafentransfer Stuttgart",
+    "title": "Wir stehen schon da, bevor Sie landen",
+    "subtitle": "Zuverlässiger Chauffeurservice mit Flugüberwachung, 60 Minuten kostenloser Wartezeit und Festpreisen – ohne versteckte Kosten.",
+    "cta": "Preis berechnen"
+  },
+  "Trust": {
+    "flightTracking": "Flugüberwachung",
+    "flightTrackingDesc": "Wir verfolgen Ihren Flug und passen die Abholzeit automatisch an.",
+    "freeWaiting": "60 Min. Wartezeit inklusive",
+    "freeWaitingDesc": "Kostenlose Wartezeit am Flughafen, auch bei Verspätungen.",
+    "fixedPrice": "Festpreis-Garantie",
+    "fixedPriceDesc": "Transparenter Preis im Voraus – keine versteckten Kosten.",
+    "payInCar": "Bequem im Fahrzeug zahlen",
+    "payInCarDesc": "Bezahlung bar oder mit Karte direkt beim Fahrer."
+  },
+  "Services": {
+    "sectionTitle": "Unsere Leistungen",
+    "sectionSubtitle": "Vom Flughafentransfer bis zur VIP-Limousine.",
+    "airport": {
+      "title": "Flughafentransfer",
+      "desc": "Pünktliche Abholung und Zustellung zu allen Flughäfen in der Region."
+    },
+    "event": {
+      "title": "Event & VIP-Limousine",
+      "desc": "Stilvolle Anfahrt für Hochzeiten, Galas und besondere Anlässe."
+    },
+    "corporate": {
+      "title": "Messe & Business",
+      "desc": "Zuverlässiger Fahrdienst für Firmen, Messen und Geschäftsreisen."
+    },
+    "hourly": {
+      "title": "Stundenweise Chauffeur",
+      "desc": "Flexibler Chauffeur nach Stunden – Sie bestimmen das Programm."
+    },
+    "learnMore": "Mehr erfahren"
+  },
+  "Process": {
+    "sectionTitle": "In 3 Schritten gebucht",
+    "step1Title": "Route eingeben",
+    "step1Desc": "Abhol- und Zielort, Datum und Uhrzeit eingeben.",
+    "step2Title": "Preis erhalten",
+    "step2Desc": "Fahrzeug wählen und den Festpreis sofort sehen.",
+    "step3Title": "Entspannt fahren",
+    "step3Desc": "Ihr Chauffeur wartet – Sie steigen ein und genießen die Fahrt."
+  },
+  "Fleet": {
+    "sectionTitle": "Unsere Fahrzeugflotte",
+    "sectionSubtitle": "Für jeden Anlass das passende Fahrzeug.",
+    "passengers": "Personen",
+    "luggage": "Gepäck",
+    "business": {
+      "name": "Business (E-Klasse)",
+      "desc": "Elegante Limousine für bis zu 3 Personen."
+    },
+    "van": {
+      "name": "Van (V-Klasse)",
+      "desc": "Geräumiger Van für bis zu 7 Personen."
+    },
+    "sprinter": {
+      "name": "Sprinter",
+      "desc": "Kleinbus für Gruppen bis zu 16 Personen."
+    }
+  },
+  "Coverage": {
+    "sectionTitle": "Unser Einzugsgebiet",
+    "sectionSubtitle": "Stuttgart und Umgebung – deutschlandweit und in die Schweiz.",
+    "cities": "Stuttgart, Frankfurt, München, Berlin, Düsseldorf, Hamburg, Köln, Zürich"
+  },
+  "Booking": {
+    "title": "Preis berechnen & buchen",
+    "pickup": "Abholort",
+    "pickupPlaceholder": "Adresse oder Flughafen eingeben",
+    "dropoff": "Zielort",
+    "dropoffPlaceholder": "Zieladresse eingeben",
+    "date": "Datum",
+    "time": "Uhrzeit",
+    "vehicle": "Fahrzeug",
+    "passengers": "Personen",
+    "luggage": "Gepäckstücke",
+    "firstName": "Vorname",
+    "lastName": "Nachname",
+    "email": "E-Mail",
+    "phone": "Telefon",
+    "notes": "Anmerkungen (optional)",
+    "calculate": "Preis berechnen",
+    "calculating": "Wird berechnet …",
+    "estimatedPrice": "Ihr Festpreis",
+    "priceNote": "Zahlung bar oder mit Karte im Fahrzeug.",
+    "submit": "Buchung absenden",
+    "submitting": "Wird gesendet …",
+    "successTitle": "Buchung erhalten!",
+    "successDesc": "Vielen Dank. Wir bestätigen Ihre Fahrt in Kürze per E-Mail.",
+    "errorGeneric": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
+    "errorRoute": "Für diese Route konnte kein Preis berechnet werden."
+  },
+  "Faq": {
+    "sectionTitle": "Häufige Fragen",
+    "q1": "Was passiert, wenn mein Flug Verspätung hat?",
+    "a1": "Wir überwachen Ihren Flug und passen die Abholzeit automatisch an. 60 Minuten Wartezeit sind inklusive.",
+    "q2": "Wie bezahle ich?",
+    "a2": "Die Bezahlung erfolgt bequem im Fahrzeug – bar oder mit Karte. Eine Online-Zahlung ist nicht erforderlich.",
+    "q3": "Ist der Preis wirklich fix?",
+    "a3": "Ja. Der angezeigte Preis ist ein Festpreis ohne versteckte Kosten.",
+    "q4": "Wie viele Personen können mitfahren?",
+    "a4": "Je nach Fahrzeug 3 bis 16 Personen. Wählen Sie einfach das passende Fahrzeug aus."
+  },
+  "Footer": {
+    "tagline": "Ihr zuverlässiger Flughafentransfer in Stuttgart und Umgebung.",
+    "quickLinks": "Schnellzugriff",
+    "legal": "Rechtliches",
+    "imprint": "Impressum",
+    "privacy": "Datenschutz",
+    "terms": "AGB",
+    "contact": "Kontakt",
+    "rights": "Alle Rechte vorbehalten."
+  },
+  "Meta": {
+    "homeTitle": "Flughafentransfer Stuttgart | VIP Chauffeurservice",
+    "homeDescription": "Zuverlässiger Flughafentransfer und Chauffeurservice in Stuttgart. Festpreise, Flugüberwachung, 60 Min. kostenlose Wartezeit. Jetzt online buchen."
+  }
+}
