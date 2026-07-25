@@ -17,11 +17,13 @@ const config: Config = {
         graphite: '#6E7178',
         line: '#E2E1DD',
 
+        // Champagne gold — used sparingly as the single warm spark on the
+        // charcoal + platinum base (steel-and-gold, like a fine watch).
+        gold: { DEFAULT: '#C8A45C', light: '#DFC489', dark: '#9A7B3A' },
+        signal: { DEFAULT: '#C8A45C', light: '#DFC489', dark: '#9A7B3A' },
+
         // Legacy aliases so inner pages/components stay coherent.
-        // On dark surfaces "gold" reads as platinum silver; on light it's graphite.
         brand: { DEFAULT: '#14161A', light: '#24272C', dark: '#0C0D10' },
-        gold: { DEFAULT: '#9DA3AC', light: '#C7CCD4', dark: '#5B5E63' },
-        signal: { DEFAULT: '#9DA3AC', light: '#C7CCD4', dark: '#5B5E63' },
         ivory: '#F3F2F0',
         midnight: '#0C0D10',
       },

@@ -183,12 +183,12 @@ export function BookingForm() {
             </span>
           </div>
           {quoting ? (
-            <p className="mt-1 font-mono text-3xl text-paper/50">·····</p>
+            <p className="mt-1 font-mono text-3xl text-paper/40">·····</p>
           ) : quoteError ? (
-            <p className="mt-2 text-sm text-signal-light">{quoteError}</p>
+            <p className="mt-2 text-sm text-red-300">{quoteError}</p>
           ) : price ? (
             <>
-              <p className="mt-1 font-mono text-4xl font-medium tracking-tight text-paper">
+              <p className="mt-1 font-mono text-4xl font-medium tracking-tight text-gold">
                 {formatEuroCents(price.totalCents, locale)}
               </p>
               <p className="mt-1 mono-label text-paper/50">{t('priceNote')}</p>

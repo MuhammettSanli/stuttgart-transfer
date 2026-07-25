@@ -46,7 +46,7 @@ body {
   }
   .eyebrow::before {
     content: '';
-    @apply h-px w-6 bg-current opacity-70;
+    @apply h-px w-6 bg-gold;
   }
 
   .mono-label {

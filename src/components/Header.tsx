@@ -23,7 +23,7 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-white/10 bg-charcoal/80 text-paper backdrop-blur">
       <div className="container-page flex h-16 items-center justify-between gap-4">
         <Link href="/" className="flex items-center gap-2.5 font-display text-lg font-semibold tracking-tight">
-          <span className="h-2 w-2 rounded-full bg-platinum" aria-hidden />
+          <span className="h-2 w-2 rounded-full bg-gold" aria-hidden />
           Stuttgart <span className="text-platinum-dark">Transfer</span>
         </Link>
 
