@@ -9,18 +9,21 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // "Engineered precision" palette — paper, graphite ink, one signal accent.
-        paper: '#F4F3EF',
-        ink: { DEFAULT: '#17181B', soft: '#2A2C30' },
-        graphite: '#5B5E63',
-        line: '#E3E1DA',
-        signal: { DEFAULT: '#DD5A2A', light: '#E9744A', dark: '#B8461E' },
+        // "Charcoal + platinum" palette — monochrome tech-luxury, no gold.
+        paper: '#F3F2F0',
+        ink: { DEFAULT: '#14161A', soft: '#24272C' },
+        charcoal: '#0C0D10',
+        platinum: { DEFAULT: '#C7CCD4', light: '#E4E6EA', dark: '#9DA3AC' },
+        graphite: '#6E7178',
+        line: '#E2E1DD',
 
-        // Legacy semantic aliases (kept so inner pages stay coherent under the new palette)
-        brand: { DEFAULT: '#17181B', light: '#2A2C30', dark: '#0F1012' },
-        gold: { DEFAULT: '#DD5A2A', light: '#E9744A', dark: '#B8461E' },
-        ivory: '#F4F3EF',
-        midnight: '#0F1012',
+        // Legacy aliases so inner pages/components stay coherent.
+        // On dark surfaces "gold" reads as platinum silver; on light it's graphite.
+        brand: { DEFAULT: '#14161A', light: '#24272C', dark: '#0C0D10' },
+        gold: { DEFAULT: '#9DA3AC', light: '#C7CCD4', dark: '#5B5E63' },
+        signal: { DEFAULT: '#9DA3AC', light: '#C7CCD4', dark: '#5B5E63' },
+        ivory: '#F3F2F0',
+        midnight: '#0C0D10',
       },
       fontFamily: {
         sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],

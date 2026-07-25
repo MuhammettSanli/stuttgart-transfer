@@ -22,10 +22,10 @@ export function FaqAccordion() {
               aria-expanded={isOpen}
             >
               <span className="flex items-baseline gap-3">
-                <span className="font-mono text-[11px] text-signal">{String(ITEMS.indexOf(n) + 1).padStart(2, '0')}</span>
-                <span className="font-display text-lg font-medium text-ink">{t(`q${n}`)}</span>
+                <span className="font-mono text-[11px] text-graphite">{String(ITEMS.indexOf(n) + 1).padStart(2, '0')}</span>
+                <span className="font-display text-lg font-semibold text-ink">{t(`q${n}`)}</span>
               </span>
-              <span className="font-mono text-signal">{isOpen ? '−' : '+'}</span>
+              <span className="font-mono text-lg text-ink">{isOpen ? '−' : '+'}</span>
             </button>
             {isOpen && <p className="pb-5 pl-8 text-sm leading-relaxed text-graphite">{t(`a${n}`)}</p>}
           </div>

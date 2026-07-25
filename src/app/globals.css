@@ -17,12 +17,12 @@ body {
   font-family: var(--font-sans);
 }
 
-/* Google Places autocomplete dropdown — square, precise, above everything. */
+/* Google Places autocomplete dropdown. */
 .pac-container {
   z-index: 10000 !important;
-  border: 1px solid #e3e1da;
+  border: 1px solid #e2e1dd;
   border-radius: 0;
-  box-shadow: 0 24px 48px -28px rgba(23, 24, 27, 0.3);
+  box-shadow: 0 24px 48px -28px rgba(12, 13, 16, 0.35);
   margin-top: 2px;
   font-family: var(--font-sans);
 }
@@ -39,45 +39,40 @@ body {
     @apply container mx-auto px-6;
   }
 
-  /* Mono index/eyebrow: e.g. "STR · 01  LEISTUNGEN" */
+  /* Uppercase tracked label with a small tick in the current text color.
+     Set the text color per context (platinum on dark, graphite on light). */
   .eyebrow {
-    @apply inline-flex items-center gap-2.5 font-mono text-xs uppercase tracking-mono text-signal;
+    @apply inline-flex items-center gap-2.5 text-xs font-medium uppercase tracking-[0.2em];
   }
   .eyebrow::before {
     content: '';
-    @apply h-2 w-2 shrink-0 bg-signal;
+    @apply h-px w-6 bg-current opacity-70;
   }
 
-  /* Mono utility label for data + field captions. */
   .mono-label {
-    @apply font-mono text-[11px] uppercase tracking-mono text-graphite;
+    @apply font-mono text-[11px] uppercase tracking-[0.08em];
   }
 
-  .display-title {
-    @apply font-display font-medium leading-[1.02] tracking-tight text-ink;
-  }
-
-  /* Buttons: sharp corners, mono caps — reads like a control. */
+  /* Buttons: crisp rectangles, tracked caps — restrained, modern. */
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-none bg-signal px-7 py-3.5 font-mono text-xs font-medium uppercase tracking-mono text-paper transition hover:bg-signal-dark disabled:cursor-not-allowed disabled:opacity-60;
+    @apply inline-flex items-center justify-center gap-2 rounded-none bg-ink px-7 py-3.5 text-xs font-semibold uppercase tracking-[0.14em] text-paper transition hover:bg-ink-soft disabled:cursor-not-allowed disabled:opacity-60;
   }
   .btn-ghost {
-    @apply inline-flex items-center justify-center gap-2 rounded-none border border-ink px-7 py-3.5 font-mono text-xs font-medium uppercase tracking-mono text-ink transition hover:bg-ink hover:text-paper;
+    @apply inline-flex items-center justify-center gap-2 rounded-none border border-platinum/40 px-7 py-3.5 text-xs font-semibold uppercase tracking-[0.14em] text-platinum transition hover:border-platinum hover:bg-platinum/10;
   }
 
   .field-label {
-    @apply mb-1.5 block font-mono text-[11px] uppercase tracking-mono text-graphite;
+    @apply mb-1.5 block text-[11px] font-medium uppercase tracking-[0.1em] text-graphite;
   }
   .field-input {
-    @apply w-full rounded-none border border-line bg-white px-3.5 py-3 text-ink outline-none transition placeholder:text-graphite/50 focus:border-signal focus:ring-1 focus:ring-signal;
+    @apply w-full rounded-none border border-line bg-white px-3.5 py-3 text-ink outline-none transition placeholder:text-graphite/50 focus:border-ink focus:ring-1 focus:ring-ink;
   }
 
-  /* Control-panel card — the booking form and data blocks. */
+  /* Control card — booking form + data blocks. */
   .panel {
     @apply rounded-none border border-line bg-white shadow-panel;
   }
 
-  /* Thin full-width hairline. */
   .rule {
     @apply h-px w-full bg-line;
   }
