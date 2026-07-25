@@ -9,27 +9,36 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Brand palette — dark navy + gold, typical for premium chauffeur brands.
+        // Deep midnight navy + warm gold — a premium chauffeur palette.
+        midnight: '#081625',
         brand: {
-          DEFAULT: '#0b1f3a',
-          light: '#16305a',
-          dark: '#061225',
+          DEFAULT: '#0B1F3A',
+          light: '#13314f',
+          dark: '#081625',
         },
         gold: {
-          DEFAULT: '#c9a24b',
-          light: '#e0c074',
-          dark: '#a9842f',
+          DEFAULT: '#C6A15B',
+          light: '#E3C888',
+          dark: '#A9842F',
         },
+        ivory: '#F5F1E9',
       },
       fontFamily: {
         sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
+        display: ['var(--font-display)', 'Georgia', 'serif'],
+      },
+      letterSpacing: {
+        eyebrow: '0.22em',
       },
       container: {
         center: true,
-        padding: '1rem',
+        padding: '1.25rem',
         screens: {
-          '2xl': '1200px',
+          '2xl': '1240px',
         },
+      },
+      boxShadow: {
+        elevated: '0 30px 60px -20px rgba(8, 22, 37, 0.45)',
       },
     },
   },

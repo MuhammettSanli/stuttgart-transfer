@@ -116,19 +116,19 @@ export function BookingForm() {
 
   if (success) {
     return (
-      <div className="rounded-2xl bg-white p-8 text-center shadow-xl">
-        <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-green-100 text-2xl">
+      <div className="glass-card p-8 text-center">
+        <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-gold/15 text-2xl text-gold-dark">
           ✓
         </div>
-        <h3 className="text-xl font-bold text-brand">{t('successTitle')}</h3>
+        <h3 className="font-display text-2xl font-normal text-brand">{t('successTitle')}</h3>
         <p className="mt-2 text-gray-600">{t('successDesc')}</p>
       </div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="rounded-2xl bg-white p-6 shadow-xl">
-      <h3 className="mb-4 text-xl font-bold text-brand">{t('title')}</h3>
+    <form onSubmit={handleSubmit} className="glass-card p-6 sm:p-7">
+      <h3 className="mb-5 font-display text-2xl font-normal text-brand">{t('title')}</h3>
 
       <div className="grid gap-4">
         <div>
@@ -172,19 +172,19 @@ export function BookingForm() {
         </div>
 
         {/* Live price preview */}
-        <div className="rounded-lg bg-brand/5 p-4 text-center">
+        <div className="rounded-xl border border-gold/30 bg-brand p-5 text-center text-ivory">
           {quoting ? (
-            <p className="text-sm text-gray-500">{t('calculating')}</p>
+            <p className="text-sm text-ivory/70">{t('calculating')}</p>
           ) : quoteError ? (
-            <p className="text-sm text-red-600">{quoteError}</p>
+            <p className="text-sm text-red-300">{quoteError}</p>
           ) : price ? (
             <>
-              <p className="text-sm text-gray-500">{t('estimatedPrice')}</p>
-              <p className="text-3xl font-bold text-brand">{formatEuroCents(price.totalCents, locale)}</p>
-              <p className="mt-1 text-xs text-gray-500">{t('priceNote')}</p>
+              <p className="text-xs uppercase tracking-wider text-gold">{t('estimatedPrice')}</p>
+              <p className="mt-1 font-display text-4xl font-normal text-ivory">{formatEuroCents(price.totalCents, locale)}</p>
+              <p className="mt-1 text-xs text-ivory/60">{t('priceNote')}</p>
             </>
           ) : (
-            <p className="text-sm text-gray-400">{t('calculate')}</p>
+            <p className="text-sm text-ivory/50">{t('calculate')}</p>
           )}
         </div>
 

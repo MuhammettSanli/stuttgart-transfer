@@ -20,18 +20,18 @@ export function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-brand text-white shadow-md">
+    <header className="sticky top-0 z-50 border-b border-white/5 bg-midnight/95 text-ivory backdrop-blur">
       <div className="container-page flex h-16 items-center justify-between gap-4">
-        <Link href="/" className="text-lg font-bold tracking-tight">
+        <Link href="/" className="font-display text-xl tracking-tight">
           <span className="text-gold">Stuttgart</span> Transfer
         </Link>
 
-        <nav className="hidden items-center gap-6 lg:flex">
+        <nav className="hidden items-center gap-7 lg:flex">
           {NAV.map((item) => (
             <Link
               key={item.key}
               href={item.href}
-              className="text-sm text-white/85 transition hover:text-gold"
+              className="text-sm text-ivory/80 transition hover:text-gold"
             >
               {t(item.key)}
             </Link>

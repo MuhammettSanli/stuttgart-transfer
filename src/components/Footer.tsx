@@ -10,7 +10,7 @@ export function Footer() {
     <footer className="bg-brand-dark text-white/80">
       <div className="container-page grid gap-8 py-12 md:grid-cols-4">
         <div>
-          <div className="text-lg font-bold text-white">
+          <div className="font-display text-xl text-white">
             <span className="text-gold">Stuttgart</span> Transfer
           </div>
           <p className="mt-3 text-sm">{t('tagline')}</p>
