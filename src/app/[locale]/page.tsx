@@ -232,22 +232,27 @@ function ExperienceBand() {
         className="-z-10 object-cover object-center opacity-30"
       />
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-charcoal via-charcoal/90 to-charcoal/60" />
-      <div className="grid grid-cols-2 gap-px bg-platinum/15 md:grid-cols-4">
-        {stats.map((s, i) => (
-          <div key={i} className="bg-charcoal/40 px-8 py-14 backdrop-blur-sm">
-            <div className="font-display text-6xl font-semibold tracking-tight text-paper">
-              {s.display ? (
-                s.display
-              ) : (
-                <>
-                  <CountUp to={s.to as number} />
-                  {s.suffix ?? ''}
-                </>
-              )}
+      <div className="container-page">
+        <div className="grid grid-cols-2 gap-y-12 md:grid-cols-4">
+          {stats.map((s, i) => (
+            <div
+              key={i}
+              className={`px-4 text-center md:px-10 ${i > 0 ? 'md:border-l md:border-platinum/15' : ''}`}
+            >
+              <div className="font-display text-5xl font-semibold tracking-tight text-paper md:text-6xl">
+                {s.display ? (
+                  s.display
+                ) : (
+                  <>
+                    <CountUp to={s.to as number} />
+                    {s.suffix ?? ''}
+                  </>
+                )}
+              </div>
+              <p className="mt-4 mono-label text-gold">{s.label}</p>
             </div>
-            <p className="mt-4 mono-label text-gold">{s.label}</p>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
