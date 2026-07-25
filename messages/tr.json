@@ -61,15 +61,15 @@
     "luggage": "bagaj",
     "business": {
       "name": "Business (E-Serisi)",
-      "desc": "3 kişiye kadar şık sedan."
+      "desc": "4 kişiye kadar şık sedan."
     },
     "first": {
       "name": "First Class (S-Serisi)",
-      "desc": "3 kişiye kadar prestijli üst sınıf sedan."
+      "desc": "4 kişiye kadar prestijli üst sınıf sedan."
     },
     "van": {
       "name": "Van (V-Serisi)",
-      "desc": "7 kişiye kadar geniş van."
+      "desc": "8 kişiye kadar geniş van."
     },
     "sprinter": {
       "name": "Sprinter",
@@ -82,10 +82,10 @@
     "cities": "Stuttgart, Frankfurt, Münih, Berlin, Düsseldorf, Hamburg, Köln, Zürih"
   },
   "Stats": {
-    "available": "Erişilebilir",
-    "waiting": "Dk. bekleme dahil",
-    "cities": "Şehir & bölge",
-    "classes": "Araç sınıfı"
+    "fleet": "Filodaki araç",
+    "passengers": "Taşınan yolcu",
+    "partners": "Partner & kurumsal müşteri",
+    "available": "Erişilebilir – gece de"
   },
   "Booking": {
     "title": "Fiyat hesapla & rezervasyon",
@@ -144,7 +144,7 @@
     "q3": "Fiyat gerçekten sabit mi?",
     "a3": "Evet. Gösterilen fiyat gizli maliyeti olmayan sabit bir fiyattır.",
     "q4": "Kaç kişi seyahat edebilir?",
-    "a4": "Araca göre 3 ila 16 kişi. Uygun aracı seçmeniz yeterli."
+    "a4": "Araca göre 4 ila 16 kişi. Uygun aracı seçmeniz yeterli."
   },
   "Footer": {
     "tagline": "Stuttgart ve çevresinde güvenilir havalimanı transferiniz.",

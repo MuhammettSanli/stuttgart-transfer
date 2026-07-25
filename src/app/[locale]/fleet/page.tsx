@@ -4,9 +4,9 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import type { Metadata } from 'next';
 
 const FLEET = [
-  { slug: 'business', img: '/images/fleet-business.jpg', pax: 3, bags: 3 },
-  { slug: 'first', img: '/images/fleet-first.jpg', pax: 3, bags: 3 },
-  { slug: 'van', img: '/images/fleet-van.jpg', pax: 7, bags: 7 },
+  { slug: 'business', img: '/images/fleet-business.jpg', pax: 4, bags: 4 },
+  { slug: 'first', img: '/images/fleet-first.jpg', pax: 4, bags: 4 },
+  { slug: 'van', img: '/images/fleet-van.jpg', pax: 8, bags: 8 },
   { slug: 'sprinter', img: '/images/fleet-sprinter.jpg', pax: 16, bags: 16 },
 ] as const;
 

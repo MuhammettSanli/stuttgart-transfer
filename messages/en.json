@@ -61,15 +61,15 @@
     "luggage": "luggage",
     "business": {
       "name": "Business (E-Class)",
-      "desc": "Elegant sedan for up to 3 passengers."
+      "desc": "Elegant sedan for up to 4 passengers."
     },
     "first": {
       "name": "First Class (S-Class)",
-      "desc": "Prestigious luxury-class sedan for up to 3 passengers."
+      "desc": "Prestigious luxury-class sedan for up to 4 passengers."
     },
     "van": {
       "name": "Van (V-Class)",
-      "desc": "Spacious van for up to 7 passengers."
+      "desc": "Spacious van for up to 8 passengers."
     },
     "sprinter": {
       "name": "Sprinter",
@@ -82,10 +82,10 @@
     "cities": "Stuttgart, Frankfurt, Munich, Berlin, Düsseldorf, Hamburg, Cologne, Zurich"
   },
   "Stats": {
-    "available": "Available",
-    "waiting": "Min. waiting incl.",
-    "cities": "Cities & regions",
-    "classes": "Vehicle classes"
+    "fleet": "Vehicles in the fleet",
+    "passengers": "Passengers transported",
+    "partners": "Partners & corporate clients",
+    "available": "Available – also at night"
   },
   "Booking": {
     "title": "Calculate price & book",
@@ -144,7 +144,7 @@
     "q3": "Is the price really fixed?",
     "a3": "Yes. The displayed price is a fixed price with no hidden costs.",
     "q4": "How many passengers can travel?",
-    "a4": "Depending on the vehicle, 3 to 16 passengers. Just choose the right vehicle."
+    "a4": "Depending on the vehicle, 4 to 16 passengers. Just choose the right vehicle."
   },
   "Footer": {
     "tagline": "Your reliable airport transfer in Stuttgart and the surrounding area.",

@@ -10,9 +10,9 @@ import { Link } from '@/i18n/navigation';
 import { serviceSlugs } from '@/config/site';
 
 const FLEET = [
-  { slug: 'business', img: '/images/fleet-business.jpg', pax: 3, bags: 3 },
-  { slug: 'first', img: '/images/fleet-first.jpg', pax: 3, bags: 3 },
-  { slug: 'van', img: '/images/fleet-van.jpg', pax: 7, bags: 7 },
+  { slug: 'business', img: '/images/fleet-business.jpg', pax: 4, bags: 4 },
+  { slug: 'first', img: '/images/fleet-first.jpg', pax: 4, bags: 4 },
+  { slug: 'van', img: '/images/fleet-van.jpg', pax: 8, bags: 8 },
   { slug: 'sprinter', img: '/images/fleet-sprinter.jpg', pax: 16, bags: 16 },
 ] as const;
 const STEPS = ['1', '2', '3'] as const;
@@ -217,11 +217,11 @@ function FleetSection() {
 function ExperienceBand() {
   const t = useTranslations('Trust');
   const st = useTranslations('Stats');
-  const stats = [
+  const stats: { to?: number; suffix?: string; display?: string; label: string }[] = [
+    { to: 22, suffix: '+', label: st('fleet') },
+    { to: 1594, label: st('passengers') },
+    { to: 13, suffix: '+', label: st('partners') },
     { display: '24/7', label: st('available') },
-    { to: 60, label: st('waiting') },
-    { to: 8, label: st('cities') },
-    { to: 4, label: st('classes') },
   ];
   return (
     <section className="relative isolate overflow-hidden bg-charcoal py-24 text-paper">
@@ -246,7 +246,14 @@ function ExperienceBand() {
           {stats.map((s, i) => (
             <div key={i} className="bg-charcoal/50 p-7 backdrop-blur-sm">
               <div className="font-display text-5xl font-semibold tracking-tight text-paper">
-                {s.display ? s.display : <CountUp to={s.to as number} />}
+                {s.display ? (
+                  s.display
+                ) : (
+                  <>
+                    <CountUp to={s.to as number} />
+                    {s.suffix ?? ''}
+                  </>
+                )}
               </div>
               <p className="mt-3 mono-label text-gold">{s.label}</p>
             </div>

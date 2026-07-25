@@ -61,15 +61,15 @@
     "luggage": "Gepäck",
     "business": {
       "name": "Business (E-Klasse)",
-      "desc": "Elegante Limousine für bis zu 3 Personen."
+      "desc": "Elegante Limousine für bis zu 4 Personen."
     },
     "first": {
       "name": "First Class (S-Klasse)",
-      "desc": "Repräsentative Oberklasse-Limousine für bis zu 3 Personen."
+      "desc": "Repräsentative Oberklasse-Limousine für bis zu 4 Personen."
     },
     "van": {
       "name": "Van (V-Klasse)",
-      "desc": "Geräumiger Van für bis zu 7 Personen."
+      "desc": "Geräumiger Van für bis zu 8 Personen."
     },
     "sprinter": {
       "name": "Sprinter",
@@ -82,10 +82,10 @@
     "cities": "Stuttgart, Frankfurt, München, Berlin, Düsseldorf, Hamburg, Köln, Zürich"
   },
   "Stats": {
-    "available": "Verfügbar",
-    "waiting": "Min. Wartezeit inkl.",
-    "cities": "Städte & Regionen",
-    "classes": "Fahrzeugklassen"
+    "fleet": "Fahrzeuge im Fuhrpark",
+    "passengers": "Beförderte Reisende",
+    "partners": "Partner & Firmenkunden",
+    "available": "Erreichbar – auch nachts"
   },
   "Booking": {
     "title": "Preis berechnen & buchen",
@@ -144,7 +144,7 @@
     "q3": "Ist der Preis wirklich fix?",
     "a3": "Ja. Der angezeigte Preis ist ein Festpreis ohne versteckte Kosten.",
     "q4": "Wie viele Personen können mitfahren?",
-    "a4": "Je nach Fahrzeug 3 bis 16 Personen. Wählen Sie einfach das passende Fahrzeug aus."
+    "a4": "Je nach Fahrzeug 4 bis 16 Personen. Wählen Sie einfach das passende Fahrzeug aus."
   },
   "Footer": {
     "tagline": "Ihr zuverlässiger Flughafentransfer in Stuttgart und Umgebung.",
