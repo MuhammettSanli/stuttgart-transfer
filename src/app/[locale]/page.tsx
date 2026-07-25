@@ -215,7 +215,6 @@ function FleetSection() {
 }
 
 function ExperienceBand() {
-  const t = useTranslations('Trust');
   const st = useTranslations('Stats');
   const stats: { to?: number; suffix?: string; display?: string; label: string }[] = [
     { to: 22, suffix: '+', label: st('fleet') },
@@ -233,32 +232,22 @@ function ExperienceBand() {
         className="-z-10 object-cover object-center opacity-30"
       />
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-charcoal via-charcoal/90 to-charcoal/60" />
-      <div className="container-page">
-        <div className="max-w-xl">
-          <span className="eyebrow text-gold">{t('payInCar')}</span>
-          <h2 className="mt-4 font-display text-3xl font-semibold tracking-tight text-paper md:text-4xl">
-            {t('flightTracking')} · {t('freeWaiting')}
-          </h2>
-          <p className="mt-4 text-platinum-light/75">{t('fixedPriceDesc')}</p>
-        </div>
-
-        <div className="mt-14 grid grid-cols-2 gap-px border border-platinum/15 bg-platinum/10 md:grid-cols-4">
-          {stats.map((s, i) => (
-            <div key={i} className="bg-charcoal/50 p-7 backdrop-blur-sm">
-              <div className="font-display text-5xl font-semibold tracking-tight text-paper">
-                {s.display ? (
-                  s.display
-                ) : (
-                  <>
-                    <CountUp to={s.to as number} />
-                    {s.suffix ?? ''}
-                  </>
-                )}
-              </div>
-              <p className="mt-3 mono-label text-gold">{s.label}</p>
+      <div className="grid grid-cols-2 gap-px bg-platinum/15 md:grid-cols-4">
+        {stats.map((s, i) => (
+          <div key={i} className="bg-charcoal/40 px-8 py-14 backdrop-blur-sm">
+            <div className="font-display text-6xl font-semibold tracking-tight text-paper">
+              {s.display ? (
+                s.display
+              ) : (
+                <>
+                  <CountUp to={s.to as number} />
+                  {s.suffix ?? ''}
+                </>
+              )}
             </div>
-          ))}
-        </div>
+            <p className="mt-4 mono-label text-gold">{s.label}</p>
+          </div>
+        ))}
       </div>
     </section>
   );
