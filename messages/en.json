@@ -81,6 +81,12 @@
     "sectionSubtitle": "Stuttgart and beyond – across Germany and into Switzerland.",
     "cities": "Stuttgart, Frankfurt, Munich, Berlin, Düsseldorf, Hamburg, Cologne, Zurich"
   },
+  "Stats": {
+    "available": "Available",
+    "waiting": "Min. waiting incl.",
+    "cities": "Cities & regions",
+    "classes": "Vehicle classes"
+  },
   "Booking": {
     "title": "Calculate price & book",
     "pickup": "Pickup location",

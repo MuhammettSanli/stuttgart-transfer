@@ -81,6 +81,12 @@
     "sectionSubtitle": "Stuttgart und Umgebung – deutschlandweit und in die Schweiz.",
     "cities": "Stuttgart, Frankfurt, München, Berlin, Düsseldorf, Hamburg, Köln, Zürich"
   },
+  "Stats": {
+    "available": "Verfügbar",
+    "waiting": "Min. Wartezeit inkl.",
+    "cities": "Städte & Regionen",
+    "classes": "Fahrzeugklassen"
+  },
   "Booking": {
     "title": "Preis berechnen & buchen",
     "pickup": "Abholort",

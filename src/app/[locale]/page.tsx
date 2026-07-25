@@ -5,6 +5,7 @@ import { Hero } from '@/components/Hero';
 import { BookingForm } from '@/components/BookingForm';
 import { FaqAccordion } from '@/components/FaqAccordion';
 import { Reveal } from '@/components/Reveal';
+import { CountUp } from '@/components/CountUp';
 import { Link } from '@/i18n/navigation';
 import { serviceSlugs } from '@/config/site';
 
@@ -140,16 +141,25 @@ function ServicesSection() {
 function ProcessSection() {
   const t = useTranslations('Process');
   return (
-    <section className="bg-white py-20">
+    <section className="bg-white py-24">
       <div className="container-page">
         <Reveal>
           <SectionHeading index="02" eyebrow={t('sectionTitle')} title={t('sectionTitle')} />
-          <div className="mt-12 grid gap-px border border-line bg-line md:grid-cols-3">
-            {STEPS.map((n) => (
-              <div key={n} className="bg-white p-8">
-                <span className="font-mono text-4xl font-medium text-ink/25">0{n}</span>
-                <h3 className="mt-4 font-display text-xl font-semibold text-ink">{t(`step${n}Title`)}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-graphite">{t(`step${n}Desc`)}</p>
+          <div className="mt-16 grid gap-x-8 gap-y-12 md:grid-cols-3">
+            {STEPS.map((n, i) => (
+              <div key={n} className="group relative">
+                <div className="flex items-center gap-4">
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-gold/50 font-mono text-lg text-gold transition duration-300 group-hover:bg-gold group-hover:text-charcoal">
+                    0{n}
+                  </div>
+                  {i < STEPS.length - 1 && (
+                    <div className="hidden h-px flex-1 bg-gradient-to-r from-gold/50 to-line md:block" />
+                  )}
+                </div>
+                <h3 className="mt-7 font-display text-2xl font-semibold tracking-tight text-ink">
+                  {t(`step${n}Title`)}
+                </h3>
+                <p className="mt-3 max-w-xs text-sm leading-relaxed text-graphite">{t(`step${n}Desc`)}</p>
               </div>
             ))}
           </div>
@@ -206,6 +216,13 @@ function FleetSection() {
 
 function ExperienceBand() {
   const t = useTranslations('Trust');
+  const st = useTranslations('Stats');
+  const stats = [
+    { display: '24/7', label: st('available') },
+    { to: 60, label: st('waiting') },
+    { to: 8, label: st('cities') },
+    { to: 4, label: st('classes') },
+  ];
   return (
     <section className="relative isolate overflow-hidden bg-charcoal py-24 text-paper">
       <Image
@@ -213,16 +230,27 @@ function ExperienceBand() {
         alt=""
         fill
         sizes="100vw"
-        className="-z-10 object-cover object-center opacity-35"
+        className="-z-10 object-cover object-center opacity-30"
       />
-      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-charcoal via-charcoal/85 to-charcoal/40" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-charcoal via-charcoal/90 to-charcoal/60" />
       <div className="container-page">
         <div className="max-w-xl">
-          <span className="eyebrow text-platinum">{t('payInCar')}</span>
+          <span className="eyebrow text-gold">{t('payInCar')}</span>
           <h2 className="mt-4 font-display text-3xl font-semibold tracking-tight text-paper md:text-4xl">
             {t('flightTracking')} · {t('freeWaiting')}
           </h2>
           <p className="mt-4 text-platinum-light/75">{t('fixedPriceDesc')}</p>
+        </div>
+
+        <div className="mt-14 grid grid-cols-2 gap-px border border-platinum/15 bg-platinum/10 md:grid-cols-4">
+          {stats.map((s, i) => (
+            <div key={i} className="bg-charcoal/50 p-7 backdrop-blur-sm">
+              <div className="font-display text-5xl font-semibold tracking-tight text-paper">
+                {s.display ? s.display : <CountUp to={s.to as number} />}
+              </div>
+              <p className="mt-3 mono-label text-gold">{s.label}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -233,19 +261,27 @@ function CoverageSection() {
   const t = useTranslations('Coverage');
   const cities = t('cities').split(',').map((c) => c.trim());
   return (
-    <section className="bg-white py-20">
+    <section className="overflow-hidden bg-white py-24">
       <div className="container-page">
         <Reveal>
           <SectionHeading index="04" eyebrow={t('sectionTitle')} title={t('sectionSubtitle')} />
-          <div className="mt-10 grid grid-cols-2 gap-px border border-line bg-line sm:grid-cols-4">
-            {cities.map((city, i) => (
-              <div key={city} className="flex items-baseline gap-2 bg-white px-4 py-4">
-                <span className="font-mono text-[11px] text-graphite">{String(i + 1).padStart(2, '0')}</span>
-                <span className="text-sm font-medium text-ink">{city}</span>
-              </div>
-            ))}
-          </div>
         </Reveal>
+      </div>
+
+      {/* Kinetic city marquee */}
+      <div className="marquee-group relative mt-14 flex overflow-hidden border-y border-line py-8">
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-white to-transparent md:w-40" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-white to-transparent md:w-40" />
+        {[0, 1].map((dup) => (
+          <ul key={dup} aria-hidden={dup === 1} className="flex shrink-0 animate-marquee items-center">
+            {cities.map((city) => (
+              <li key={city} className="flex items-center gap-8 pr-8">
+                <span className="font-display text-4xl font-semibold text-ink md:text-6xl">{city}</span>
+                <span className="text-xl text-gold">✦</span>
+              </li>
+            ))}
+          </ul>
+        ))}
       </div>
     </section>
   );

@@ -81,6 +81,12 @@
     "sectionSubtitle": "Stuttgart ve çevresi – Almanya geneli ve İsviçre.",
     "cities": "Stuttgart, Frankfurt, Münih, Berlin, Düsseldorf, Hamburg, Köln, Zürih"
   },
+  "Stats": {
+    "available": "Erişilebilir",
+    "waiting": "Dk. bekleme dahil",
+    "cities": "Şehir & bölge",
+    "classes": "Araç sınıfı"
+  },
   "Booking": {
     "title": "Fiyat hesapla & rezervasyon",
     "pickup": "Alış noktası",
