@@ -36,10 +36,15 @@ export default function BlogPostPage({
 
   return (
     <article className="container-page max-w-3xl py-16">
-      <Link href="/blog" className="text-sm text-gold-dark">← Blog</Link>
-      <p className="mt-4 text-xs text-gray-400">{post.date}</p>
-      <h1 className="mt-2 text-3xl font-bold text-brand">{post.title[l]}</h1>
-      <p className="mt-6 leading-relaxed text-gray-700">{post.body[l]}</p>
+      <Link href="/blog" className="text-xs font-medium uppercase tracking-[0.14em] text-graphite transition hover:text-gold-dark">
+        ← Blog
+      </Link>
+      <p className="mt-8 font-mono text-[11px] uppercase tracking-[0.08em] text-gold">{post.date}</p>
+      <h1 className="mt-3 font-display text-4xl font-semibold leading-[1.08] tracking-tight text-ink md:text-5xl">
+        {post.title[l]}
+      </h1>
+      <div className="mt-8 rule" />
+      <p className="mt-8 text-lg leading-relaxed text-graphite">{post.body[l]}</p>
     </article>
   );
 }

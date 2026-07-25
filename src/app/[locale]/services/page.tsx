@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import type { Metadata } from 'next';
@@ -22,20 +23,37 @@ function ServicesList() {
   const t = useTranslations('Services');
   return (
     <div className="container-page py-16">
-      <h1 className="text-3xl font-bold text-brand">{t('sectionTitle')}</h1>
-      <p className="mt-2 text-gray-600">{t('sectionSubtitle')}</p>
-      <div className="mt-10 grid gap-6 md:grid-cols-2">
-        {serviceSlugs.map((slug) => (
+      <span className="eyebrow text-graphite">{t('sectionTitle')}</span>
+      <h1 className="mt-4 max-w-2xl font-display text-4xl font-semibold tracking-tight text-ink md:text-5xl">
+        {t('sectionSubtitle')}
+      </h1>
+
+      <div className="mt-12 grid gap-6 md:grid-cols-2">
+        {serviceSlugs.map((slug, i) => (
           <Link
             key={slug}
             href={{ pathname: '/services/[slug]', params: { slug } }}
-            className="rounded-2xl border border-gray-200 bg-white p-6 transition hover:shadow-md"
+            className="group flex flex-col border border-line bg-white transition hover:shadow-panel"
           >
-            <h2 className="text-xl font-semibold text-brand">{t(`${slug}.title`)}</h2>
-            <p className="mt-2 text-gray-600">{t(`${slug}.desc`)}</p>
-            <span className="mt-4 inline-block text-sm font-medium text-gold-dark">
-              {t('learnMore')} →
-            </span>
+            <div className="relative aspect-[16/10] overflow-hidden border-b border-line bg-ink">
+              <Image
+                src={`/images/service-${slug}.jpg`}
+                alt={t(`${slug}.title`)}
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover transition duration-700 group-hover:scale-[1.04]"
+              />
+              <span className="absolute left-3 top-3 bg-charcoal/80 px-2 py-1 font-mono text-[11px] text-platinum backdrop-blur">
+                {String(i + 1).padStart(2, '0')}
+              </span>
+            </div>
+            <div className="flex flex-1 flex-col p-7">
+              <h2 className="font-display text-xl font-semibold text-ink">{t(`${slug}.title`)}</h2>
+              <p className="mt-3 flex-1 text-sm leading-relaxed text-graphite">{t(`${slug}.desc`)}</p>
+              <span className="mt-6 text-[11px] font-semibold uppercase tracking-[0.14em] text-gold-dark transition group-hover:translate-x-1">
+                {t('learnMore')} ⟶
+              </span>
+            </div>
           </Link>
         ))}
       </div>

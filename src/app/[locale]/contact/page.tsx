@@ -21,21 +21,39 @@ export default function ContactPage({ params: { locale } }: { params: { locale: 
 function Contact() {
   const nav = useTranslations('Nav');
   const f = useTranslations('Footer');
+
+  const rows = [
+    { label: f('contact'), value: siteConfig.phone, href: siteConfig.phoneHref },
+    { label: 'E-Mail', value: siteConfig.email, href: `mailto:${siteConfig.email}` },
+    {
+      label: siteConfig.address.city,
+      value: `${siteConfig.address.street}, ${siteConfig.address.postalCode} ${siteConfig.address.city}`,
+    },
+  ];
+
   return (
     <div className="container-page py-16">
-      <h1 className="text-3xl font-bold text-brand">{nav('contact')}</h1>
-      <div className="mt-8 grid gap-8 md:grid-cols-2">
-        <div className="space-y-3 text-gray-700">
-          <p>
-            <span className="font-semibold text-brand">{f('contact')}:</span><br />
-            <a href={siteConfig.phoneHref} className="text-gold-dark">{siteConfig.phone}</a><br />
-            <a href={`mailto:${siteConfig.email}`} className="text-gold-dark">{siteConfig.email}</a>
-          </p>
-          <p>
-            {siteConfig.address.street}<br />
-            {siteConfig.address.postalCode} {siteConfig.address.city}
-          </p>
-        </div>
+      <span className="eyebrow text-graphite">{nav('contact')}</span>
+      <h1 className="mt-4 font-display text-4xl font-semibold tracking-tight text-ink md:text-5xl">
+        {nav('contact')}
+      </h1>
+
+      <div className="mt-12 grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+        <dl className="divide-y divide-line border-y border-line">
+          {rows.map((r) => (
+            <div key={r.label} className="py-5">
+              <dt className="mono-label text-graphite">{r.label}</dt>
+              <dd className="mt-1 text-ink">
+                {r.href ? (
+                  <a href={r.href} className="transition hover:text-gold-dark">{r.value}</a>
+                ) : (
+                  r.value
+                )}
+              </dd>
+            </div>
+          ))}
+        </dl>
+
         <ContactForm />
       </div>
     </div>

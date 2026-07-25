@@ -14,17 +14,26 @@ function BlogList({ locale }: { locale: Locale }) {
   const t = useTranslations('Nav');
   return (
     <div className="container-page py-16">
-      <h1 className="text-3xl font-bold text-brand">{t('blog')}</h1>
-      <div className="mt-10 grid gap-6 md:grid-cols-2">
-        {posts.map((post) => (
+      <span className="eyebrow text-graphite">{t('blog')}</span>
+      <h1 className="mt-4 font-display text-4xl font-semibold tracking-tight text-ink md:text-5xl">{t('blog')}</h1>
+
+      <div className="mt-12 divide-y divide-line border-y border-line">
+        {posts.map((post, i) => (
           <Link
             key={post.slug}
             href={{ pathname: '/blog/[slug]', params: { slug: post.slug } }}
-            className="rounded-2xl border border-gray-200 bg-white p-6 transition hover:shadow-md"
+            className="group flex flex-col gap-2 py-7 transition hover:bg-white md:flex-row md:items-baseline md:gap-8"
           >
-            <p className="text-xs text-gray-400">{post.date}</p>
-            <h2 className="mt-2 text-lg font-semibold text-brand">{post.title[locale]}</h2>
-            <p className="mt-2 text-sm text-gray-600">{post.excerpt[locale]}</p>
+            <span className="font-mono text-[11px] text-graphite md:w-28">
+              {String(i + 1).padStart(2, '0')} · {post.date}
+            </span>
+            <div className="flex-1">
+              <h2 className="font-display text-2xl font-semibold text-ink transition group-hover:text-gold-dark">
+                {post.title[locale]}
+              </h2>
+              <p className="mt-2 text-sm leading-relaxed text-graphite">{post.excerpt[locale]}</p>
+            </div>
+            <span className="text-gold transition group-hover:translate-x-1">⟶</span>
           </Link>
         ))}
       </div>

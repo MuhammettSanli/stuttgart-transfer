@@ -40,16 +40,19 @@ export function ContactForm() {
 
   if (success) {
     return (
-      <div className="rounded-2xl border border-green-200 bg-green-50 p-6">
-        <h3 className="font-bold text-green-800">{t('successTitle')}</h3>
-        <p className="mt-1 text-sm text-green-700">{t('successDesc')}</p>
+      <div className="panel p-8">
+        <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-none border border-gold text-xl text-gold-dark">
+          ✓
+        </div>
+        <h3 className="font-display text-2xl font-semibold text-ink">{t('successTitle')}</h3>
+        <p className="mt-1 text-sm text-graphite">{t('successDesc')}</p>
       </div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="rounded-2xl border border-gray-200 bg-white p-6">
-      <h3 className="mb-4 text-lg font-bold text-brand">{t('title')}</h3>
+    <form onSubmit={handleSubmit(onSubmit)} className="panel p-6 sm:p-7">
+      <h3 className="mb-5 font-display text-xl font-semibold text-ink">{t('title')}</h3>
       <div className="space-y-4">
         <div>
           <label htmlFor="c-name" className="field-label">{t('name')}</label>

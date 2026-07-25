@@ -21,11 +21,12 @@ function Imprint() {
   const t = useTranslations('Legal');
   return (
     <div className="container-page max-w-3xl py-16">
-      <h1 className="text-3xl font-bold text-brand">{t('imprintTitle')}</h1>
+      <span className="eyebrow text-graphite">{t('imprintTitle')}</span>
+      <h1 className="mt-4 font-display text-4xl font-semibold tracking-tight text-ink">{t('imprintTitle')}</h1>
 
-      <div className="mt-8 space-y-6 text-gray-700">
+      <div className="mt-10 space-y-8 border-t border-line pt-8 text-graphite">
         <section>
-          <h2 className="font-semibold text-brand">Angaben gemäß § 5 TMG</h2>
+          <h2 className="mono-label text-gold">Angaben gemäß § 5 TMG</h2>
           <p className="mt-2">
             {siteConfig.legalName}<br />
             {siteConfig.address.street}<br />
@@ -34,12 +35,12 @@ function Imprint() {
         </section>
 
         <section>
-          <h2 className="font-semibold text-brand">Vertreten durch</h2>
+          <h2 className="mono-label text-gold">Vertreten durch</h2>
           <p className="mt-2">{siteConfig.owners}</p>
         </section>
 
         <section>
-          <h2 className="font-semibold text-brand">{t('contactHeading')}</h2>
+          <h2 className="mono-label text-gold">{t('contactHeading')}</h2>
           <p className="mt-2">
             Tel: {siteConfig.phone}<br />
             E-Mail: {siteConfig.email}

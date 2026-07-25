@@ -20,13 +20,14 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
   setRequestLocale(locale);
   return (
     <>
+      {/* Alternating dark / light rhythm */}
       <Hero />
       <BookingSection />
       <ServicesSection />
       <ProcessSection />
       <FleetSection />
-      <ExperienceBand />
       <CoverageSection />
+      <ExperienceBand />
       <FaqSection />
     </>
   );
@@ -97,19 +98,19 @@ function BookingSection() {
 function ServicesSection() {
   const t = useTranslations('Services');
   return (
-    <section className="bg-paper py-20">
+    <section className="bg-charcoal py-20 text-paper">
       <div className="container-page">
         <Reveal>
-          <SectionHeading index="01" eyebrow={t('sectionTitle')} title={t('sectionTitle')} subtitle={t('sectionSubtitle')} />
+          <SectionHeading index="01" eyebrow={t('sectionTitle')} title={t('sectionTitle')} subtitle={t('sectionSubtitle')} dark />
         </Reveal>
         <div className="mt-12 grid gap-6 md:grid-cols-2">
           {serviceSlugs.map((slug, i) => (
             <Link
               key={slug}
               href={{ pathname: '/services/[slug]', params: { slug } }}
-              className="group flex flex-col border border-line bg-white transition hover:shadow-panel"
+              className="group flex flex-col border border-platinum/15 bg-ink transition hover:border-gold/40"
             >
-              <div className="relative aspect-[16/10] overflow-hidden border-b border-line bg-ink">
+              <div className="relative aspect-[16/10] overflow-hidden border-b border-platinum/15">
                 <Image
                   src={`/images/service-${slug}.jpg`}
                   alt={t(`${slug}.title`)}
@@ -122,9 +123,9 @@ function ServicesSection() {
                 </span>
               </div>
               <div className="flex flex-1 flex-col p-7">
-                <h3 className="font-display text-xl font-semibold text-ink">{t(`${slug}.title`)}</h3>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-graphite">{t(`${slug}.desc`)}</p>
-                <span className="mt-6 text-[11px] font-semibold uppercase tracking-[0.14em] text-ink transition group-hover:translate-x-1">
+                <h3 className="font-display text-xl font-semibold text-paper">{t(`${slug}.title`)}</h3>
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-platinum-light/70">{t(`${slug}.desc`)}</p>
+                <span className="mt-6 text-[11px] font-semibold uppercase tracking-[0.14em] text-gold transition group-hover:translate-x-1">
                   {t('learnMore')} ⟶
                 </span>
               </div>

@@ -21,19 +21,20 @@ function Privacy() {
   const t = useTranslations('Legal');
   return (
     <div className="container-page max-w-3xl py-16">
-      <h1 className="text-3xl font-bold text-brand">{t('privacyTitle')}</h1>
-      <p className="mt-2 text-sm text-amber-600">{t('placeholderNote')}</p>
+      <span className="eyebrow text-graphite">{t('privacyTitle')}</span>
+      <h1 className="mt-4 font-display text-4xl font-semibold tracking-tight text-ink">{t('privacyTitle')}</h1>
+      <p className="mt-3 text-sm text-graphite">{t('placeholderNote')}</p>
 
-      <div className="mt-8 space-y-6 text-gray-700">
+      <div className="mt-10 space-y-8 border-t border-line pt-8 text-graphite">
         <section>
-          <h2 className="font-semibold text-brand">1. Verantwortlicher</h2>
+          <h2 className="mono-label text-gold">1. Verantwortlicher</h2>
           <p className="mt-2">
             {siteConfig.name}, {siteConfig.address.street}, {siteConfig.address.postalCode} {siteConfig.address.city}.
             E-Mail: {siteConfig.email}
           </p>
         </section>
         <section>
-          <h2 className="font-semibold text-brand">2. Erhebung und Verarbeitung personenbezogener Daten</h2>
+          <h2 className="mono-label text-gold">2. Erhebung und Verarbeitung personenbezogener Daten</h2>
           <p className="mt-2">
             Bei einer Buchungs- oder Kontaktanfrage verarbeiten wir die von Ihnen angegebenen Daten
             (Name, E-Mail, Telefon, Abhol- und Zieladresse, Datum/Uhrzeit) ausschließlich zur
@@ -41,7 +42,7 @@ function Privacy() {
           </p>
         </section>
         <section>
-          <h2 className="font-semibold text-brand">3. Google Maps</h2>
+          <h2 className="mono-label text-gold">3. Google Maps</h2>
           <p className="mt-2">
             Zur Adresseingabe und Distanzberechnung nutzen wir Dienste von Google (Places, Distance
             Matrix). Dabei können Daten an Google übertragen werden. Details:
@@ -49,7 +50,7 @@ function Privacy() {
           </p>
         </section>
         <section>
-          <h2 className="font-semibold text-brand">4. Ihre Rechte</h2>
+          <h2 className="mono-label text-gold">4. Ihre Rechte</h2>
           <p className="mt-2">
             Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung
             sowie auf Datenübertragbarkeit. Kontakt: {siteConfig.email}
