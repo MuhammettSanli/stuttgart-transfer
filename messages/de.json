@@ -63,6 +63,10 @@
       "name": "Business (E-Klasse)",
       "desc": "Elegante Limousine für bis zu 3 Personen."
     },
+    "first": {
+      "name": "First Class (S-Klasse)",
+      "desc": "Repräsentative Oberklasse-Limousine für bis zu 3 Personen."
+    },
     "van": {
       "name": "Van (V-Klasse)",
       "desc": "Geräumiger Van für bis zu 7 Personen."

@@ -55,6 +55,51 @@ service atmosphere. No people, no text, no watermark. 16:9 aspect ratio.
 
 ---
 
+---
+
+# EK GÖRSELLER (2. tur) — S-serisi + hizmet fotoğrafları
+
+## 6) fleet-first.jpg  (First Class / S-Klasse araç kartı, 4:3)
+
+```
+A photorealistic studio shot of a luxury black Mercedes-Benz S-Class sedan,
+three-quarter front view, on a clean dark charcoal gradient background with soft
+professional lighting and a subtle silver rim light. Elegant, premium, spotless.
+No text, no watermark, no license plate. 4:3 aspect ratio.
+```
+
+## 7) service-airport.jpg  (Havalimanı transferi, 3:2)
+
+```
+A cinematic photo of a black Mercedes-Benz sedan at an airport terminal drop-off,
+a uniformed chauffeur opening the rear door, dusk lighting, professional and
+premium mood, charcoal and silver tones. No text, no watermark. 3:2 aspect ratio.
+```
+
+## 8) service-event.jpg  (Etkinlik & VIP limuzin, 3:2)
+
+```
+A cinematic photo of a black Mercedes-Benz limousine parked in front of an
+elegant illuminated venue at night, red-carpet gala atmosphere, refined and
+exclusive, charcoal and silver tones. No text, no watermark. 3:2 aspect ratio.
+```
+
+## 9) service-corporate.jpg  (Fuar & kurumsal, 3:2)
+
+```
+A cinematic photo of a black Mercedes-Benz V-Class van in a modern business
+district near a trade-fair / convention center, daytime, executive corporate
+atmosphere, clean and professional. No text, no watermark. 3:2 aspect ratio.
+```
+
+## 10) service-hourly.jpg  (Saatlik şoför, 3:2)
+
+```
+A cinematic photo of a black Mercedes-Benz sedan with a chauffeur standing beside
+it, waiting on an elegant city street, evening ambient light, premium and calm,
+charcoal and silver tones. No text, no watermark. 3:2 aspect ratio.
+```
+
 ## İpuçları
 - Gemini beğenmediğin sonucu verirse "make it more cinematic / darker / more
   premium" gibi ekle, tekrar üret.

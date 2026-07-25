@@ -10,6 +10,7 @@ import { serviceSlugs } from '@/config/site';
 
 const FLEET = [
   { slug: 'business', img: '/images/fleet-business.jpg', pax: 3, bags: 3 },
+  { slug: 'first', img: '/images/fleet-first.jpg', pax: 3, bags: 3 },
   { slug: 'van', img: '/images/fleet-van.jpg', pax: 7, bags: 7 },
   { slug: 'sprinter', img: '/images/fleet-sprinter.jpg', pax: 16, bags: 16 },
 ] as const;
@@ -101,19 +102,32 @@ function ServicesSection() {
         <Reveal>
           <SectionHeading index="01" eyebrow={t('sectionTitle')} title={t('sectionTitle')} subtitle={t('sectionSubtitle')} />
         </Reveal>
-        <div className="mt-12 grid gap-px border border-line bg-line md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-6 md:grid-cols-2">
           {serviceSlugs.map((slug, i) => (
             <Link
               key={slug}
               href={{ pathname: '/services/[slug]', params: { slug } }}
-              className="group flex flex-col bg-paper p-7 transition hover:bg-white"
+              className="group flex flex-col border border-line bg-white transition hover:shadow-panel"
             >
-              <span className="font-mono text-[11px] text-graphite">{String(i + 1).padStart(2, '0')}</span>
-              <h3 className="mt-4 font-display text-xl font-semibold text-ink">{t(`${slug}.title`)}</h3>
-              <p className="mt-3 flex-1 text-sm leading-relaxed text-graphite">{t(`${slug}.desc`)}</p>
-              <span className="mt-6 text-[11px] font-semibold uppercase tracking-[0.14em] text-ink transition group-hover:translate-x-1">
-                {t('learnMore')} ⟶
-              </span>
+              <div className="relative aspect-[16/10] overflow-hidden border-b border-line bg-ink">
+                <Image
+                  src={`/images/service-${slug}.jpg`}
+                  alt={t(`${slug}.title`)}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover transition duration-700 group-hover:scale-[1.04]"
+                />
+                <span className="absolute left-3 top-3 bg-charcoal/80 px-2 py-1 font-mono text-[11px] text-platinum backdrop-blur">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+              </div>
+              <div className="flex flex-1 flex-col p-7">
+                <h3 className="font-display text-xl font-semibold text-ink">{t(`${slug}.title`)}</h3>
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-graphite">{t(`${slug}.desc`)}</p>
+                <span className="mt-6 text-[11px] font-semibold uppercase tracking-[0.14em] text-ink transition group-hover:translate-x-1">
+                  {t('learnMore')} ⟶
+                </span>
+              </div>
             </Link>
           ))}
         </div>
@@ -152,7 +166,7 @@ function FleetSection() {
         <Reveal>
           <SectionHeading index="03" eyebrow={t('sectionTitle')} title={t('sectionSubtitle')} dark />
         </Reveal>
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {FLEET.map((v, i) => (
             <div key={v.slug} className="border border-platinum/15 bg-ink">
               <div className="relative aspect-[4/3] w-full overflow-hidden border-b border-platinum/15">

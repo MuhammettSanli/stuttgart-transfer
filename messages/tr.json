@@ -63,6 +63,10 @@
       "name": "Business (E-Serisi)",
       "desc": "3 kişiye kadar şık sedan."
     },
+    "first": {
+      "name": "First Class (S-Serisi)",
+      "desc": "3 kişiye kadar prestijli üst sınıf sedan."
+    },
     "van": {
       "name": "Van (V-Serisi)",
       "desc": "7 kişiye kadar geniş van."

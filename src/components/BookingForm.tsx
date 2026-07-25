@@ -5,7 +5,7 @@ import { useLocale, useTranslations } from 'next-intl';
 import { AddressInput } from './AddressInput';
 import { formatEuroCents } from '@/lib/pricing';
 
-type VehicleSlug = 'business' | 'van' | 'sprinter';
+type VehicleSlug = 'business' | 'first' | 'van' | 'sprinter';
 
 interface QuoteResponse {
   totalCents: number;
@@ -13,7 +13,7 @@ interface QuoteResponse {
   breakdown?: { isFixedRoute: boolean };
 }
 
-const VEHICLES: VehicleSlug[] = ['business', 'van', 'sprinter'];
+const VEHICLES: VehicleSlug[] = ['business', 'first', 'van', 'sprinter'];
 
 export function BookingForm() {
   const t = useTranslations('Booking');

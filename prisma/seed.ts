@@ -7,19 +7,27 @@ async function main() {
   const vehicles = [
     {
       slug: 'business',
-      name: 'Business (E-Class)',
+      name: 'Business (E-Klasse)',
       maxPassengers: 3,
       maxLuggage: 3,
       multiplierMilli: 1000, // ×1.0
       sortOrder: 1,
     },
     {
+      slug: 'first',
+      name: 'First Class (S-Klasse)',
+      maxPassengers: 3,
+      maxLuggage: 3,
+      multiplierMilli: 1300, // ×1.3
+      sortOrder: 2,
+    },
+    {
       slug: 'van',
-      name: 'Van (V-Class)',
+      name: 'Van (V-Klasse)',
       maxPassengers: 7,
       maxLuggage: 7,
       multiplierMilli: 1400, // ×1.4
-      sortOrder: 2,
+      sortOrder: 3,
     },
     {
       slug: 'sprinter',
@@ -27,7 +35,7 @@ async function main() {
       maxPassengers: 16,
       maxLuggage: 16,
       multiplierMilli: 1800, // ×1.8
-      sortOrder: 3,
+      sortOrder: 4,
     },
   ];
 

@@ -63,6 +63,10 @@
       "name": "Business (E-Class)",
       "desc": "Elegant sedan for up to 3 passengers."
     },
+    "first": {
+      "name": "First Class (S-Class)",
+      "desc": "Prestigious luxury-class sedan for up to 3 passengers."
+    },
     "van": {
       "name": "Van (V-Class)",
       "desc": "Spacious van for up to 7 passengers."

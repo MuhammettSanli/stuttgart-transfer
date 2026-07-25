@@ -6,7 +6,7 @@ import { z } from 'zod';
 export const quoteSchema = z.object({
   pickup: z.string().min(3),
   dropoff: z.string().min(3),
-  vehicleSlug: z.enum(['business', 'van', 'sprinter']),
+  vehicleSlug: z.enum(['business', 'first', 'van', 'sprinter']),
   // ISO date-time string of the pickup moment (local time from the form).
   pickupAt: z.string().min(1),
 });
