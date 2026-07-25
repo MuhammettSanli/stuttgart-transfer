@@ -116,19 +116,22 @@ export function BookingForm() {
 
   if (success) {
     return (
-      <div className="glass-card p-8 text-center">
-        <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-gold/15 text-2xl text-gold-dark">
+      <div className="panel p-8 text-center">
+        <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-none border border-signal text-xl text-signal">
           ✓
         </div>
-        <h3 className="font-display text-2xl font-normal text-brand">{t('successTitle')}</h3>
+        <h3 className="font-display text-2xl font-medium text-ink">{t('successTitle')}</h3>
         <p className="mt-2 text-gray-600">{t('successDesc')}</p>
       </div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="glass-card p-6 sm:p-7">
-      <h3 className="mb-5 font-display text-2xl font-normal text-brand">{t('title')}</h3>
+    <form onSubmit={handleSubmit} className="panel p-6 sm:p-7">
+      <div className="mb-5 flex items-center justify-between border-b border-line pb-4">
+        <h3 className="font-display text-xl font-medium text-ink">{t('title')}</h3>
+        <span className="mono-label">Angebot</span>
+      </div>
 
       <div className="grid gap-4">
         <div>
@@ -171,20 +174,27 @@ export function BookingForm() {
           </div>
         </div>
 
-        {/* Live price preview */}
-        <div className="rounded-xl border border-gold/30 bg-brand p-5 text-center text-ivory">
+        {/* Live price — instrument readout */}
+        <div className="border border-ink bg-ink px-5 py-4 text-paper">
+          <div className="flex items-center justify-between">
+            <span className="mono-label text-paper/60">{t('estimatedPrice')}</span>
+            <span className="font-mono text-[11px] text-signal">
+              {price ? 'FEST' : quoting ? '···' : '—'}
+            </span>
+          </div>
           {quoting ? (
-            <p className="text-sm text-ivory/70">{t('calculating')}</p>
+            <p className="mt-1 font-mono text-3xl text-paper/50">·····</p>
           ) : quoteError ? (
-            <p className="text-sm text-red-300">{quoteError}</p>
+            <p className="mt-2 text-sm text-signal-light">{quoteError}</p>
           ) : price ? (
             <>
-              <p className="text-xs uppercase tracking-wider text-gold">{t('estimatedPrice')}</p>
-              <p className="mt-1 font-display text-4xl font-normal text-ivory">{formatEuroCents(price.totalCents, locale)}</p>
-              <p className="mt-1 text-xs text-ivory/60">{t('priceNote')}</p>
+              <p className="mt-1 font-mono text-4xl font-medium tracking-tight text-paper">
+                {formatEuroCents(price.totalCents, locale)}
+              </p>
+              <p className="mt-1 mono-label text-paper/50">{t('priceNote')}</p>
             </>
           ) : (
-            <p className="text-sm text-ivory/50">{t('calculate')}</p>
+            <p className="mt-1 font-mono text-3xl text-paper/30">€ —,—</p>
           )}
         </div>
 

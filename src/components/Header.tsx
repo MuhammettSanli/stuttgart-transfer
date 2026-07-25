@@ -20,10 +20,11 @@ export function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/5 bg-midnight/95 text-ivory backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-line bg-paper/90 text-ink backdrop-blur">
       <div className="container-page flex h-16 items-center justify-between gap-4">
-        <Link href="/" className="font-display text-xl tracking-tight">
-          <span className="text-gold">Stuttgart</span> Transfer
+        <Link href="/" className="flex items-center gap-2 font-display text-lg font-semibold tracking-tight">
+          <span className="h-2.5 w-2.5 bg-signal" aria-hidden />
+          Stuttgart <span className="text-graphite">Transfer</span>
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex">
@@ -31,15 +32,15 @@ export function Header() {
             <Link
               key={item.key}
               href={item.href}
-              className="text-sm text-ivory/80 transition hover:text-gold"
+              className="font-mono text-xs uppercase tracking-mono text-graphite transition hover:text-signal"
             >
               {t(item.key)}
             </Link>
           ))}
         </nav>
 
-        <div className="hidden items-center gap-4 lg:flex">
-          <a href={siteConfig.phoneHref} className="text-sm font-semibold text-gold">
+        <div className="hidden items-center gap-5 lg:flex">
+          <a href={siteConfig.phoneHref} className="font-mono text-xs tracking-mono text-ink transition hover:text-signal">
             {siteConfig.phone}
           </a>
           <LanguageSwitcher />
@@ -51,27 +52,27 @@ export function Header() {
           aria-label="Menu"
           onClick={() => setOpen((v) => !v)}
         >
-          <span className="block h-0.5 w-6 bg-white" />
-          <span className="mt-1.5 block h-0.5 w-6 bg-white" />
-          <span className="mt-1.5 block h-0.5 w-6 bg-white" />
+          <span className="block h-0.5 w-6 bg-ink" />
+          <span className="mt-1.5 block h-0.5 w-6 bg-ink" />
+          <span className="mt-1.5 block h-0.5 w-6 bg-ink" />
         </button>
       </div>
 
       {open && (
-        <nav className="border-t border-white/10 bg-brand-dark lg:hidden">
+        <nav className="border-t border-line bg-paper lg:hidden">
           <div className="container-page flex flex-col py-3">
             {NAV.map((item) => (
               <Link
                 key={item.key}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="py-2 text-sm text-white/85 hover:text-gold"
+                className="py-2 font-mono text-xs uppercase tracking-mono text-graphite hover:text-signal"
               >
                 {t(item.key)}
               </Link>
             ))}
-            <div className="mt-3 flex items-center justify-between border-t border-white/10 pt-3">
-              <a href={siteConfig.phoneHref} className="text-sm font-semibold text-gold">
+            <div className="mt-3 flex items-center justify-between border-t border-line pt-3">
+              <a href={siteConfig.phoneHref} className="font-mono text-xs tracking-mono text-ink">
                 {siteConfig.phone}
               </a>
               <LanguageSwitcher />

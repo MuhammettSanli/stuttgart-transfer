@@ -23,8 +23,8 @@ export function LanguageSwitcher() {
           // @ts-expect-error -- next-intl validates params against the pathname
           onClick={() => router.replace({ pathname, params }, { locale: l })}
           aria-current={l === locale ? 'true' : undefined}
-          className={`rounded px-2 py-1 transition ${
-            l === locale ? 'bg-gold text-brand-dark font-semibold' : 'text-white/80 hover:text-white'
+          className={`rounded-none px-2 py-1 font-mono text-xs uppercase tracking-mono transition ${
+            l === locale ? 'bg-signal text-paper' : 'text-graphite hover:text-ink'
           }`}
         >
           {LABELS[l]}

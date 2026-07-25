@@ -10,21 +10,24 @@ export function FaqAccordion() {
   const [open, setOpen] = useState<string | null>('1');
 
   return (
-    <div className="mx-auto max-w-3xl divide-y divide-gray-200 rounded-2xl border border-gray-200">
+    <div className="mx-auto max-w-3xl divide-y divide-line border-y border-line">
       {ITEMS.map((n) => {
         const isOpen = open === n;
         return (
           <div key={n}>
             <button
               type="button"
-              className="flex w-full items-center justify-between px-5 py-4 text-left font-semibold text-brand"
+              className="flex w-full items-center justify-between gap-4 py-5 text-left"
               onClick={() => setOpen(isOpen ? null : n)}
               aria-expanded={isOpen}
             >
-              {t(`q${n}`)}
-              <span className="ml-4 text-gold">{isOpen ? '−' : '+'}</span>
+              <span className="flex items-baseline gap-3">
+                <span className="font-mono text-[11px] text-signal">{String(ITEMS.indexOf(n) + 1).padStart(2, '0')}</span>
+                <span className="font-display text-lg font-medium text-ink">{t(`q${n}`)}</span>
+              </span>
+              <span className="font-mono text-signal">{isOpen ? '−' : '+'}</span>
             </button>
-            {isOpen && <p className="px-5 pb-4 text-gray-600">{t(`a${n}`)}</p>}
+            {isOpen && <p className="pb-5 pl-8 text-sm leading-relaxed text-graphite">{t(`a${n}`)}</p>}
           </div>
         );
       })}

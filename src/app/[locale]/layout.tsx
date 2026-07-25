@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { Inter, Fraunces } from 'next/font/google';
+import { Inter, Space_Grotesk, IBM_Plex_Mono } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
@@ -10,19 +10,26 @@ import { JsonLd } from '@/components/JsonLd';
 import { FloatingContact } from '@/components/FloatingContact';
 import '../globals.css';
 
-// Display: Fraunces — a characterful high-contrast serif for a premium,
-// crafted feel. Body: Inter — clean and neutral so the serif carries the voice.
-const fraunces = Fraunces({
+// "Engineered precision" type system:
+// Display — Space Grotesk (technical, distinctive grotesque)
+// Body — Inter (neutral, legible)
+// Data/labels — IBM Plex Mono (instrument-readout feel for prices, distances, indices)
+const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
   variable: '--font-display',
   display: 'swap',
   weight: ['400', '500', '600', '700'],
-  style: ['normal', 'italic'],
 });
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-sans',
   display: 'swap',
+});
+const plexMono = IBM_Plex_Mono({
+  subsets: ['latin'],
+  variable: '--font-mono',
+  display: 'swap',
+  weight: ['400', '500', '600'],
 });
 
 export function generateStaticParams() {
@@ -68,7 +75,7 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className={`${fraunces.variable} ${inter.variable}`}>
+    <html lang={locale} className={`${spaceGrotesk.variable} ${inter.variable} ${plexMono.variable}`}>
       <body className="flex min-h-screen flex-col">
         <NextIntlClientProvider messages={messages}>
           <JsonLd />
