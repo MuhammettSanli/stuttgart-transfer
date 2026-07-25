@@ -79,7 +79,7 @@ premium mood, charcoal and silver tones. No text, no watermark. 3:2 aspect ratio
 ## 8) service-event.jpg  (Etkinlik & VIP limuzin, 3:2)
 
 ```
-A cinematic photo of a black Mercedes-Benz limousine parked in front of an
+A cinematic photo of a black Mercedes-Benz  S-Class sedan parked in front of an
 elegant illuminated venue at night, red-carpet gala atmosphere, refined and
 exclusive, charcoal and silver tones. No text, no watermark. 3:2 aspect ratio.
 ```
