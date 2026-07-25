@@ -40,7 +40,7 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-5 lg:flex">
-          <a href={siteConfig.phoneHref} className="font-mono text-xs tracking-[0.06em] text-paper transition hover:text-platinum">
+          <a href={siteConfig.phoneHref} className="font-mono text-xs tracking-[0.06em] text-gold transition hover:text-gold-light">
             {siteConfig.phone}
           </a>
           <LanguageSwitcher />
@@ -72,7 +72,7 @@ export function Header() {
               </Link>
             ))}
             <div className="mt-3 flex items-center justify-between border-t border-white/10 pt-3">
-              <a href={siteConfig.phoneHref} className="font-mono text-xs tracking-[0.06em] text-paper">
+              <a href={siteConfig.phoneHref} className="font-mono text-xs tracking-[0.06em] text-gold">
                 {siteConfig.phone}
               </a>
               <LanguageSwitcher />

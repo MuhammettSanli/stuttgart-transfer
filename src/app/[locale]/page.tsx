@@ -2,12 +2,12 @@ import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 import { Hero } from '@/components/Hero';
+import { BookingForm } from '@/components/BookingForm';
 import { FaqAccordion } from '@/components/FaqAccordion';
 import { Reveal } from '@/components/Reveal';
 import { Link } from '@/i18n/navigation';
 import { serviceSlugs } from '@/config/site';
 
-const TRUST = ['flightTracking', 'freeWaiting', 'fixedPrice', 'payInCar'] as const;
 const FLEET = [
   { slug: 'business', img: '/images/fleet-business.jpg', pax: 3, bags: 3 },
   { slug: 'van', img: '/images/fleet-van.jpg', pax: 7, bags: 7 },
@@ -20,7 +20,7 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
   return (
     <>
       <Hero />
-      <TrustSection />
+      <BookingSection />
       <ServicesSection />
       <ProcessSection />
       <FleetSection />
@@ -61,18 +61,33 @@ function SectionHeading({
   );
 }
 
-function TrustSection() {
-  const t = useTranslations('Trust');
+function BookingSection() {
+  const t = useTranslations('Booking');
+  const nav = useTranslations('Nav');
+  const trust = useTranslations('Trust');
+  const points = ['flightTracking', 'freeWaiting', 'fixedPrice', 'payInCar'] as const;
   return (
-    <section className="border-y border-line bg-white">
-      <div className="container-page grid divide-y divide-line md:grid-cols-4 md:divide-x md:divide-y-0">
-        {TRUST.map((key, i) => (
-          <div key={key} className="py-6 md:px-6 md:first:pl-0">
-            <span className="font-mono text-[11px] text-graphite">{String(i + 1).padStart(2, '0')}</span>
-            <h3 className="mt-2 text-sm font-semibold text-ink">{t(key)}</h3>
-            <p className="mt-1 text-sm leading-relaxed text-graphite">{t(`${key}Desc`)}</p>
-          </div>
-        ))}
+    <section id="booking" className="scroll-mt-20 border-b border-line bg-paper py-20">
+      <div className="container-page grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+        <div>
+          <span className="eyebrow text-graphite">{nav('bookNow')}</span>
+          <h2 className="mt-4 font-display text-3xl font-semibold tracking-tight text-ink md:text-4xl">
+            {t('title')}
+          </h2>
+          <p className="mt-3 max-w-md text-graphite">{t('priceNote')}</p>
+          <ul className="mt-8 space-y-5 border-t border-line pt-6">
+            {points.map((p, i) => (
+              <li key={p} className="flex gap-3">
+                <span className="font-mono text-[11px] text-gold">{String(i + 1).padStart(2, '0')}</span>
+                <div>
+                  <p className="text-sm font-semibold text-ink">{trust(p)}</p>
+                  <p className="mt-0.5 text-sm leading-relaxed text-graphite">{trust(`${p}Desc`)}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <BookingForm />
       </div>
     </section>
   );

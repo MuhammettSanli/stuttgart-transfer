@@ -24,7 +24,7 @@ export function LanguageSwitcher() {
           onClick={() => router.replace({ pathname, params }, { locale: l })}
           aria-current={l === locale ? 'true' : undefined}
           className={`rounded-none px-2 py-1 font-mono text-xs uppercase tracking-[0.08em] transition ${
-            l === locale ? 'bg-platinum text-charcoal' : 'text-platinum-light/60 hover:text-paper'
+            l === locale ? 'bg-gold text-charcoal' : 'text-platinum-light/60 hover:text-paper'
           }`}
         >
           {LABELS[l]}
