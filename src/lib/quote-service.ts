@@ -9,10 +9,18 @@ export interface QuoteServiceResult extends QuoteResult {
   vehicle: { id: string; slug: string; name: string; multiplierMilli: number };
 }
 
+/** Lowercase + strip diacritics so "Zürich"/"Zurich", "München"/"Munchen" match. */
+function normalizeCity(s: string): string {
+  return s
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '');
+}
+
 /** Extract a coarse city token from a formatted address for route matching. */
 function extractCity(address: string, cities: string[]): string | null {
-  const lower = address.toLowerCase();
-  return cities.find((c) => lower.includes(c.toLowerCase())) ?? null;
+  const norm = normalizeCity(address);
+  return cities.find((c) => norm.includes(normalizeCity(c))) ?? null;
 }
 
 /**
