@@ -68,10 +68,16 @@ async function main() {
   }
 
   // --- Sample fixed-price routes (Business-tier base price, in cents) ---
+  // Fixed one-way prices (Business tier), multiplied per vehicle. Distant
+  // cities where metered would be far too expensive get a fixed fare.
   const routes = [
-    { fromCity: 'Stuttgart', toCity: 'Frankfurt', fixedPriceCents: 29900 },
-    { fromCity: 'Stuttgart', toCity: 'München', fixedPriceCents: 34900 },
-    { fromCity: 'Stuttgart', toCity: 'Zürich', fixedPriceCents: 39900 },
+    { fromCity: 'Stuttgart', toCity: 'Frankfurt', fixedPriceCents: 29900 }, // ~210 km
+    { fromCity: 'Stuttgart', toCity: 'München', fixedPriceCents: 34900 }, // ~220 km
+    { fromCity: 'Stuttgart', toCity: 'Zürich', fixedPriceCents: 39900 }, // ~215 km (int'l)
+    { fromCity: 'Stuttgart', toCity: 'Köln', fixedPriceCents: 52900 }, // ~360 km
+    { fromCity: 'Stuttgart', toCity: 'Düsseldorf', fixedPriceCents: 59900 }, // ~410 km
+    { fromCity: 'Stuttgart', toCity: 'Berlin', fixedPriceCents: 89900 }, // ~630 km
+    { fromCity: 'Stuttgart', toCity: 'Hamburg', fixedPriceCents: 94900 }, // ~660 km
   ];
   for (const r of routes) {
     await prisma.route.upsert({
