@@ -33,14 +33,14 @@ function FleetList() {
 
       <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {FLEET.map((v, i) => (
-          <div key={v.slug} className="border border-line bg-white">
+          <div key={v.slug} className="group border border-line bg-white transition-colors duration-300 hover:border-gold/40">
             <div className="relative aspect-[4/3] w-full overflow-hidden border-b border-line bg-ink">
               <Image
                 src={v.img}
                 alt={t(`${v.slug}.name`)}
                 fill
                 sizes="(max-width: 768px) 100vw, 25vw"
-                className="object-cover"
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
               />
               <span className="absolute left-3 top-3 bg-charcoal/80 px-2 py-1 font-mono text-[11px] text-platinum backdrop-blur">
                 {String(i + 1).padStart(2, '0')}
