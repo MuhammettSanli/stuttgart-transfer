@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import { LanguageSwitcher } from './LanguageSwitcher';
-import { siteConfig } from '@/config/site';
+import { siteConfig, serviceSlugs } from '@/config/site';
 
 const NAV: Array<{ href: '/' | '/about' | '/services' | '/fleet' | '/blog' | '/contact'; key: string }> = [
   { href: '/', key: 'home' },
@@ -17,6 +17,7 @@ const NAV: Array<{ href: '/' | '/about' | '/services' | '/fleet' | '/blog' | '/c
 
 export function Header() {
   const t = useTranslations('Nav');
+  const s = useTranslations('Services');
   const [open, setOpen] = useState(false);
 
   return (
@@ -28,15 +29,43 @@ export function Header() {
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex">
-          {NAV.map((item) => (
-            <Link
-              key={item.key}
-              href={item.href}
-              className="text-xs font-medium uppercase tracking-[0.12em] text-platinum-light/70 transition hover:text-paper"
-            >
-              {t(item.key)}
-            </Link>
-          ))}
+          {NAV.map((item) =>
+            item.key === 'services' ? (
+              <div key={item.key} className="group relative">
+                <Link
+                  href={item.href}
+                  className="flex items-center gap-1 text-xs font-medium uppercase tracking-[0.12em] text-platinum-light/70 transition hover:text-paper"
+                >
+                  {t(item.key)}
+                  <svg viewBox="0 0 24 24" className="h-3 w-3 transition group-hover:rotate-180" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </Link>
+                {/* Dropdown */}
+                <div className="invisible absolute left-1/2 top-full z-50 -translate-x-1/2 pt-4 opacity-0 transition duration-200 group-hover:visible group-hover:opacity-100">
+                  <div className="min-w-[260px] border border-white/10 bg-charcoal shadow-xl">
+                    {serviceSlugs.map((slug) => (
+                      <Link
+                        key={slug}
+                        href={{ pathname: '/services/[slug]', params: { slug } }}
+                        className="block border-b border-white/5 px-5 py-3.5 text-sm text-platinum-light/80 transition last:border-b-0 hover:bg-white/5 hover:text-gold"
+                      >
+                        {s(`${slug}.title`)}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <Link
+                key={item.key}
+                href={item.href}
+                className="text-xs font-medium uppercase tracking-[0.12em] text-platinum-light/70 transition hover:text-paper"
+              >
+                {t(item.key)}
+              </Link>
+            ),
+          )}
         </nav>
 
         <div className="hidden items-center gap-5 lg:flex">
@@ -62,14 +91,29 @@ export function Header() {
         <nav className="border-t border-white/10 bg-charcoal lg:hidden">
           <div className="container-page flex flex-col py-3">
             {NAV.map((item) => (
-              <Link
-                key={item.key}
-                href={item.href}
-                onClick={() => setOpen(false)}
-                className="py-2 text-xs font-medium uppercase tracking-[0.12em] text-platinum-light/70 hover:text-paper"
-              >
-                {t(item.key)}
-              </Link>
+              <div key={item.key}>
+                <Link
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  className="block py-2 text-xs font-medium uppercase tracking-[0.12em] text-platinum-light/70 hover:text-paper"
+                >
+                  {t(item.key)}
+                </Link>
+                {item.key === 'services' && (
+                  <div className="mb-1 ml-3 flex flex-col border-l border-white/10 pl-3">
+                    {serviceSlugs.map((slug) => (
+                      <Link
+                        key={slug}
+                        href={{ pathname: '/services/[slug]', params: { slug } }}
+                        onClick={() => setOpen(false)}
+                        className="py-1.5 text-xs text-platinum-light/60 hover:text-gold"
+                      >
+                        {s(`${slug}.title`)}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
             ))}
             <div className="mt-3 flex items-center justify-between border-t border-white/10 pt-3">
               <a href={siteConfig.phoneHref} className="font-mono text-xs tracking-[0.06em] text-gold">
