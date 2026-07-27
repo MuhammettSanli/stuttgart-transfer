@@ -134,7 +134,7 @@ export function BookingForm() {
       <div className="p-6 sm:p-7">
         <div className="mb-6 flex items-center justify-between border-b border-line pb-4">
           <h3 className="font-display text-xl font-medium text-ink">{t('title')}</h3>
-          <span className="mono-label text-graphite">Angebot</span>
+          <span className="mono-label hidden shrink-0 text-graphite sm:block">Angebot</span>
         </div>
 
         <div className="grid gap-4">
