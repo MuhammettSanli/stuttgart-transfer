@@ -321,9 +321,9 @@ function PartnersSection() {
         {[0, 1].map((dup) => (
           <ul key={dup} aria-hidden={dup === 1} className="flex shrink-0 animate-marquee items-center">
             {PARTNERS.map((p) => (
-              <li key={p.name} className="mx-8 flex h-20 shrink-0 items-center md:mx-12">
+              <li key={p.name} className="mx-8 flex h-28 shrink-0 items-center md:mx-14">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={p.img} alt={p.name} className="h-12 w-auto object-contain md:h-16" loading="lazy" />
+                <img src={p.img} alt={p.name} className="h-16 w-auto object-contain md:h-24" loading="lazy" />
               </li>
             ))}
           </ul>
