@@ -127,108 +127,134 @@ export function BookingForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="panel p-6 sm:p-7">
-      <div className="mb-5 flex items-center justify-between border-b border-line pb-4">
-        <h3 className="font-display text-xl font-medium text-ink">{t('title')}</h3>
-        <span className="mono-label">Angebot</span>
-      </div>
+    <form onSubmit={handleSubmit} className="panel overflow-hidden">
+      {/* Gold top accent */}
+      <div className="h-1 w-full bg-gold" />
 
-      <div className="grid gap-4">
-        <div>
-          <label htmlFor="pickup" className="field-label">{t('pickup')}</label>
-          <AddressInput id="pickup" value={pickup} onChange={setPickup} placeholder={t('pickupPlaceholder')} />
-        </div>
-        <div>
-          <label htmlFor="dropoff" className="field-label">{t('dropoff')}</label>
-          <AddressInput id="dropoff" value={dropoff} onChange={setDropoff} placeholder={t('dropoffPlaceholder')} />
+      <div className="p-6 sm:p-7">
+        <div className="mb-6 flex items-center justify-between border-b border-line pb-4">
+          <h3 className="font-display text-xl font-medium text-ink">{t('title')}</h3>
+          <span className="mono-label text-graphite">Angebot</span>
         </div>
 
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid gap-4">
+          {/* Group: trip */}
+          <div className="flex items-center gap-3">
+            <span className="mono-label text-gold">{t('tripLabel')}</span>
+            <span className="h-px flex-1 bg-line" />
+          </div>
+
           <div>
-            <label htmlFor="date" className="field-label">{t('date')}</label>
-            <input id="date" type="date" className="field-input" value={date} onChange={(e) => setDate(e.target.value)} />
+            <label htmlFor="pickup" className="field-label">{t('pickup')}</label>
+            <AddressInput id="pickup" value={pickup} onChange={setPickup} placeholder={t('pickupPlaceholder')} />
           </div>
           <div>
-            <label htmlFor="time" className="field-label">{t('time')}</label>
-            <input id="time" type="time" className="field-input" value={time} onChange={(e) => setTime(e.target.value)} />
+            <label htmlFor="dropoff" className="field-label">{t('dropoff')}</label>
+            <AddressInput id="dropoff" value={dropoff} onChange={setDropoff} placeholder={t('dropoffPlaceholder')} />
           </div>
-        </div>
 
-        <div>
-          <label htmlFor="vehicle" className="field-label">{t('vehicle')}</label>
-          <select id="vehicle" className="field-input" value={vehicleSlug} onChange={(e) => setVehicleSlug(e.target.value as VehicleSlug)}>
-            {VEHICLES.map((v) => (
-              <option key={v} value={v}>{tf(`${v}.name`)}</option>
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <label htmlFor="date" className="field-label">{t('date')}</label>
+              <input id="date" type="date" className="field-input" value={date} onChange={(e) => setDate(e.target.value)} />
+            </div>
+            <div>
+              <label htmlFor="time" className="field-label">{t('time')}</label>
+              <input id="time" type="time" className="field-input" value={time} onChange={(e) => setTime(e.target.value)} />
+            </div>
+          </div>
+
+          <div>
+            <label htmlFor="vehicle" className="field-label">{t('vehicle')}</label>
+            <select id="vehicle" className="field-input" value={vehicleSlug} onChange={(e) => setVehicleSlug(e.target.value as VehicleSlug)}>
+              {VEHICLES.map((v) => (
+                <option key={v} value={v}>{tf(`${v}.name`)}</option>
+              ))}
+            </select>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <label htmlFor="passengers" className="field-label">{t('passengers')}</label>
+              <input id="passengers" type="number" min={1} max={16} className="field-input" value={passengers} onChange={(e) => setPassengers(Number(e.target.value))} />
+            </div>
+            <div>
+              <label htmlFor="luggage" className="field-label">{t('luggage')}</label>
+              <input id="luggage" type="number" min={0} max={30} className="field-input" value={luggage} onChange={(e) => setLuggage(Number(e.target.value))} />
+            </div>
+          </div>
+
+          {/* Live price — instrument readout */}
+          <div className={`border bg-ink px-5 py-5 text-paper transition-colors ${price ? 'border-gold' : 'border-ink'}`}>
+            <div className="flex items-center justify-between">
+              <span className="mono-label text-paper/60">{t('estimatedPrice')}</span>
+              <span className="font-mono text-[11px] text-gold">
+                {price ? 'FEST' : quoting ? '···' : '—'}
+              </span>
+            </div>
+            {quoting ? (
+              <p className="mt-1 font-mono text-4xl text-paper/40">·····</p>
+            ) : quoteError ? (
+              <p className="mt-2 text-sm text-red-300">{quoteError}</p>
+            ) : price ? (
+              <>
+                <p className="mt-1 font-mono text-5xl font-medium tracking-tight text-gold">
+                  {formatEuroCents(price.totalCents, locale)}
+                </p>
+                <p className="mt-1 mono-label text-paper/50">{t('priceNote')}</p>
+              </>
+            ) : (
+              <p className="mt-1 font-mono text-4xl text-paper/25">€ —,—</p>
+            )}
+          </div>
+
+          {/* Group: contact */}
+          <div className="mt-2 flex items-center gap-3">
+            <span className="mono-label text-gold">{t('contactLabel')}</span>
+            <span className="h-px flex-1 bg-line" />
+          </div>
+
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <label htmlFor="firstName" className="field-label">{t('firstName')}</label>
+              <input id="firstName" className="field-input" value={firstName} onChange={(e) => setFirstName(e.target.value)} required />
+            </div>
+            <div>
+              <label htmlFor="lastName" className="field-label">{t('lastName')}</label>
+              <input id="lastName" className="field-input" value={lastName} onChange={(e) => setLastName(e.target.value)} required />
+            </div>
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <label htmlFor="email" className="field-label">{t('email')}</label>
+              <input id="email" type="email" className="field-input" value={email} onChange={(e) => setEmail(e.target.value)} required />
+            </div>
+            <div>
+              <label htmlFor="phone" className="field-label">{t('phone')}</label>
+              <input id="phone" type="tel" minLength={6} className="field-input" value={phone} onChange={(e) => setPhone(e.target.value)} required />
+            </div>
+          </div>
+          <div>
+            <label htmlFor="notes" className="field-label">{t('notes')}</label>
+            <textarea id="notes" rows={2} className="field-input" value={notes} onChange={(e) => setNotes(e.target.value)} />
+          </div>
+
+          {submitError && <p className="text-sm text-red-600">{submitError}</p>}
+
+          <button type="submit" className="btn-primary w-full" disabled={submitting}>
+            {submitting ? t('submitting') : t('submit')}
+          </button>
+
+          {/* Trust badges */}
+          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 border-t border-line pt-4">
+            {[t('badgeFixed'), t('badgeNoHidden'), t('badgePayInCar'), '24/7'].map((b) => (
+              <span key={b} className="flex items-center gap-1.5 text-[11px] font-medium uppercase tracking-wide text-graphite">
+                <span className="text-gold">✦</span>
+                {b}
+              </span>
             ))}
-          </select>
-        </div>
-
-        <div className="grid grid-cols-2 gap-4">
-          <div>
-            <label htmlFor="passengers" className="field-label">{t('passengers')}</label>
-            <input id="passengers" type="number" min={1} max={16} className="field-input" value={passengers} onChange={(e) => setPassengers(Number(e.target.value))} />
-          </div>
-          <div>
-            <label htmlFor="luggage" className="field-label">{t('luggage')}</label>
-            <input id="luggage" type="number" min={0} max={30} className="field-input" value={luggage} onChange={(e) => setLuggage(Number(e.target.value))} />
           </div>
         </div>
-
-        {/* Live price — instrument readout */}
-        <div className="border border-ink bg-ink px-5 py-4 text-paper">
-          <div className="flex items-center justify-between">
-            <span className="mono-label text-paper/60">{t('estimatedPrice')}</span>
-            <span className="font-mono text-[11px] text-signal">
-              {price ? 'FEST' : quoting ? '···' : '—'}
-            </span>
-          </div>
-          {quoting ? (
-            <p className="mt-1 font-mono text-3xl text-paper/40">·····</p>
-          ) : quoteError ? (
-            <p className="mt-2 text-sm text-red-300">{quoteError}</p>
-          ) : price ? (
-            <>
-              <p className="mt-1 font-mono text-4xl font-medium tracking-tight text-gold">
-                {formatEuroCents(price.totalCents, locale)}
-              </p>
-              <p className="mt-1 mono-label text-paper/50">{t('priceNote')}</p>
-            </>
-          ) : (
-            <p className="mt-1 font-mono text-3xl text-paper/30">€ —,—</p>
-          )}
-        </div>
-
-        {/* Contact details */}
-        <div className="grid grid-cols-2 gap-4">
-          <div>
-            <label htmlFor="firstName" className="field-label">{t('firstName')}</label>
-            <input id="firstName" className="field-input" value={firstName} onChange={(e) => setFirstName(e.target.value)} required />
-          </div>
-          <div>
-            <label htmlFor="lastName" className="field-label">{t('lastName')}</label>
-            <input id="lastName" className="field-input" value={lastName} onChange={(e) => setLastName(e.target.value)} required />
-          </div>
-        </div>
-        <div className="grid grid-cols-2 gap-4">
-          <div>
-            <label htmlFor="email" className="field-label">{t('email')}</label>
-            <input id="email" type="email" className="field-input" value={email} onChange={(e) => setEmail(e.target.value)} required />
-          </div>
-          <div>
-            <label htmlFor="phone" className="field-label">{t('phone')}</label>
-            <input id="phone" type="tel" minLength={6} className="field-input" value={phone} onChange={(e) => setPhone(e.target.value)} required />
-          </div>
-        </div>
-        <div>
-          <label htmlFor="notes" className="field-label">{t('notes')}</label>
-          <textarea id="notes" rows={2} className="field-input" value={notes} onChange={(e) => setNotes(e.target.value)} />
-        </div>
-
-        {submitError && <p className="text-sm text-red-600">{submitError}</p>}
-
-        <button type="submit" className="btn-primary w-full" disabled={submitting}>
-          {submitting ? t('submitting') : t('submit')}
-        </button>
       </div>
     </form>
   );
