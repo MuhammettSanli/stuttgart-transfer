@@ -35,13 +35,12 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
 }
 
 function SectionHeading({
-  index,
   eyebrow,
   title,
   subtitle,
   dark = false,
 }: {
-  index: string;
+  index?: string;
   eyebrow: string;
   title: string;
   subtitle?: string;
@@ -51,7 +50,7 @@ function SectionHeading({
     <div className={`flex flex-col gap-4 border-t pt-6 md:flex-row md:items-end md:justify-between ${dark ? 'border-platinum/20' : 'border-line'}`}>
       <div>
         <span className={`eyebrow ${dark ? 'text-platinum' : 'text-graphite'}`}>
-          <span className="font-mono">{index}</span> {eyebrow}
+          {eyebrow}
         </span>
         <h2 className={`mt-4 font-display text-3xl font-semibold tracking-tight md:text-5xl ${dark ? 'text-paper' : 'text-ink'}`}>
           {title}
