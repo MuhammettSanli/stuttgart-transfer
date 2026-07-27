@@ -16,6 +16,25 @@ const FLEET = [
 ] as const;
 const STEPS = ['1', '2', '3'] as const;
 
+const STEP_ICONS = [
+  // Location / route
+  <svg key="1" viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.6">
+    <path d="M12 21s-6-5.686-6-10a6 6 0 1112 0c0 4.314-6 10-6 10z" strokeLinejoin="round" />
+    <circle cx="12" cy="11" r="2" />
+  </svg>,
+  // Price tag
+  <svg key="2" viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.6">
+    <path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L2 12V2h10l8.6 8.6a2 2 0 010 2.8z" strokeLinejoin="round" />
+    <circle cx="7.5" cy="7.5" r="1.3" />
+  </svg>,
+  // Steering wheel
+  <svg key="3" viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.6">
+    <circle cx="12" cy="12" r="9" />
+    <circle cx="12" cy="12" r="2.5" />
+    <path d="M12 3.2v6.3M4.6 17.5l4.9-3.2M19.4 17.5l-4.9-3.2" strokeLinecap="round" />
+  </svg>,
+];
+
 export default function HomePage({ params: { locale } }: { params: { locale: string } }) {
   setRequestLocale(locale);
   return (
@@ -126,22 +145,23 @@ function ProcessSection() {
     <section className="bg-white py-24">
       <div className="container-page">
         <Reveal>
-          <SectionHeading index="02" eyebrow={t('sectionTitle')} title={t('sectionTitle')} />
-          <div className="mt-16 grid gap-x-8 gap-y-12 md:grid-cols-3">
+          <SectionHeading eyebrow={t('eyebrow')} title={t('sectionTitle')} />
+          <div className="mt-14 grid gap-6 md:grid-cols-3">
             {STEPS.map((n, i) => (
-              <div key={n} className="group relative">
-                <div className="flex items-center gap-4">
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-gold/50 font-mono text-lg text-gold transition duration-300 group-hover:bg-gold group-hover:text-charcoal">
-                    0{n}
+              <div
+                key={n}
+                className="group relative border border-line bg-white p-8 transition duration-300 hover:-translate-y-1 hover:border-gold/40 hover:shadow-panel"
+              >
+                <div className="flex items-start justify-between">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-full border border-gold/40 text-gold transition duration-300 group-hover:bg-gold group-hover:text-charcoal">
+                    {STEP_ICONS[i]}
                   </div>
-                  {i < STEPS.length - 1 && (
-                    <div className="hidden h-px flex-1 bg-gradient-to-r from-gold/50 to-line md:block" />
-                  )}
+                  <span className="font-mono text-4xl font-medium text-line">0{n}</span>
                 </div>
-                <h3 className="mt-7 font-display text-2xl font-semibold tracking-tight text-ink">
+                <h3 className="mt-7 font-display text-xl font-semibold tracking-tight text-ink">
                   {t(`step${n}Title`)}
                 </h3>
-                <p className="mt-3 max-w-xs text-sm leading-relaxed text-graphite">{t(`step${n}Desc`)}</p>
+                <p className="mt-3 text-sm leading-relaxed text-graphite">{t(`step${n}Desc`)}</p>
               </div>
             ))}
           </div>

@@ -46,6 +46,7 @@
     "learnMore": "Learn more"
   },
   "Process": {
+    "eyebrow": "How it works",
     "sectionTitle": "Booked in 3 steps",
     "step1Title": "Enter your route",
     "step1Desc": "Enter pickup and destination, date and time.",
