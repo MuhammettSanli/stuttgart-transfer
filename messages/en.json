@@ -168,6 +168,27 @@
     "contact": "Contact",
     "rights": "All rights reserved."
   },
+  "Admin": {
+    "loginTitle": "Admin login",
+    "username": "Username",
+    "password": "Password",
+    "signIn": "Sign in",
+    "loginError": "Login failed.",
+    "title": "Bookings",
+    "logout": "Log out",
+    "colDate": "Date",
+    "colCustomer": "Customer",
+    "colRoute": "Route",
+    "colVehicle": "Vehicle",
+    "colPrice": "Price",
+    "colStatus": "Status",
+    "empty": "No bookings yet.",
+    "all": "All",
+    "statusNEW": "New",
+    "statusCONFIRMED": "Confirmed",
+    "statusDONE": "Done",
+    "statusCANCELLED": "Cancelled"
+  },
   "Meta": {
     "homeTitle": "Stuttgart Airport Transfer | VIP Chauffeur Service",
     "homeDescription": "Reliable airport transfer and chauffeur service in Stuttgart. Fixed prices, flight tracking, 60 min free waiting. Book online now."

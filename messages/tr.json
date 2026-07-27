@@ -168,6 +168,27 @@
     "contact": "İletişim",
     "rights": "Tüm hakları saklıdır."
   },
+  "Admin": {
+    "loginTitle": "Yönetici girişi",
+    "username": "Kullanıcı adı",
+    "password": "Şifre",
+    "signIn": "Giriş",
+    "loginError": "Giriş başarısız.",
+    "title": "Rezervasyonlar",
+    "logout": "Çıkış",
+    "colDate": "Tarih",
+    "colCustomer": "Müşteri",
+    "colRoute": "Güzergah",
+    "colVehicle": "Araç",
+    "colPrice": "Fiyat",
+    "colStatus": "Durum",
+    "empty": "Henüz rezervasyon yok.",
+    "all": "Tümü",
+    "statusNEW": "Yeni",
+    "statusCONFIRMED": "Onaylı",
+    "statusDONE": "Tamamlandı",
+    "statusCANCELLED": "İptal"
+  },
   "Meta": {
     "homeTitle": "Stuttgart Havalimanı Transferi | VIP Şoför Hizmeti",
     "homeDescription": "Stuttgart'ta güvenilir havalimanı transferi ve şoför hizmeti. Sabit fiyat, uçuş takibi, 60 dk ücretsiz bekleme. Hemen online rezervasyon."

@@ -168,6 +168,27 @@
     "contact": "Kontakt",
     "rights": "Alle Rechte vorbehalten."
   },
+  "Admin": {
+    "loginTitle": "Admin-Anmeldung",
+    "username": "Benutzername",
+    "password": "Passwort",
+    "signIn": "Anmelden",
+    "loginError": "Anmeldung fehlgeschlagen.",
+    "title": "Buchungen",
+    "logout": "Abmelden",
+    "colDate": "Datum",
+    "colCustomer": "Kunde",
+    "colRoute": "Route",
+    "colVehicle": "Fahrzeug",
+    "colPrice": "Preis",
+    "colStatus": "Status",
+    "empty": "Noch keine Buchungen.",
+    "all": "Alle",
+    "statusNEW": "Neu",
+    "statusCONFIRMED": "Bestätigt",
+    "statusDONE": "Erledigt",
+    "statusCANCELLED": "Storniert"
+  },
   "Meta": {
     "homeTitle": "Flughafentransfer Stuttgart | VIP Chauffeurservice",
     "homeDescription": "Zuverlässiger Flughafentransfer und Chauffeurservice in Stuttgart. Festpreise, Flugüberwachung, 60 Min. kostenlose Wartezeit. Jetzt online buchen."
