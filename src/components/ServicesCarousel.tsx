@@ -89,15 +89,15 @@ export function ServicesCarousel() {
           <Link
             key={slug}
             href={{ pathname: '/services/[slug]', params: { slug } }}
-            className="group w-[86vw] shrink-0 sm:w-[520px] lg:w-[600px]"
+            className="group w-[88vw] shrink-0 sm:w-[560px] lg:w-[700px]"
             style={{ scrollSnapAlign: 'start' }}
           >
-            <div className="relative aspect-[4/3] overflow-hidden">
+            <div className="relative aspect-[3/2] overflow-hidden">
               <Image
                 src={`/images/service-${slug}.jpg`}
                 alt={t(`${slug}.title`)}
                 fill
-                sizes="(max-width: 640px) 86vw, 600px"
+                sizes="(max-width: 640px) 88vw, 700px"
                 draggable={false}
                 className="pointer-events-none object-cover transition duration-700 group-hover:scale-105"
               />
