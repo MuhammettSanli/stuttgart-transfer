@@ -292,35 +292,51 @@ function CoverageSection() {
   );
 }
 
-const PARTNERS = ['Aviapages', 'DATAGROUP', 'ZÜBLIN', 'Bauknecht', 'KURZ Aviation', 'Mercedes-Benz'];
+const PARTNERS = [
+  { name: 'Aviapages', img: '/images/Aviapages.webp' },
+  { name: 'DATAGROUP', img: '/images/Datagroup.webp' },
+  { name: 'ZÜBLIN', img: '/images/Zuplin.webp' },
+  { name: 'Bauknecht', img: '/images/bauknecht.webp' },
+  { name: 'KURZ Aviation Service', img: '/images/aviotion.webp' },
+  { name: 'Mercedes-Benz', img: '/images/mercedes-benz.webp' },
+];
 
 function PartnersSection() {
   const t = useTranslations('Partners');
   return (
-    <section className="border-t border-line bg-paper py-20">
+    <section className="overflow-hidden border-t border-line bg-paper py-20">
       <div className="container-page text-center">
         <Reveal>
           <span className="mono-label tracking-[0.2em] text-graphite">{t('eyebrow')}</span>
           <h2 className="mx-auto mt-4 max-w-2xl font-display text-2xl font-semibold tracking-tight text-ink md:text-3xl">
             {t('title')}
           </h2>
-          <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
-            {PARTNERS.map((p) => (
-              <div
-                key={p}
-                className="flex items-center justify-center border border-line px-4 py-7 text-center font-display text-sm font-semibold uppercase tracking-wide text-graphite/55 transition hover:border-gold/40 hover:text-ink"
-              >
-                {p}
-              </div>
-            ))}
-          </div>
-          <p className="mt-10 text-sm text-graphite">
-            {t('ctaText')}{' '}
-            <Link href="/contact" className="font-semibold text-gold-dark transition hover:text-gold">
-              {t('ctaLink')} →
-            </Link>
-          </p>
         </Reveal>
+      </div>
+
+      {/* Scrolling logo marquee */}
+      <div className="marquee-group relative mt-14 flex overflow-hidden">
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-paper to-transparent md:w-40" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-paper to-transparent md:w-40" />
+        {[0, 1].map((dup) => (
+          <ul key={dup} aria-hidden={dup === 1} className="flex shrink-0 animate-marquee items-center">
+            {PARTNERS.map((p) => (
+              <li key={p.name} className="mx-10 flex h-14 shrink-0 items-center md:mx-14">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={p.img} alt={p.name} className="h-9 w-auto object-contain md:h-11" loading="lazy" />
+              </li>
+            ))}
+          </ul>
+        ))}
+      </div>
+
+      <div className="container-page mt-12 text-center">
+        <p className="text-sm text-graphite">
+          {t('ctaText')}{' '}
+          <Link href="/contact" className="font-semibold text-gold-dark transition hover:text-gold">
+            {t('ctaLink')} →
+          </Link>
+        </p>
       </div>
     </section>
   );
