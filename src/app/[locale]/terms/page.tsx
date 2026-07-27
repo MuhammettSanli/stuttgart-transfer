@@ -49,8 +49,9 @@ function Terms() {
         <section>
           <h2 className="mono-label text-gold">4. Stornierung</h2>
           <p className="mt-2">
-            Stornierungen sind bis [X] Stunden vor Fahrtbeginn kostenfrei möglich. [Bitte Ihre
-            Stornobedingungen ergänzen.]
+            Stornierungen sind bis 24 Stunden vor Fahrtbeginn kostenfrei möglich. Bei
+            kurzfristigeren Stornierungen oder Nichterscheinen kann der volle Fahrpreis berechnet
+            werden.
           </p>
         </section>
       </div>
