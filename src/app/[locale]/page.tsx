@@ -6,8 +6,7 @@ import { BookingForm } from '@/components/BookingForm';
 import { FaqAccordion } from '@/components/FaqAccordion';
 import { Reveal } from '@/components/Reveal';
 import { CountUp } from '@/components/CountUp';
-import { Link } from '@/i18n/navigation';
-import { serviceSlugs } from '@/config/site';
+import { ServicesCarousel } from '@/components/ServicesCarousel';
 
 const FLEET = [
   { slug: 'business', img: '/images/fleet-business.jpg', pax: 4, bags: 4 },
@@ -101,36 +100,20 @@ function ServicesSection() {
     <section className="bg-charcoal py-20 text-paper">
       <div className="container-page">
         <Reveal>
-          <SectionHeading index="01" eyebrow={t('sectionTitle')} title={t('sectionTitle')} subtitle={t('sectionSubtitle')} dark />
+          <span className="eyebrow text-platinum">{t('sectionSubtitle')}</span>
+          <h2 className="mt-4 font-display text-4xl font-bold uppercase tracking-tight md:text-6xl">
+            {t('sectionTitle')
+              .split(' ')
+              .map((word, i, arr) => (
+                <span key={i} className={i === arr.length - 1 ? 'text-gold' : 'text-paper'}>
+                  {word}
+                  {i < arr.length - 1 ? ' ' : ''}
+                </span>
+              ))}
+          </h2>
         </Reveal>
-        <div className="mt-12 grid gap-6 md:grid-cols-2">
-          {serviceSlugs.map((slug, i) => (
-            <Link
-              key={slug}
-              href={{ pathname: '/services/[slug]', params: { slug } }}
-              className="group flex flex-col border border-platinum/15 bg-ink transition hover:border-gold/40"
-            >
-              <div className="relative aspect-[16/10] overflow-hidden border-b border-platinum/15">
-                <Image
-                  src={`/images/service-${slug}.jpg`}
-                  alt={t(`${slug}.title`)}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover transition duration-700 group-hover:scale-[1.04]"
-                />
-                <span className="absolute left-3 top-3 bg-charcoal/80 px-2 py-1 font-mono text-[11px] text-platinum backdrop-blur">
-                  {String(i + 1).padStart(2, '0')}
-                </span>
-              </div>
-              <div className="flex flex-1 flex-col p-7">
-                <h3 className="font-display text-xl font-semibold text-paper">{t(`${slug}.title`)}</h3>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-platinum-light/70">{t(`${slug}.desc`)}</p>
-                <span className="mt-6 text-[11px] font-semibold uppercase tracking-[0.14em] text-gold transition group-hover:translate-x-1">
-                  {t('learnMore')} ⟶
-                </span>
-              </div>
-            </Link>
-          ))}
+        <div className="mt-12">
+          <ServicesCarousel />
         </div>
       </div>
     </section>
