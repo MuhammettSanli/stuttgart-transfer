@@ -77,8 +77,8 @@
     }
   },
   "Coverage": {
-    "sectionTitle": "Hizmet bölgemiz",
-    "sectionSubtitle": "Stuttgart ve çevresi – Almanya geneli ve İsviçre.",
+    "sectionTitle": "Hizmet bölgesi",
+    "sectionSubtitle": "{count} şehirde yanınızdayız – Almanya & İsviçre",
     "cities": "Stuttgart, Frankfurt, Münih, Berlin, Düsseldorf, Hamburg, Köln, Zürih"
   },
   "Stats": {

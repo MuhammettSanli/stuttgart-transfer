@@ -264,7 +264,7 @@ function CoverageSection() {
     <section className="overflow-hidden bg-white py-24">
       <div className="container-page">
         <Reveal>
-          <SectionHeading index="04" eyebrow={t('sectionTitle')} title={t('sectionSubtitle')} />
+          <SectionHeading eyebrow={t('sectionTitle')} title={t('sectionSubtitle', { count: cities.length })} />
         </Reveal>
       </div>
 
