@@ -141,6 +141,12 @@
     "contactHeading": "Kontakt",
     "placeholderNote": "Bitte ersetzen Sie diese Platzhalter durch Ihre echten Angaben."
   },
+  "Partners": {
+    "eyebrow": "Vertrauen von Anfang an",
+    "title": "Hotels, Unternehmen & Veranstalter fahren mit uns",
+    "ctaText": "Regelmäßige Fahrten für Ihr Team oder Ihre Gäste?",
+    "ctaLink": "Firmenkonditionen anfragen"
+  },
   "Faq": {
     "sectionTitle": "Häufige Fragen",
     "q1": "Was passiert, wenn mein Flug Verspätung hat?",

@@ -141,6 +141,12 @@
     "contactHeading": "İletişim",
     "placeholderNote": "Lütfen bu örnek bilgileri gerçek bilgilerinizle değiştirin."
   },
+  "Partners": {
+    "eyebrow": "Baştan beri güven",
+    "title": "Oteller, şirketler ve organizatörler bizimle yol alıyor",
+    "ctaText": "Ekibiniz veya misafirleriniz için düzenli transfer?",
+    "ctaLink": "Kurumsal koşulları sorun"
+  },
   "Faq": {
     "sectionTitle": "Sık sorulan sorular",
     "q1": "Uçuşum gecikirse ne olur?",

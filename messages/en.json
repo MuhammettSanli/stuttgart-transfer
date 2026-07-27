@@ -141,6 +141,12 @@
     "contactHeading": "Contact",
     "placeholderNote": "Please replace these placeholders with your real details."
   },
+  "Partners": {
+    "eyebrow": "Trusted from the start",
+    "title": "Hotels, companies & event organizers ride with us",
+    "ctaText": "Regular rides for your team or guests?",
+    "ctaLink": "Request corporate rates"
+  },
   "Faq": {
     "sectionTitle": "Frequently asked questions",
     "q1": "What happens if my flight is delayed?",

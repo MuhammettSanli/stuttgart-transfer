@@ -7,6 +7,7 @@ import { FaqAccordion } from '@/components/FaqAccordion';
 import { Reveal } from '@/components/Reveal';
 import { CountUp } from '@/components/CountUp';
 import { ServicesCarousel } from '@/components/ServicesCarousel';
+import { Link } from '@/i18n/navigation';
 
 const FLEET = [
   { slug: 'business', img: '/images/fleet-business.jpg', pax: 4, bags: 4 },
@@ -47,6 +48,7 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
       <FleetSection />
       <CoverageSection />
       <ExperienceBand />
+      <PartnersSection />
       <FaqSection />
     </>
   );
@@ -285,6 +287,40 @@ function CoverageSection() {
             ))}
           </ul>
         ))}
+      </div>
+    </section>
+  );
+}
+
+const PARTNERS = ['Aviapages', 'DATAGROUP', 'ZÜBLIN', 'Bauknecht', 'KURZ Aviation', 'Mercedes-Benz'];
+
+function PartnersSection() {
+  const t = useTranslations('Partners');
+  return (
+    <section className="border-t border-line bg-paper py-20">
+      <div className="container-page text-center">
+        <Reveal>
+          <span className="mono-label tracking-[0.2em] text-graphite">{t('eyebrow')}</span>
+          <h2 className="mx-auto mt-4 max-w-2xl font-display text-2xl font-semibold tracking-tight text-ink md:text-3xl">
+            {t('title')}
+          </h2>
+          <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+            {PARTNERS.map((p) => (
+              <div
+                key={p}
+                className="flex items-center justify-center border border-line px-4 py-7 text-center font-display text-sm font-semibold uppercase tracking-wide text-graphite/55 transition hover:border-gold/40 hover:text-ink"
+              >
+                {p}
+              </div>
+            ))}
+          </div>
+          <p className="mt-10 text-sm text-graphite">
+            {t('ctaText')}{' '}
+            <Link href="/contact" className="font-semibold text-gold-dark transition hover:text-gold">
+              {t('ctaLink')} →
+            </Link>
+          </p>
+        </Reveal>
       </div>
     </section>
   );
