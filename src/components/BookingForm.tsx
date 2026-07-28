@@ -15,6 +15,20 @@ interface QuoteResponse {
 
 const VEHICLES: VehicleSlug[] = ['business', 'first', 'van', 'sprinter'];
 
+// Country dial codes for the phone field. Capturing the code makes the stored
+// number unambiguous so the admin "Call / WhatsApp" actions always resolve the
+// right country. German market default first.
+const DIAL_CODES = [
+  { code: '+49', label: '🇩🇪 +49' },
+  { code: '+90', label: '🇹🇷 +90' },
+  { code: '+43', label: '🇦🇹 +43' },
+  { code: '+41', label: '🇨🇭 +41' },
+  { code: '+33', label: '🇫🇷 +33' },
+  { code: '+31', label: '🇳🇱 +31' },
+  { code: '+44', label: '🇬🇧 +44' },
+  { code: '+1', label: '🇺🇸 +1' },
+] as const;
+
 export function BookingForm() {
   const t = useTranslations('Booking');
   const tf = useTranslations('Fleet');
@@ -30,6 +44,7 @@ export function BookingForm() {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
+  const [dialCode, setDialCode] = useState('+49');
   const [phone, setPhone] = useState('');
   const [notes, setNotes] = useState('');
 
@@ -79,6 +94,10 @@ export function BookingForm() {
     e.preventDefault();
     setSubmitError(null);
     setSubmitting(true);
+    // Combine dial code with the local number, dropping any leading trunk zero
+    // so the stored value is a clean international number (e.g. +49 5519656049).
+    const localPhone = phone.replace(/[^\d]/g, '').replace(/^0+/, '');
+    const fullPhone = localPhone ? `${dialCode} ${localPhone}` : phone;
     try {
       const res = await fetch('/api/booking', {
         method: 'POST',
@@ -91,7 +110,7 @@ export function BookingForm() {
           firstName,
           lastName,
           email,
-          phone,
+          phone: fullPhone,
           passengers,
           luggage,
           notes,
@@ -231,7 +250,19 @@ export function BookingForm() {
             </div>
             <div>
               <label htmlFor="phone" className="field-label">{t('phone')}</label>
-              <input id="phone" type="tel" minLength={6} className="field-input" value={phone} onChange={(e) => setPhone(e.target.value)} required />
+              <div className="flex gap-2">
+                <select
+                  aria-label={t('phone')}
+                  className="field-input w-[92px] shrink-0 px-2"
+                  value={dialCode}
+                  onChange={(e) => setDialCode(e.target.value)}
+                >
+                  {DIAL_CODES.map((d) => (
+                    <option key={d.code} value={d.code}>{d.label}</option>
+                  ))}
+                </select>
+                <input id="phone" type="tel" minLength={6} className="field-input" value={phone} onChange={(e) => setPhone(e.target.value)} required />
+              </div>
             </div>
           </div>
           <div>
