@@ -47,7 +47,11 @@ export default function BlogPostPage({
       <div className="relative mt-8 aspect-[16/9] overflow-hidden border border-line">
         <Image src={post.image} alt={post.title[l]} fill priority sizes="(max-width: 768px) 100vw, 768px" className="object-cover" />
       </div>
-      <p className="mt-8 text-lg leading-relaxed text-graphite">{post.body[l]}</p>
+      <div className="mt-8 space-y-5">
+        {post.body[l].split('\n\n').map((para, i) => (
+          <p key={i} className="text-lg leading-relaxed text-graphite">{para}</p>
+        ))}
+      </div>
     </article>
   );
 }

@@ -35,21 +35,30 @@
   "Services": {
     "sectionTitle": "Our services",
     "sectionSubtitle": "From airport transfers to VIP limousines.",
+    "includedTitle": "Included in the service",
     "airport": {
       "title": "Airport transfer",
-      "desc": "Punctual pickup and drop-off to all airports in the region."
+      "desc": "Punctual pickup and drop-off to all airports in the region.",
+      "long": "Whether arriving or departing, we get you to Stuttgart Airport and all airports in the region reliably and stress-free. We monitor your flight in real time and are ready on time even in case of delays. Your chauffeur greets you in the arrivals hall with a name sign and helps with your luggage.",
+      "includes": ["Real-time flight tracking", "60 minutes of free waiting time", "Meet & greet with a name sign in arrivals", "Help with your luggage", "Fixed price with no hidden costs"]
     },
     "event": {
       "title": "Event & VIP limousine",
-      "desc": "Stylish arrival for weddings, galas and special occasions."
+      "desc": "Stylish arrival for weddings, galas and special occasions.",
+      "long": "For weddings, galas, proms or company celebrations we ensure a stylish entrance. Our first-class limousines and professional chauffeurs in suits make every occasion special – punctual, discreet and representative.",
+      "includes": ["Representative S-Class or V-Class", "Chauffeur in a suit", "Flexible scheduling for your occasion", "Discretion and privacy", "Multiple stops on request"]
     },
     "corporate": {
       "title": "Trade show & business",
-      "desc": "Reliable transport for companies, trade shows and business trips."
+      "desc": "Reliable transport for companies, trade shows and business trips.",
+      "long": "For trade shows, business trips and corporate clients we offer a reliable driving service with a dedicated contact person. Whether a single ride or regular transfers for your team, we ensure a professional process you can rely on.",
+      "includes": ["Dedicated contact person", "Group pickup of teams and guests", "Transfers to the Stuttgart trade fair grounds", "Monthly consolidated invoicing available", "Discreet, professional chauffeurs"]
     },
     "hourly": {
       "title": "Hourly chauffeur",
-      "desc": "Flexible chauffeur by the hour – you set the itinerary."
+      "desc": "Flexible chauffeur by the hour – you set the itinerary.",
+      "long": "You set the itinerary – we drive. Book a chauffeur by the hour for several appointments, shopping, sightseeing or business meetings in one day. The vehicle and chauffeur remain exclusively at your disposal the whole time.",
+      "includes": ["Vehicle & chauffeur exclusively for you", "As many stops as you like", "Flexible routes and times", "Waiting time included", "Ideal for business and city tours"]
     },
     "learnMore": "Learn more"
   },
@@ -68,21 +77,41 @@
     "sectionSubtitle": "The right vehicle for every occasion.",
     "passengers": "passengers",
     "luggage": "luggage",
+    "classLabel": "Class",
+    "featuresTitle": "Features",
+    "bestForLabel": "Ideal for",
+    "bookCta": "Book this vehicle",
     "business": {
       "name": "Business (E-Class)",
-      "desc": "Elegant sedan for up to 4 passengers."
+      "desc": "Elegant sedan for up to 4 passengers.",
+      "class": "Business",
+      "long": "The Mercedes E-Class is our classic for airport transfers and business trips. Comfortable, discreet and reliable – ideal for up to 4 passengers with suitcases and hand luggage.",
+      "bestFor": "Solo travellers & business clients",
+      "features": ["Fine leather interior", "Automatic climate control", "Water & Wi-Fi on board", "Quiet, smooth ride"]
     },
     "first": {
       "name": "First Class (S-Class)",
-      "desc": "Prestigious luxury-class sedan for up to 4 passengers."
+      "desc": "Prestigious luxury-class sedan for up to 4 passengers.",
+      "class": "First Class",
+      "long": "The Mercedes S-Class stands for the highest comfort and prestige. Generous legroom, fine materials and an especially quiet ride – the first choice for VIPs and special occasions.",
+      "bestFor": "VIPs, events & representative occasions",
+      "features": ["First-class leather interior", "Maximum legroom", "Water & Wi-Fi on board", "Discreet privacy", "Rear climate comfort"]
     },
     "van": {
       "name": "Van (V-Class)",
-      "desc": "Spacious van for up to 8 passengers."
+      "desc": "Spacious van for up to 8 passengers.",
+      "class": "Van",
+      "long": "The Mercedes V-Class van offers room for up to 8 passengers and plenty of luggage. Perfect for families, travel groups or teams who want to travel together in comfort.",
+      "bestFor": "Families & groups with lots of luggage",
+      "features": ["Generous head- & legroom", "Large luggage space", "Automatic climate control", "Water & Wi-Fi on board", "Easy boarding"]
     },
     "sprinter": {
       "name": "Sprinter",
-      "desc": "Minibus for groups of up to 16 passengers."
+      "desc": "Minibus for groups of up to 16 passengers.",
+      "class": "Group",
+      "long": "The Mercedes Sprinter carries up to 16 passengers plus luggage. The ideal solution for larger groups, clubs and company outings – with no changing vehicles.",
+      "bestFor": "Travel groups, teams & clubs",
+      "features": ["Up to 16 seats", "Very large luggage space", "Air conditioning", "Comfortable individual seats", "Everyone in one vehicle"]
     }
   },
   "Coverage": {
@@ -165,6 +194,31 @@
     "ctaText": "Regular rides for your team or guests?",
     "ctaLink": "Request corporate rates"
   },
+  "Prices": {
+    "eyebrow": "Price examples",
+    "title": "Transparent fixed prices",
+    "subtitle": "Examples from Business class (E-Class). Van, S-Class and Sprinter accordingly more.",
+    "fromLabel": "from",
+    "perVehicleNote": "Prices for Business class (E-Class). Final price depends on vehicle, time and exact address. Trips within the region are calculated by the kilometre.",
+    "cta": "Calculate exact price",
+    "routes": [
+      { "from": "Stuttgart Airport", "to": "Stuttgart city centre", "price": "€57" },
+      { "from": "Stuttgart", "to": "Frankfurt", "price": "€299" },
+      { "from": "Stuttgart", "to": "Munich", "price": "€349" },
+      { "from": "Stuttgart", "to": "Zurich", "price": "€399" },
+      { "from": "Stuttgart", "to": "Cologne", "price": "€529" },
+      { "from": "Stuttgart", "to": "Berlin", "price": "€899" }
+    ]
+  },
+  "Testimonials": {
+    "eyebrow": "Testimonials",
+    "title": "What our passengers say",
+    "items": [
+      { "quote": "Punctual, friendly and a spotless vehicle. The driver kept an eye on my flight and was ready despite the delay.", "name": "Michael K.", "role": "Business traveller, Stuttgart" },
+      { "quote": "The perfect choice for our wedding. Elegant S-Class, discreet chauffeur – everything went smoothly.", "name": "Sandra & Tobias", "role": "Wedding, Ludwigsburg" },
+      { "quote": "We regularly book transfers for our trade-show guests. Always reliable and professional. Highly recommended.", "name": "Andreas W.", "role": "Corporate client, Böblingen" }
+    ]
+  },
   "Faq": {
     "sectionTitle": "Frequently asked questions",
     "q1": "What happens if my flight is delayed?",
@@ -174,7 +228,15 @@
     "q3": "Is the price really fixed?",
     "a3": "Yes. The displayed price is a fixed price with no hidden costs.",
     "q4": "How many passengers can travel?",
-    "a4": "Depending on the vehicle, 4 to 16 passengers. Just choose the right vehicle."
+    "a4": "Depending on the vehicle, 4 to 16 passengers. Just choose the right vehicle.",
+    "q5": "Can I cancel or change my booking?",
+    "a5": "Yes. Cancellations are free of charge up to 24 hours before the ride. We're happy to take changes anytime by phone or email.",
+    "q6": "How much luggage can I bring?",
+    "a6": "It depends on the vehicle: the E-Class and S-Class take up to 4 pieces, the V-Class up to 8, and the Sprinter up to 16. For oversized items (golf, skis) just let us know.",
+    "q7": "Do you provide child seats?",
+    "a7": "Yes. We provide child seats and booster seats free of charge on request. Please note your requirement in the “Notes” field when booking.",
+    "q8": "How far in advance should I book?",
+    "a8": "For guaranteed availability we recommend at least 24 hours in advance. Short-notice bookings are also possible depending on availability – just give us a call."
   },
   "Footer": {
     "tagline": "Your reliable airport transfer in Stuttgart and the surrounding area.",

@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 
-const ITEMS = ['1', '2', '3', '4'] as const;
+const ITEMS = ['1', '2', '3', '4', '5', '6', '7', '8'] as const;
 
 export function FaqAccordion() {
   const t = useTranslations('Faq');

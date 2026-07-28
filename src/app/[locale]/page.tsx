@@ -45,10 +45,12 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
       <BookingSection />
       <ServicesSection />
       <ProcessSection />
+      <PricesSection />
       <FleetSection />
       <CoverageSection />
       <ExperienceBand />
       <PartnersSection />
+      <TestimonialsSection />
       <FaqSection />
     </>
   );
@@ -168,6 +170,75 @@ function ProcessSection() {
             ))}
           </div>
         </Reveal>
+      </div>
+    </section>
+  );
+}
+
+function PricesSection() {
+  const t = useTranslations('Prices');
+  const routes = t.raw('routes') as { from: string; to: string; price: string }[];
+  return (
+    <section className="border-t border-line bg-paper py-24">
+      <div className="container-page">
+        <Reveal>
+          <SectionHeading eyebrow={t('eyebrow')} title={t('title')} subtitle={t('subtitle')} />
+        </Reveal>
+        <div className="mt-12 divide-y divide-line border-y border-line">
+          {routes.map((r) => (
+            <div key={`${r.from}-${r.to}`} className="flex items-center justify-between gap-4 py-5">
+              <div className="flex items-center gap-3 text-ink">
+                <span className="font-display text-lg font-medium">{r.from}</span>
+                <svg viewBox="0 0 24 24" className="h-4 w-4 shrink-0 text-gold" fill="none" stroke="currentColor" strokeWidth="1.6">
+                  <path d="M5 12h14M13 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+                <span className="font-display text-lg font-medium">{r.to}</span>
+              </div>
+              <div className="shrink-0 text-right">
+                <span className="mono-label mr-1.5 text-graphite">{t('fromLabel')}</span>
+                <span className="font-mono text-lg font-semibold text-ink">{r.price}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="mt-8 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+          <p className="max-w-xl text-xs leading-relaxed text-graphite">{t('perVehicleNote')}</p>
+          <a href="#booking" className="btn-primary shrink-0">{t('cta')}</a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function TestimonialsSection() {
+  const t = useTranslations('Testimonials');
+  const items = t.raw('items') as { quote: string; name: string; role: string }[];
+  return (
+    <section className="bg-charcoal py-24 text-paper">
+      <div className="container-page">
+        <Reveal>
+          <SectionHeading eyebrow={t('eyebrow')} title={t('title')} dark />
+        </Reveal>
+        <div className="mt-14 grid gap-6 md:grid-cols-3">
+          {items.map((it) => (
+            <figure key={it.name} className="flex flex-col border border-platinum/15 bg-ink p-8">
+              <div className="flex gap-1 text-gold" aria-hidden>
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <svg key={i} viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor">
+                    <path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z" />
+                  </svg>
+                ))}
+              </div>
+              <blockquote className="mt-5 flex-1 text-sm leading-relaxed text-platinum-light/90">
+                “{it.quote}”
+              </blockquote>
+              <figcaption className="mt-6 border-t border-platinum/15 pt-4">
+                <p className="font-display text-base font-semibold text-paper">{it.name}</p>
+                <p className="mt-0.5 mono-label text-platinum">{it.role}</p>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -35,21 +35,30 @@
   "Services": {
     "sectionTitle": "Unsere Leistungen",
     "sectionSubtitle": "Vom Flughafentransfer bis zur VIP-Limousine.",
+    "includedTitle": "Im Service enthalten",
     "airport": {
       "title": "Flughafentransfer",
-      "desc": "Pünktliche Abholung und Zustellung zu allen Flughäfen in der Region."
+      "desc": "Pünktliche Abholung und Zustellung zu allen Flughäfen in der Region.",
+      "long": "Ob Ankunft oder Abflug – wir bringen Sie zuverlässig und stressfrei zum Flughafen Stuttgart sowie zu allen Flughäfen der Region. Wir überwachen Ihren Flug in Echtzeit und stehen auch bei Verspätungen pünktlich bereit. Ihr Chauffeur erwartet Sie in der Ankunftshalle mit Namensschild und hilft Ihnen mit dem Gepäck.",
+      "includes": ["Flugüberwachung in Echtzeit", "60 Minuten kostenlose Wartezeit", "Meet & Greet mit Namensschild in der Ankunftshalle", "Hilfe mit dem Gepäck", "Festpreis ohne versteckte Kosten"]
     },
     "event": {
       "title": "Event & VIP-Limousine",
-      "desc": "Stilvolle Anfahrt für Hochzeiten, Galas und besondere Anlässe."
+      "desc": "Stilvolle Anfahrt für Hochzeiten, Galas und besondere Anlässe.",
+      "long": "Für Hochzeiten, Galas, Abibälle oder Firmenfeiern sorgen wir für einen stilvollen Auftritt. Unsere First-Class-Limousinen und professionellen Chauffeure im Anzug machen jeden Anlass zu etwas Besonderem – pünktlich, diskret und repräsentativ.",
+      "includes": ["Repräsentative S-Klasse oder V-Klasse", "Chauffeur im Anzug", "Flexible Zeitplanung für Ihren Anlass", "Diskretion und Privatsphäre", "Auf Wunsch mehrere Stationen"]
     },
     "corporate": {
       "title": "Messe & Business",
-      "desc": "Zuverlässiger Fahrdienst für Firmen, Messen und Geschäftsreisen."
+      "desc": "Zuverlässiger Fahrdienst für Firmen, Messen und Geschäftsreisen.",
+      "long": "Für Messen, Geschäftsreisen und Firmenkunden bieten wir einen zuverlässigen Fahrdienst mit fester Ansprechperson. Ob einzelne Fahrt oder regelmäßige Transfers für Ihr Team – wir sorgen für einen professionellen Ablauf, auf den Sie sich verlassen können.",
+      "includes": ["Feste Ansprechperson", "Sammelabholung von Teams und Gästen", "Transfers zum Messegelände Stuttgart", "Monatliche Sammelrechnung möglich", "Diskrete, professionelle Chauffeure"]
     },
     "hourly": {
       "title": "Stundenweise Chauffeur",
-      "desc": "Flexibler Chauffeur nach Stunden – Sie bestimmen das Programm."
+      "desc": "Flexibler Chauffeur nach Stunden – Sie bestimmen das Programm.",
+      "long": "Sie bestimmen das Programm – wir fahren. Buchen Sie einen Chauffeur stundenweise für mehrere Termine, Shopping, Sightseeing oder Geschäftstermine an einem Tag. Fahrzeug und Chauffeur bleiben Ihnen die gesamte Zeit exklusiv zur Verfügung.",
+      "includes": ["Fahrzeug & Chauffeur exklusiv für Sie", "Beliebig viele Stopps", "Flexible Routen und Zeiten", "Wartezeit inklusive", "Ideal für Geschäfts- und Stadttouren"]
     },
     "learnMore": "Mehr erfahren"
   },
@@ -68,21 +77,41 @@
     "sectionSubtitle": "Für jeden Anlass das passende Fahrzeug.",
     "passengers": "Personen",
     "luggage": "Gepäck",
+    "classLabel": "Klasse",
+    "featuresTitle": "Ausstattung",
+    "bestForLabel": "Ideal für",
+    "bookCta": "Dieses Fahrzeug buchen",
     "business": {
       "name": "Business (E-Klasse)",
-      "desc": "Elegante Limousine für bis zu 4 Personen."
+      "desc": "Elegante Limousine für bis zu 4 Personen.",
+      "class": "Business",
+      "long": "Die Mercedes E-Klasse ist unser Klassiker für Flughafentransfers und Geschäftsfahrten. Komfortabel, diskret und zuverlässig – ideal für bis zu 4 Personen mit Koffern und Handgepäck.",
+      "bestFor": "Einzelreisende & Geschäftskunden",
+      "features": ["Feine Lederausstattung", "Klimaautomatik", "Wasser & WLAN an Bord", "Ruhige, gepflegte Fahrt"]
     },
     "first": {
       "name": "First Class (S-Klasse)",
-      "desc": "Repräsentative Oberklasse-Limousine für bis zu 4 Personen."
+      "desc": "Repräsentative Oberklasse-Limousine für bis zu 4 Personen.",
+      "class": "First Class",
+      "long": "Die Mercedes S-Klasse steht für höchsten Komfort und Repräsentation. Großzügige Beinfreiheit, edle Materialien und eine besonders ruhige Fahrt – die erste Wahl für VIPs und besondere Anlässe.",
+      "bestFor": "VIPs, Events & repräsentative Anlässe",
+      "features": ["Erstklassige Lederausstattung", "Maximale Beinfreiheit", "Wasser & WLAN an Bord", "Diskrete Privatsphäre", "Klimakomfort im Fond"]
     },
     "van": {
       "name": "Van (V-Klasse)",
-      "desc": "Geräumiger Van für bis zu 8 Personen."
+      "desc": "Geräumiger Van für bis zu 8 Personen.",
+      "class": "Van",
+      "long": "Der Mercedes V-Klasse Van bietet Platz für bis zu 8 Personen und reichlich Gepäck. Perfekt für Familien, Reisegruppen oder Teams, die zusammen komfortabel reisen möchten.",
+      "bestFor": "Familien & Gruppen mit viel Gepäck",
+      "features": ["Viel Bein- & Kopffreiheit", "Großer Gepäckraum", "Klimaautomatik", "Wasser & WLAN an Bord", "Bequemes Ein- und Aussteigen"]
     },
     "sprinter": {
       "name": "Sprinter",
-      "desc": "Kleinbus für Gruppen bis zu 16 Personen."
+      "desc": "Kleinbus für Gruppen bis zu 16 Personen.",
+      "class": "Group",
+      "long": "Der Mercedes Sprinter befördert bis zu 16 Personen samt Gepäck. Die ideale Lösung für größere Gruppen, Vereine und Firmenausflüge – ganz ohne Umsteigen.",
+      "bestFor": "Reisegruppen, Teams & Vereine",
+      "features": ["Bis zu 16 Sitzplätze", "Sehr großer Gepäckraum", "Klimaanlage", "Bequeme Einzelsitze", "Alle zusammen in einem Fahrzeug"]
     }
   },
   "Coverage": {
@@ -165,6 +194,31 @@
     "ctaText": "Regelmäßige Fahrten für Ihr Team oder Ihre Gäste?",
     "ctaLink": "Firmenkonditionen anfragen"
   },
+  "Prices": {
+    "eyebrow": "Preisbeispiele",
+    "title": "Transparente Festpreise",
+    "subtitle": "Beispiele ab Business-Klasse (E-Klasse). Van, S-Klasse und Sprinter entsprechend mehr.",
+    "fromLabel": "ab",
+    "perVehicleNote": "Preise für die Business-Klasse (E-Klasse). Endpreis je nach Fahrzeug, Uhrzeit und exakter Adresse. Fahrten innerhalb der Region werden nach Kilometern berechnet.",
+    "cta": "Genauen Preis berechnen",
+    "routes": [
+      { "from": "Flughafen Stuttgart", "to": "Stuttgart Zentrum", "price": "57 €" },
+      { "from": "Stuttgart", "to": "Frankfurt", "price": "299 €" },
+      { "from": "Stuttgart", "to": "München", "price": "349 €" },
+      { "from": "Stuttgart", "to": "Zürich", "price": "399 €" },
+      { "from": "Stuttgart", "to": "Köln", "price": "529 €" },
+      { "from": "Stuttgart", "to": "Berlin", "price": "899 €" }
+    ]
+  },
+  "Testimonials": {
+    "eyebrow": "Kundenstimmen",
+    "title": "Was unsere Fahrgäste sagen",
+    "items": [
+      { "quote": "Pünktlich, freundlich und ein makelloses Fahrzeug. Der Fahrer hat meinen Flug im Blick behalten und stand trotz Verspätung bereit.", "name": "Michael K.", "role": "Geschäftsreisender, Stuttgart" },
+      { "quote": "Für unsere Hochzeit die perfekte Wahl. Stilvolle S-Klasse, diskreter Chauffeur – alles hat reibungslos geklappt.", "name": "Sandra & Tobias", "role": "Hochzeit, Ludwigsburg" },
+      { "quote": "Wir buchen regelmäßig Transfers für unsere Messegäste. Immer zuverlässig und professionell. Klare Empfehlung.", "name": "Andreas W.", "role": "Firmenkunde, Böblingen" }
+    ]
+  },
   "Faq": {
     "sectionTitle": "Häufige Fragen",
     "q1": "Was passiert, wenn mein Flug Verspätung hat?",
@@ -174,7 +228,15 @@
     "q3": "Ist der Preis wirklich fix?",
     "a3": "Ja. Der angezeigte Preis ist ein Festpreis ohne versteckte Kosten.",
     "q4": "Wie viele Personen können mitfahren?",
-    "a4": "Je nach Fahrzeug 4 bis 16 Personen. Wählen Sie einfach das passende Fahrzeug aus."
+    "a4": "Je nach Fahrzeug 4 bis 16 Personen. Wählen Sie einfach das passende Fahrzeug aus.",
+    "q5": "Kann ich meine Buchung stornieren oder ändern?",
+    "a5": "Ja. Stornierungen sind bis 24 Stunden vor Fahrtbeginn kostenfrei. Änderungen nehmen wir jederzeit gerne telefonisch oder per E-Mail entgegen.",
+    "q6": "Wie viel Gepäck kann ich mitnehmen?",
+    "a6": "Das hängt vom Fahrzeug ab: E-Klasse und S-Klasse bis zu 4 Gepäckstücke, V-Klasse bis zu 8, Sprinter bis zu 16. Für Sondergepäck (Golf, Ski) sprechen Sie uns einfach an.",
+    "q7": "Bieten Sie Kindersitze an?",
+    "a7": "Ja. Kindersitze und Sitzerhöhungen stellen wir auf Wunsch kostenfrei zur Verfügung. Bitte geben Sie den Bedarf bei der Buchung im Feld „Anmerkungen“ an.",
+    "q8": "Wie weit im Voraus sollte ich buchen?",
+    "a8": "Für garantierte Verfügbarkeit empfehlen wir mindestens 24 Stunden im Voraus. Kurzfristige Buchungen sind je nach Verfügbarkeit ebenfalls möglich – rufen Sie uns an."
   },
   "Footer": {
     "tagline": "Ihr zuverlässiger Flughafentransfer in Stuttgart und Umgebung.",

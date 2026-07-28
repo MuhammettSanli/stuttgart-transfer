@@ -35,21 +35,30 @@
   "Services": {
     "sectionTitle": "Hizmetlerimiz",
     "sectionSubtitle": "Havalimanı transferinden VIP limuzine kadar.",
+    "includedTitle": "Hizmete dahil",
     "airport": {
       "title": "Havalimanı transferi",
-      "desc": "Bölgedeki tüm havalimanlarına dakik karşılama ve bırakma."
+      "desc": "Bölgedeki tüm havalimanlarına dakik karşılama ve bırakma.",
+      "long": "İster varış ister kalkış olsun – sizi Stuttgart Havalimanı ile bölgedeki tüm havalimanlarına güvenilir ve stressiz bir şekilde ulaştırıyoruz. Uçuşunuzu gerçek zamanlı izler, gecikmelerde bile dakik hazır bekleriz. Şoförünüz sizi varış salonunda isim tabelasıyla karşılar ve bagajınıza yardımcı olur.",
+      "includes": ["Gerçek zamanlı uçuş takibi", "60 dakika ücretsiz bekleme", "Varış salonunda isim tabelasıyla karşılama", "Bagaj yardımı", "Gizli ücret olmayan sabit fiyat"]
     },
     "event": {
       "title": "Etkinlik & VIP limuzin",
-      "desc": "Düğün, gala ve özel anlar için şık ulaşım."
+      "desc": "Düğün, gala ve özel anlar için şık ulaşım.",
+      "long": "Düğün, gala, balo veya şirket kutlamaları için şık bir varış sağlıyoruz. First-Class limuzinlerimiz ve takım elbiseli profesyonel şoförlerimiz her anı özel kılar – dakik, gösterişsiz ve prestijli.",
+      "includes": ["Prestijli S-Serisi veya V-Serisi", "Takım elbiseli şoför", "Anınıza göre esnek zaman planı", "Gizlilik ve mahremiyet", "Talep üzerine birden fazla durak"]
     },
     "corporate": {
       "title": "Fuar & kurumsal",
-      "desc": "Şirketler, fuarlar ve iş seyahatleri için güvenilir ulaşım."
+      "desc": "Şirketler, fuarlar ve iş seyahatleri için güvenilir ulaşım.",
+      "long": "Fuarlar, iş seyahatleri ve kurumsal müşteriler için sabit bir irtibat kişisiyle güvenilir bir ulaşım hizmeti sunuyoruz. İster tek yolculuk ister ekibiniz için düzenli transferler olsun – güvenebileceğiniz profesyonel bir akış sağlıyoruz.",
+      "includes": ["Sabit irtibat kişisi", "Ekip ve misafirlerin toplu karşılanması", "Stuttgart fuar alanına transferler", "Aylık toplu faturalandırma imkânı", "Gösterişsiz, profesyonel şoförler"]
     },
     "hourly": {
       "title": "Saatlik şoför",
-      "desc": "Saat bazında esnek şoför – programı siz belirlersiniz."
+      "desc": "Saat bazında esnek şoför – programı siz belirlersiniz.",
+      "long": "Programı siz belirlersiniz – biz süreriz. Bir gün içinde birden fazla randevu, alışveriş, gezi veya iş görüşmesi için saatlik şoför kiralayın. Araç ve şoför tüm süre boyunca yalnızca size ayrılır.",
+      "includes": ["Yalnızca size özel araç & şoför", "İstediğiniz kadar durak", "Esnek güzergâh ve saatler", "Bekleme süresi dahil", "İş ve şehir turları için ideal"]
     },
     "learnMore": "Daha fazla"
   },
@@ -68,21 +77,41 @@
     "sectionSubtitle": "Her ihtiyaca uygun araç.",
     "passengers": "kişi",
     "luggage": "bagaj",
+    "classLabel": "Sınıf",
+    "featuresTitle": "Donanım",
+    "bestForLabel": "Şunun için ideal",
+    "bookCta": "Bu aracı rezerve et",
     "business": {
       "name": "Business (E-Serisi)",
-      "desc": "4 kişiye kadar şık sedan."
+      "desc": "4 kişiye kadar şık sedan.",
+      "class": "Business",
+      "long": "Mercedes E-Serisi, havalimanı transferleri ve iş seyahatleri için klasiğimiz. Konforlu, gösterişsiz ve güvenilir – valiz ve el bagajıyla 4 kişiye kadar ideal.",
+      "bestFor": "Tek yolcular & iş insanları",
+      "features": ["Zarif deri döşeme", "Otomatik klima", "Araçta su & Wi-Fi", "Sessiz, konforlu sürüş"]
     },
     "first": {
       "name": "First Class (S-Serisi)",
-      "desc": "4 kişiye kadar prestijli üst sınıf sedan."
+      "desc": "4 kişiye kadar prestijli üst sınıf sedan.",
+      "class": "First Class",
+      "long": "Mercedes S-Serisi en üst düzey konfor ve prestijin simgesi. Geniş diz mesafesi, seçkin malzemeler ve son derece sessiz bir sürüş – VIP'ler ve özel anlar için ilk tercih.",
+      "bestFor": "VIP, etkinlik & prestijli anlar",
+      "features": ["Birinci sınıf deri döşeme", "Maksimum diz mesafesi", "Araçta su & Wi-Fi", "Gizlilik ve mahremiyet", "Arka koltukta klima konforu"]
     },
     "van": {
       "name": "Van (V-Serisi)",
-      "desc": "8 kişiye kadar geniş van."
+      "desc": "8 kişiye kadar geniş van.",
+      "class": "Van",
+      "long": "Mercedes V-Serisi van, 8 kişiye kadar ve bol bagaja yer sunar. Birlikte konforlu seyahat etmek isteyen aileler, yolcu grupları veya ekipler için mükemmel.",
+      "bestFor": "Bol bagajlı aileler & gruplar",
+      "features": ["Geniş baş & diz mesafesi", "Büyük bagaj hacmi", "Otomatik klima", "Araçta su & Wi-Fi", "Kolay iniş-biniş"]
     },
     "sprinter": {
       "name": "Sprinter",
-      "desc": "16 kişiye kadar gruplar için minibüs."
+      "desc": "16 kişiye kadar gruplar için minibüs.",
+      "class": "Group",
+      "long": "Mercedes Sprinter, bagajlarıyla birlikte 16 kişiye kadar taşır. Daha büyük gruplar, kulüpler ve şirket gezileri için ideal çözüm – aktarma yok.",
+      "bestFor": "Yolcu grupları, ekipler & kulüpler",
+      "features": ["16 koltuğa kadar", "Çok geniş bagaj hacmi", "Klima", "Konforlu tekli koltuklar", "Herkes tek araçta"]
     }
   },
   "Coverage": {
@@ -165,6 +194,31 @@
     "ctaText": "Ekibiniz veya misafirleriniz için düzenli transfer?",
     "ctaLink": "Kurumsal koşulları sorun"
   },
+  "Prices": {
+    "eyebrow": "Fiyat örnekleri",
+    "title": "Şeffaf sabit fiyatlar",
+    "subtitle": "Business sınıfından (E-Serisi) örnekler. Van, S-Serisi ve Sprinter buna göre daha yüksektir.",
+    "fromLabel": "başlangıç",
+    "perVehicleNote": "Business sınıfı (E-Serisi) fiyatlarıdır. Nihai fiyat araca, saate ve tam adrese göre değişir. Bölge içi yolculuklar kilometreye göre hesaplanır.",
+    "cta": "Kesin fiyatı hesapla",
+    "routes": [
+      { "from": "Stuttgart Havalimanı", "to": "Stuttgart merkez", "price": "57 €" },
+      { "from": "Stuttgart", "to": "Frankfurt", "price": "299 €" },
+      { "from": "Stuttgart", "to": "Münih", "price": "349 €" },
+      { "from": "Stuttgart", "to": "Zürih", "price": "399 €" },
+      { "from": "Stuttgart", "to": "Köln", "price": "529 €" },
+      { "from": "Stuttgart", "to": "Berlin", "price": "899 €" }
+    ]
+  },
+  "Testimonials": {
+    "eyebrow": "Müşteri yorumları",
+    "title": "Yolcularımız ne diyor",
+    "items": [
+      { "quote": "Dakik, güler yüzlü ve tertemiz bir araç. Şoför uçuşumu takip etti ve gecikmeye rağmen hazır bekliyordu.", "name": "Michael K.", "role": "İş seyahati, Stuttgart" },
+      { "quote": "Düğünümüz için mükemmel tercih. Şık S-Serisi, gösterişsiz şoför – her şey kusursuz gitti.", "name": "Sandra & Tobias", "role": "Düğün, Ludwigsburg" },
+      { "quote": "Fuar misafirlerimiz için düzenli transfer alıyoruz. Her zaman güvenilir ve profesyonel. Kesinlikle tavsiye ederim.", "name": "Andreas W.", "role": "Kurumsal müşteri, Böblingen" }
+    ]
+  },
   "Faq": {
     "sectionTitle": "Sık sorulan sorular",
     "q1": "Uçuşum gecikirse ne olur?",
@@ -174,7 +228,15 @@
     "q3": "Fiyat gerçekten sabit mi?",
     "a3": "Evet. Gösterilen fiyat gizli maliyeti olmayan sabit bir fiyattır.",
     "q4": "Kaç kişi seyahat edebilir?",
-    "a4": "Araca göre 4 ila 16 kişi. Uygun aracı seçmeniz yeterli."
+    "a4": "Araca göre 4 ila 16 kişi. Uygun aracı seçmeniz yeterli.",
+    "q5": "Rezervasyonumu iptal edebilir veya değiştirebilir miyim?",
+    "a5": "Evet. Yolculuktan 24 saat öncesine kadar iptaller ücretsizdir. Değişiklikleri telefon veya e-posta ile her zaman memnuniyetle alırız.",
+    "q6": "Ne kadar bagaj getirebilirim?",
+    "a6": "Araca bağlıdır: E-Serisi ve S-Serisi 4 parçaya kadar, V-Serisi 8'e kadar, Sprinter 16'ya kadar. Özel bagaj (golf, kayak) için bize haber vermeniz yeterli.",
+    "q7": "Çocuk koltuğu sağlıyor musunuz?",
+    "a7": "Evet. Çocuk koltuğu ve yükseltici koltukları talep üzerine ücretsiz sağlıyoruz. Lütfen ihtiyacınızı rezervasyon sırasında “Notlar” alanına yazın.",
+    "q8": "Ne kadar önceden rezervasyon yapmalıyım?",
+    "a8": "Garantili müsaitlik için en az 24 saat önceden öneririz. Son dakika rezervasyonları da müsaitliğe göre mümkündür – bizi arayın yeter."
   },
   "Footer": {
     "tagline": "Stuttgart ve çevresinde güvenilir havalimanı transferiniz.",
