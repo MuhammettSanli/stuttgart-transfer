@@ -4,10 +4,12 @@ import { useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useLocale, useTranslations } from 'next-intl';
 import { formatEuroCents } from '@/lib/pricing';
+import { buildReply, waPhone } from '@/lib/admin-reply';
 
 export interface AdminBooking {
   id: string;
   status: string;
+  locale: string;
   firstName: string;
   lastName: string;
   email: string;
@@ -36,6 +38,7 @@ export function BookingsTable({ bookings }: { bookings: AdminBooking[] }) {
   const router = useRouter();
   const [savingId, setSavingId] = useState<string | null>(null);
   const [filter, setFilter] = useState<'ALL' | (typeof STATUSES)[number]>('ALL');
+  const [query, setQuery] = useState('');
 
   const counts = useMemo(() => {
     const c: Record<string, number> = { ALL: bookings.length };
@@ -43,7 +46,15 @@ export function BookingsTable({ bookings }: { bookings: AdminBooking[] }) {
     return c;
   }, [bookings]);
 
-  const visible = filter === 'ALL' ? bookings : bookings.filter((b) => b.status === filter);
+  const q = query.trim().toLowerCase();
+  const visible = bookings.filter((b) => {
+    if (filter !== 'ALL' && b.status !== filter) return false;
+    if (!q) return true;
+    return [b.firstName, b.lastName, b.phone, b.email, b.pickupAddress, b.dropoffAddress]
+      .join(' ')
+      .toLowerCase()
+      .includes(q);
+  });
 
   async function updateStatus(id: string, status: string) {
     setSavingId(id);
@@ -98,6 +109,16 @@ export function BookingsTable({ bookings }: { bookings: AdminBooking[] }) {
         ))}
       </div>
 
+      <div className="mb-6">
+        <input
+          type="search"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder={t('searchPlaceholder')}
+          className="w-full max-w-sm rounded-none border border-line bg-white px-3 py-2 text-sm outline-none focus:border-gold"
+        />
+      </div>
+
       <div className="overflow-x-auto border border-line">
         <table className="w-full min-w-[860px] text-left text-sm">
           <thead className="border-b border-line bg-paper">
@@ -120,6 +141,24 @@ export function BookingsTable({ bookings }: { bookings: AdminBooking[] }) {
                   <div className="font-medium text-ink">{b.firstName} {b.lastName}</div>
                   <div className="text-xs text-graphite">{b.phone}</div>
                   <div className="text-xs text-graphite">{b.email}</div>
+                  {(() => {
+                    const reply = buildReply(b, b.locale);
+                    const wa = `https://wa.me/${waPhone(b.phone)}?text=${encodeURIComponent(reply.body)}`;
+                    const mail = `mailto:${b.email}?subject=${encodeURIComponent(reply.subject)}&body=${encodeURIComponent(reply.body)}`;
+                    return (
+                      <div className="mt-2 flex flex-wrap gap-1.5">
+                        <a href={`tel:${b.phone}`} className="inline-flex items-center gap-1 border border-line px-2 py-1 text-[11px] font-medium text-ink transition hover:border-gold hover:text-gold-dark">
+                          {t('contactCall')}
+                        </a>
+                        <a href={wa} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 border border-green-600/30 px-2 py-1 text-[11px] font-medium text-green-700 transition hover:border-green-600 hover:bg-green-50">
+                          {t('contactWhatsapp')}
+                        </a>
+                        <a href={mail} className="inline-flex items-center gap-1 border border-line px-2 py-1 text-[11px] font-medium text-ink transition hover:border-gold hover:text-gold-dark">
+                          {t('contactEmail')}
+                        </a>
+                      </div>
+                    );
+                  })()}
                 </td>
                 <td className="p-4 text-graphite">
                   <div className="text-ink">{b.pickupAddress}</div>

@@ -29,6 +29,7 @@ export default async function AdminPage({ params: { locale } }: { params: { loca
   const bookings: AdminBooking[] = rows.map((b) => ({
     id: b.id,
     status: b.status,
+    locale: b.locale,
     firstName: b.firstName,
     lastName: b.lastName,
     email: b.email,
