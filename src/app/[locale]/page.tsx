@@ -45,8 +45,8 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
       <BookingSection />
       <ServicesSection />
       <ProcessSection />
-      <PricesSection />
       <FleetSection />
+      <PricesSection />
       <CoverageSection />
       <ExperienceBand />
       <PartnersSection />
