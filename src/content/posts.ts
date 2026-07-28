@@ -16,7 +16,7 @@ export const posts: Post[] = [
   {
     slug: 'flughafentransfer-tipps',
     date: '2026-06-01',
-    image: '/images/service-airport.jpg',
+    image: '/images/blog-airport.jpg',
     title: {
       de: 'Stressfrei zum Flughafen Stuttgart – 5 Tipps',
       en: 'Stress-free to Stuttgart Airport – 5 tips',
@@ -36,7 +36,7 @@ export const posts: Post[] = [
   {
     slug: 'vip-limousine-events',
     date: '2026-06-15',
-    image: '/images/service-event.jpg',
+    image: '/images/blog-event.jpg',
     title: {
       de: 'VIP-Limousine für Ihre Events',
       en: 'VIP limousine for your events',
