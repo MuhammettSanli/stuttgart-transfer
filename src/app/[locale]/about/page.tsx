@@ -69,8 +69,8 @@ function About() {
       {/* Story + image */}
       <section className="bg-white py-16 md:py-20">
         <div className="container-page grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
-          <div className="relative aspect-[4/3] overflow-hidden border border-line">
-            <Image src="/images/interior.jpg" alt="" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
+          <div className="relative aspect-[5/4] overflow-hidden border border-line">
+            <Image src="/images/about.jpg" alt="Chauffeur & Mercedes S-Klasse" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
           </div>
           <div>
             <span className="mono-label text-gold">{siteConfig.shortName}</span>
