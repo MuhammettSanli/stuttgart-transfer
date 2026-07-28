@@ -57,6 +57,10 @@ export function BookingForm() {
 
   const debounceRef = useRef<ReturnType<typeof setTimeout>>();
 
+  // Earliest selectable date (local today) — prevents bookings in the past.
+  const now = new Date();
+  const todayStr = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+
   const pickupAtIso = date && time ? `${date}T${time}:00` : '';
 
   // Debounced live quote whenever the trip inputs change.
@@ -175,7 +179,7 @@ export function BookingForm() {
           <div className="grid grid-cols-2 gap-4">
             <div>
               <label htmlFor="date" className="field-label">{t('date')}</label>
-              <input id="date" type="date" className="field-input" value={date} onChange={(e) => setDate(e.target.value)} />
+              <input id="date" type="date" min={todayStr} className="field-input" value={date} onChange={(e) => setDate(e.target.value)} />
             </div>
             <div>
               <label htmlFor="time" className="field-label">{t('time')}</label>
