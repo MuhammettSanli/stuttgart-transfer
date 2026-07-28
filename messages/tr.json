@@ -199,15 +199,13 @@
     "title": "Şeffaf sabit fiyatlar",
     "subtitle": "Business sınıfından (E-Serisi) örnekler. Van, S-Serisi ve Sprinter buna göre daha yüksektir.",
     "fromLabel": "başlangıç",
-    "perVehicleNote": "Business sınıfı (E-Serisi) fiyatlarıdır. Nihai fiyat araca, saate ve tam adrese göre değişir. Bölge içi yolculuklar kilometreye göre hesaplanır.",
+    "perVehicleNote": "Business sınıfı (E-Serisi) fiyatlarıdır. Nihai fiyat araca, saate ve tam adrese göre değişir. Uzun mesafeler (örn. Frankfurt, Münih) talep üzerine sabit fiyatla.",
     "cta": "Kesin fiyatı hesapla",
     "routes": [
       { "from": "Stuttgart Havalimanı", "to": "Stuttgart merkez", "price": "57 €" },
-      { "from": "Stuttgart", "to": "Frankfurt", "price": "299 €" },
-      { "from": "Stuttgart", "to": "Münih", "price": "349 €" },
-      { "from": "Stuttgart", "to": "Zürih", "price": "399 €" },
-      { "from": "Stuttgart", "to": "Köln", "price": "529 €" },
-      { "from": "Stuttgart", "to": "Berlin", "price": "899 €" }
+      { "from": "Stuttgart Havalimanı", "to": "Esslingen", "price": "55 €" },
+      { "from": "Stuttgart Havalimanı", "to": "Böblingen", "price": "65 €" },
+      { "from": "Stuttgart Havalimanı", "to": "Ludwigsburg", "price": "85 €" }
     ]
   },
   "Testimonials": {

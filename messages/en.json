@@ -199,15 +199,13 @@
     "title": "Transparent fixed prices",
     "subtitle": "Examples from Business class (E-Class). Van, S-Class and Sprinter accordingly more.",
     "fromLabel": "from",
-    "perVehicleNote": "Prices for Business class (E-Class). Final price depends on vehicle, time and exact address. Trips within the region are calculated by the kilometre.",
+    "perVehicleNote": "Prices for Business class (E-Class). Final price depends on vehicle, time and exact address. Long-distance trips (e.g. Frankfurt, Munich) at a fixed price on request.",
     "cta": "Calculate exact price",
     "routes": [
       { "from": "Stuttgart Airport", "to": "Stuttgart city centre", "price": "€57" },
-      { "from": "Stuttgart", "to": "Frankfurt", "price": "€299" },
-      { "from": "Stuttgart", "to": "Munich", "price": "€349" },
-      { "from": "Stuttgart", "to": "Zurich", "price": "€399" },
-      { "from": "Stuttgart", "to": "Cologne", "price": "€529" },
-      { "from": "Stuttgart", "to": "Berlin", "price": "€899" }
+      { "from": "Stuttgart Airport", "to": "Esslingen", "price": "€55" },
+      { "from": "Stuttgart Airport", "to": "Böblingen", "price": "€65" },
+      { "from": "Stuttgart Airport", "to": "Ludwigsburg", "price": "€85" }
     ]
   },
   "Testimonials": {

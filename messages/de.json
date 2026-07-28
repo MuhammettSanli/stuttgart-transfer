@@ -199,15 +199,13 @@
     "title": "Transparente Festpreise",
     "subtitle": "Beispiele ab Business-Klasse (E-Klasse). Van, S-Klasse und Sprinter entsprechend mehr.",
     "fromLabel": "ab",
-    "perVehicleNote": "Preise für die Business-Klasse (E-Klasse). Endpreis je nach Fahrzeug, Uhrzeit und exakter Adresse. Fahrten innerhalb der Region werden nach Kilometern berechnet.",
+    "perVehicleNote": "Preise für die Business-Klasse (E-Klasse). Endpreis je nach Fahrzeug, Uhrzeit und exakter Adresse. Fernstrecken (z. B. Frankfurt, München) auf Anfrage zum Festpreis.",
     "cta": "Genauen Preis berechnen",
     "routes": [
       { "from": "Flughafen Stuttgart", "to": "Stuttgart Zentrum", "price": "57 €" },
-      { "from": "Stuttgart", "to": "Frankfurt", "price": "299 €" },
-      { "from": "Stuttgart", "to": "München", "price": "349 €" },
-      { "from": "Stuttgart", "to": "Zürich", "price": "399 €" },
-      { "from": "Stuttgart", "to": "Köln", "price": "529 €" },
-      { "from": "Stuttgart", "to": "Berlin", "price": "899 €" }
+      { "from": "Flughafen Stuttgart", "to": "Esslingen", "price": "55 €" },
+      { "from": "Flughafen Stuttgart", "to": "Böblingen", "price": "65 €" },
+      { "from": "Flughafen Stuttgart", "to": "Ludwigsburg", "price": "85 €" }
     ]
   },
   "Testimonials": {
