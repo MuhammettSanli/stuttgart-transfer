@@ -6,6 +6,7 @@ type Locale = 'de' | 'en' | 'tr';
 export interface Post {
   slug: string;
   date: string; // ISO
+  image: string; // featured image path
   title: Record<Locale, string>;
   excerpt: Record<Locale, string>;
   body: Record<Locale, string>;
@@ -15,6 +16,7 @@ export const posts: Post[] = [
   {
     slug: 'flughafentransfer-tipps',
     date: '2026-06-01',
+    image: '/images/service-airport.jpg',
     title: {
       de: 'Stressfrei zum Flughafen Stuttgart – 5 Tipps',
       en: 'Stress-free to Stuttgart Airport – 5 tips',
@@ -34,6 +36,7 @@ export const posts: Post[] = [
   {
     slug: 'vip-limousine-events',
     date: '2026-06-15',
+    image: '/images/service-event.jpg',
     title: {
       de: 'VIP-Limousine für Ihre Events',
       en: 'VIP limousine for your events',

@@ -129,6 +129,16 @@
     "errorRoute": "Bu güzergâh için fiyat hesaplanamadı.",
     "errorValidation": "Lütfen bilgilerinizi kontrol edin (geçerli telefon ve e-posta gerekli)."
   },
+  "Contact": {
+    "title": "Bize ulaşın",
+    "lead": "7/24 buradayız. Rezervasyon, teklif veya kurumsal koşullar için bize her zaman ulaşabilirsiniz.",
+    "phone": "Telefon",
+    "email": "E-posta",
+    "address": "Adres",
+    "hours": "Erişilebilirlik",
+    "hoursValue": "7/24 · her gün",
+    "whatsapp": "WhatsApp"
+  },
   "ContactForm": {
     "title": "Bize yazın",
     "name": "Ad Soyad",

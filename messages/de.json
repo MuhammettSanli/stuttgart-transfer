@@ -129,6 +129,16 @@
     "errorRoute": "Für diese Route konnte kein Preis berechnet werden.",
     "errorValidation": "Bitte prüfen Sie Ihre Eingaben (gültige Telefonnummer und E-Mail erforderlich)."
   },
+  "Contact": {
+    "title": "Kontaktieren Sie uns",
+    "lead": "Wir sind rund um die Uhr für Sie da. Für Buchungen, Angebote oder Firmenkonditionen erreichen Sie uns jederzeit.",
+    "phone": "Telefon",
+    "email": "E-Mail",
+    "address": "Adresse",
+    "hours": "Erreichbarkeit",
+    "hoursValue": "24/7 · täglich",
+    "whatsapp": "WhatsApp"
+  },
   "ContactForm": {
     "title": "Schreiben Sie uns",
     "name": "Name",

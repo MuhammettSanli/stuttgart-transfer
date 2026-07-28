@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { setRequestLocale } from 'next-intl/server';
 import type { Metadata } from 'next';
@@ -43,7 +44,9 @@ export default function BlogPostPage({
       <h1 className="mt-3 font-display text-4xl font-semibold leading-[1.08] tracking-tight text-ink md:text-5xl">
         {post.title[l]}
       </h1>
-      <div className="mt-8 rule" />
+      <div className="relative mt-8 aspect-[16/9] overflow-hidden border border-line">
+        <Image src={post.image} alt={post.title[l]} fill priority sizes="(max-width: 768px) 100vw, 768px" className="object-cover" />
+      </div>
       <p className="mt-8 text-lg leading-relaxed text-graphite">{post.body[l]}</p>
     </article>
   );

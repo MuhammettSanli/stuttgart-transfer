@@ -129,6 +129,16 @@
     "errorRoute": "We couldn't calculate a price for this route.",
     "errorValidation": "Please check your entries (a valid phone number and email are required)."
   },
+  "Contact": {
+    "title": "Get in touch",
+    "lead": "We're here around the clock. Reach us anytime for bookings, quotes or corporate rates.",
+    "phone": "Phone",
+    "email": "Email",
+    "address": "Address",
+    "hours": "Availability",
+    "hoursValue": "24/7 · every day",
+    "whatsapp": "WhatsApp"
+  },
   "ContactForm": {
     "title": "Write to us",
     "name": "Name",
