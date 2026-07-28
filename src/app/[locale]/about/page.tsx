@@ -73,8 +73,8 @@ function About() {
             <Image src="/images/interior.jpg" alt="" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
           </div>
           <div>
-            <span className="eyebrow text-graphite">{t('storyTitle')}</span>
-            <h2 className="mt-4 font-display text-3xl font-semibold tracking-tight text-ink">{t('storyTitle')}</h2>
+            <span className="mono-label text-gold">{siteConfig.shortName}</span>
+            <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-ink">{t('storyTitle')}</h2>
             <p className="mt-5 leading-relaxed text-graphite">{t('storyText')}</p>
           </div>
         </div>
@@ -100,8 +100,7 @@ function About() {
       <section className="bg-paper py-16 md:py-20">
         <div className="container-page">
           <div className="border-t border-line pt-6">
-            <span className="eyebrow text-graphite">{nav('about')}</span>
-            <h2 className="mt-4 font-display text-3xl font-semibold tracking-tight text-ink md:text-4xl">
+            <h2 className="font-display text-3xl font-semibold tracking-tight text-ink md:text-4xl">
               {t('valuesTitle')}
             </h2>
           </div>
