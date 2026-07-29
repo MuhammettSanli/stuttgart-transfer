@@ -3,14 +3,15 @@ import { bookingSchema } from '@/lib/validation';
 import { computeQuote } from '@/lib/quote-service';
 import { prisma } from '@/lib/prisma';
 import { sendBookingEmails } from '@/lib/email';
-import { rateLimit, getClientIp, LIMITS } from '@/lib/rate-limit';
+import { checkRateLimit, getClientIp, LIMITS } from '@/lib/rate-limit';
+import { minibarTotalCents } from '@/lib/extras';
 
 // POST /api/booking — re-quotes server-side (authoritative price), persists the
 // booking, then sends notification + confirmation emails.
 export async function POST(request: Request) {
   // Per-IP rate limit: block a single client from spamming bookings.
   const ip = getClientIp(request.headers);
-  const rl = rateLimit(`booking:${ip}`, LIMITS.booking.limit, LIMITS.booking.windowMs);
+  const rl = await checkRateLimit(`booking:${ip}`, LIMITS.booking.limit, LIMITS.booking.windowMs);
   if (!rl.ok) {
     return NextResponse.json(
       { error: 'RATE_LIMIT' },
@@ -51,6 +52,11 @@ export async function POST(request: Request) {
 
   const pickupAt = new Date(data.pickupAt);
 
+  // Add paid extras (minibar) — priced server-side from the shared catalog so
+  // the stored total always matches what the customer was shown.
+  const extrasCents = minibarTotalCents(data.extras?.minibar);
+  const totalCents = quote.totalCents + extrasCents;
+
   const booking = await prisma.booking.create({
     data: {
       firstName: data.firstName,
@@ -66,7 +72,7 @@ export async function POST(request: Request) {
       vehicleId: quote.vehicle.id,
       distanceMeters: quote.distanceMeters,
       durationSeconds: quote.durationSeconds,
-      priceCents: quote.totalCents,
+      priceCents: totalCents,
       currency: quote.currency,
       locale: data.locale,
     },

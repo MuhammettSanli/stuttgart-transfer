@@ -31,6 +31,13 @@ export const bookingSchema = quoteSchema.extend({
   passengers: z.coerce.number().int().min(1).max(16),
   luggage: z.coerce.number().int().min(0).max(30),
   notes: z.string().max(1000).optional().or(z.literal('')),
+  // Optional paid extras. Minibar is a map of item-id -> quantity; the server
+  // re-prices it from the catalog (client prices are never trusted).
+  extras: z
+    .object({
+      minibar: z.record(z.string(), z.coerce.number().int().min(0).max(20)).optional(),
+    })
+    .optional(),
   locale: z.enum(['de', 'en', 'tr']).default('de'),
 });
 

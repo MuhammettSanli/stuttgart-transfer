@@ -25,6 +25,7 @@ export function LoginForm() {
         body: JSON.stringify({ username, password }),
       });
       if (res.ok) router.refresh();
+      else if (res.status === 429) setError(t('loginRateLimited'));
       else setError(t('loginError'));
     } catch {
       setError(t('loginError'));

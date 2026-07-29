@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { quoteSchema } from '@/lib/validation';
 import { computeQuote } from '@/lib/quote-service';
-import { rateLimit, getClientIp, LIMITS } from '@/lib/rate-limit';
+import { checkRateLimit, getClientIp, LIMITS } from '@/lib/rate-limit';
 
 // POST /api/quote — authoritative price calculation. The client PriceCalculator
 // calls this (debounced) for the live preview; the booking flow re-quotes here
@@ -10,7 +10,7 @@ export async function POST(request: Request) {
   // Per-IP rate limit: each quote hits the paid Google Distance Matrix API, so
   // cap how fast a single client can trigger it.
   const ip = getClientIp(request.headers);
-  const rl = rateLimit(`quote:${ip}`, LIMITS.quote.limit, LIMITS.quote.windowMs);
+  const rl = await checkRateLimit(`quote:${ip}`, LIMITS.quote.limit, LIMITS.quote.windowMs);
   if (!rl.ok) {
     return NextResponse.json(
       { error: 'RATE_LIMIT' },

@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import { AddressInput } from './AddressInput';
 import { formatEuroCents } from '@/lib/pricing';
+import { MINIBAR_ITEMS, minibarTotalCents } from '@/lib/extras';
 
 type VehicleSlug = 'business' | 'first' | 'van' | 'sprinter';
 
@@ -51,7 +52,7 @@ export function BookingForm() {
   const [babySeat, setBabySeat] = useState(0);
   const [childSeat, setChildSeat] = useState(0);
   const [boosterSeat, setBoosterSeat] = useState(0);
-  const [minibar, setMinibar] = useState(false);
+  const [drinks, setDrinks] = useState<Record<string, number>>({});
   // Contact
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -87,6 +88,11 @@ export function BookingForm() {
     { label: t('seatChild'), val: childSeat, set: setChildSeat },
     { label: t('seatBooster'), val: boosterSeat, set: setBoosterSeat },
   ];
+
+  const setDrink = (id: string, qty: number) =>
+    setDrinks((d) => ({ ...d, [id]: Math.max(0, qty) }));
+  const minibarCents = minibarTotalCents(drinks);
+  const grandTotal = (price?.totalCents ?? 0) + minibarCents;
 
   // Debounced live quote whenever the trip inputs change.
   useEffect(() => {
@@ -137,7 +143,10 @@ export function BookingForm() {
     if (babySeat > 0) extras.push(`${t('seatBaby')} ×${babySeat}`);
     if (childSeat > 0) extras.push(`${t('seatChild')} ×${childSeat}`);
     if (boosterSeat > 0) extras.push(`${t('seatBooster')} ×${boosterSeat}`);
-    if (minibar) extras.push(t('minibar'));
+    for (const it of MINIBAR_ITEMS) {
+      const qty = drinks[it.id] ?? 0;
+      if (qty > 0) extras.push(`${t(`minibar_${it.id}`)} ×${qty}`);
+    }
     const extrasText = extras.length ? `[${t('extrasLabel')}: ${extras.join(', ')}]` : '';
     const combinedNotes = [extrasText, notes].filter(Boolean).join('\n').trim();
 
@@ -157,6 +166,7 @@ export function BookingForm() {
           passengers,
           luggage,
           notes: combinedNotes,
+          extras: { minibar: drinks },
           locale,
         }),
       });
@@ -226,9 +236,23 @@ export function BookingForm() {
 
         {/* Compact price recap on later steps */}
         {step > 1 && price && (
-          <div className="mb-5 flex items-center justify-between border border-gold bg-ink px-4 py-3 text-paper">
-            <span className="mono-label text-paper/60">{t('estimatedPrice')}</span>
-            <span className="font-mono text-2xl font-medium text-gold">{formatEuroCents(price.totalCents, locale)}</span>
+          <div className="mb-5 border border-gold bg-ink px-4 py-3 text-paper">
+            {minibarCents > 0 && (
+              <div className="mb-2 space-y-1 border-b border-paper/15 pb-2 text-xs text-paper/60">
+                <div className="flex justify-between">
+                  <span>{t('tripLabel')}</span>
+                  <span className="font-mono">{formatEuroCents(price.totalCents, locale)}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>{t('extrasLabel')}</span>
+                  <span className="font-mono">{formatEuroCents(minibarCents, locale)}</span>
+                </div>
+              </div>
+            )}
+            <div className="flex items-center justify-between">
+              <span className="mono-label text-paper/60">{t('totalLabel')}</span>
+              <span className="font-mono text-2xl font-medium text-gold">{formatEuroCents(grandTotal, locale)}</span>
+            </div>
           </div>
         )}
 
@@ -329,18 +353,37 @@ export function BookingForm() {
               </div>
             </div>
 
-            <label className="flex cursor-pointer items-center gap-3 border border-line p-4 transition hover:border-gold/40">
-              <input
-                type="checkbox"
-                className="h-4 w-4 accent-gold"
-                checked={minibar}
-                onChange={(e) => setMinibar(e.target.checked)}
-              />
-              <span>
-                <span className="block text-sm font-semibold text-ink">{t('minibar')}</span>
-                <span className="block text-xs text-graphite">{t('minibarHint')}</span>
-              </span>
-            </label>
+            <div>
+              <div className="flex items-center gap-3">
+                <span className="mono-label text-gold">{t('minibar')}</span>
+                <span className="h-px flex-1 bg-line" />
+              </div>
+              <p className="mt-2 text-xs text-graphite">{t('minibarHint')}</p>
+              <ul className="mt-4 divide-y divide-line border-y border-line">
+                {MINIBAR_ITEMS.map((it) => (
+                  <li key={it.id} className="flex items-center justify-between gap-3 py-2.5">
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-sm text-ink">{t(`minibar_${it.id}`)}</span>
+                      <span className="font-mono text-xs text-graphite">{formatEuroCents(it.priceCents, locale)}</span>
+                    </div>
+                    <input
+                      type="number"
+                      min={0}
+                      max={20}
+                      className="field-input w-20 text-center"
+                      value={drinks[it.id] ?? 0}
+                      onChange={(e) => setDrink(it.id, Number(e.target.value))}
+                    />
+                  </li>
+                ))}
+              </ul>
+              {minibarCents > 0 && (
+                <div className="mt-3 flex justify-between text-sm">
+                  <span className="text-graphite">{t('minibarSubtotal')}</span>
+                  <span className="font-mono font-semibold text-ink">{formatEuroCents(minibarCents, locale)}</span>
+                </div>
+              )}
+            </div>
 
             <p className="text-xs text-graphite">{t('extrasNote')}</p>
 

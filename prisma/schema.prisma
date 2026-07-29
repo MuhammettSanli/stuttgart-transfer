@@ -62,6 +62,19 @@ model Route {
   @@map("routes")
 }
 
+/// Durable rate-limit counters. Serverless instances each have their own memory,
+/// so the in-memory limiter in `lib/rate-limit.ts` alone lets an attacker through
+/// by spreading requests across instances. This table is the shared source of
+/// truth: one row per (bucket, IP) key, holding a fixed-window counter.
+model RateLimit {
+  key     String   @id
+  count   Int      @default(0)
+  resetAt DateTime
+
+  @@index([resetAt])
+  @@map("rate_limits")
+}
+
 enum BookingStatus {
   NEW
   CONFIRMED

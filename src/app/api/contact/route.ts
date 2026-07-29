@@ -1,13 +1,13 @@
 import { NextResponse } from 'next/server';
 import { contactSchema } from '@/lib/validation';
 import { sendContactEmail } from '@/lib/email';
-import { rateLimit, getClientIp, LIMITS } from '@/lib/rate-limit';
+import { checkRateLimit, getClientIp, LIMITS } from '@/lib/rate-limit';
 
 // POST /api/contact — validates a contact-form submission and emails the operator.
 export async function POST(request: Request) {
   // Per-IP rate limit: block contact-form spam.
   const ip = getClientIp(request.headers);
-  const rl = rateLimit(`contact:${ip}`, LIMITS.contact.limit, LIMITS.contact.windowMs);
+  const rl = await checkRateLimit(`contact:${ip}`, LIMITS.contact.limit, LIMITS.contact.windowMs);
   if (!rl.ok) {
     return NextResponse.json(
       { error: 'RATE_LIMIT' },
