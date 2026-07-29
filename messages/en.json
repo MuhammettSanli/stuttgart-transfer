@@ -156,7 +156,8 @@
     "successDesc": "Thank you. We will confirm your ride shortly by email.",
     "errorGeneric": "Something went wrong. Please try again.",
     "errorRoute": "We couldn't calculate a price for this route.",
-    "errorValidation": "Please check your entries (a valid phone number and email are required)."
+    "errorValidation": "Please check your entries (a valid phone number and email are required).",
+    "errorRateLimit": "Too many requests. Please try again in a little while."
   },
   "Contact": {
     "title": "Get in touch",
@@ -178,7 +179,8 @@
     "submitting": "Sending …",
     "successTitle": "Message sent!",
     "successDesc": "Thank you. We will get back to you shortly.",
-    "error": "Something went wrong. Please try again."
+    "error": "Something went wrong. Please try again.",
+    "errorRateLimit": "Too many requests. Please try again in a little while."
   },
   "Legal": {
     "imprintTitle": "Imprint",

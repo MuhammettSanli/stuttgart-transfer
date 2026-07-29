@@ -32,7 +32,7 @@ export function ContactForm() {
         body: JSON.stringify({ ...data, locale }),
       });
       if (res.ok) setSuccess(true);
-      else setServerError(t('error'));
+      else setServerError(res.status === 429 ? t('errorRateLimit') : t('error'));
     } catch {
       setServerError(t('error'));
     }

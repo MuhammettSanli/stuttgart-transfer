@@ -79,7 +79,9 @@ export function BookingForm() {
           body: JSON.stringify({ pickup, dropoff, vehicleSlug, pickupAt: pickupAtIso }),
         });
         if (!res.ok) {
-          setQuoteError(res.status === 422 ? t('errorRoute') : t('errorGeneric'));
+          setQuoteError(
+            res.status === 429 ? t('errorRateLimit') : res.status === 422 ? t('errorRoute') : t('errorGeneric'),
+          );
           setPrice(null);
         } else {
           setPrice(await res.json());
@@ -124,7 +126,8 @@ export function BookingForm() {
       if (!res.ok) {
         // Distinguish input-validation failures from a genuine no-route result.
         const data = (await res.json().catch(() => null)) as { error?: string } | null;
-        if (data?.error === 'VALIDATION') setSubmitError(t('errorValidation'));
+        if (data?.error === 'RATE_LIMIT') setSubmitError(t('errorRateLimit'));
+        else if (data?.error === 'VALIDATION') setSubmitError(t('errorValidation'));
         else if (data?.error === 'NO_ROUTE') setSubmitError(t('errorRoute'));
         else setSubmitError(t('errorGeneric'));
       } else {

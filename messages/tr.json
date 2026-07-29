@@ -156,7 +156,8 @@
     "successDesc": "Teşekkürler. Yolculuğunuzu kısa süre içinde e-posta ile onaylayacağız.",
     "errorGeneric": "Bir şeyler ters gitti. Lütfen tekrar deneyin.",
     "errorRoute": "Bu güzergâh için fiyat hesaplanamadı.",
-    "errorValidation": "Lütfen bilgilerinizi kontrol edin (geçerli telefon ve e-posta gerekli)."
+    "errorValidation": "Lütfen bilgilerinizi kontrol edin (geçerli telefon ve e-posta gerekli).",
+    "errorRateLimit": "Çok fazla istek. Lütfen bir süre sonra tekrar deneyin."
   },
   "Contact": {
     "title": "Bize ulaşın",
@@ -178,7 +179,8 @@
     "submitting": "Gönderiliyor …",
     "successTitle": "Mesaj gönderildi!",
     "successDesc": "Teşekkürler. En kısa sürede size döneriz.",
-    "error": "Bir şeyler ters gitti. Lütfen tekrar deneyin."
+    "error": "Bir şeyler ters gitti. Lütfen tekrar deneyin.",
+    "errorRateLimit": "Çok fazla istek. Lütfen bir süre sonra tekrar deneyin."
   },
   "Legal": {
     "imprintTitle": "Künye (Impressum)",

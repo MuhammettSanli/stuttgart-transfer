@@ -156,7 +156,8 @@
     "successDesc": "Vielen Dank. Wir bestätigen Ihre Fahrt in Kürze per E-Mail.",
     "errorGeneric": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
     "errorRoute": "Für diese Route konnte kein Preis berechnet werden.",
-    "errorValidation": "Bitte prüfen Sie Ihre Eingaben (gültige Telefonnummer und E-Mail erforderlich)."
+    "errorValidation": "Bitte prüfen Sie Ihre Eingaben (gültige Telefonnummer und E-Mail erforderlich).",
+    "errorRateLimit": "Zu viele Anfragen. Bitte versuchen Sie es in einer Weile erneut."
   },
   "Contact": {
     "title": "Kontaktieren Sie uns",
@@ -178,7 +179,8 @@
     "submitting": "Wird gesendet …",
     "successTitle": "Nachricht gesendet!",
     "successDesc": "Vielen Dank. Wir melden uns in Kürze bei Ihnen.",
-    "error": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut."
+    "error": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
+    "errorRateLimit": "Zu viele Anfragen. Bitte versuchen Sie es in einer Weile erneut."
   },
   "Legal": {
     "imprintTitle": "Impressum",

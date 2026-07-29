@@ -3,10 +3,21 @@ import { bookingSchema } from '@/lib/validation';
 import { computeQuote } from '@/lib/quote-service';
 import { prisma } from '@/lib/prisma';
 import { sendBookingEmails } from '@/lib/email';
+import { rateLimit, getClientIp, LIMITS } from '@/lib/rate-limit';
 
 // POST /api/booking — re-quotes server-side (authoritative price), persists the
 // booking, then sends notification + confirmation emails.
 export async function POST(request: Request) {
+  // Per-IP rate limit: block a single client from spamming bookings.
+  const ip = getClientIp(request.headers);
+  const rl = rateLimit(`booking:${ip}`, LIMITS.booking.limit, LIMITS.booking.windowMs);
+  if (!rl.ok) {
+    return NextResponse.json(
+      { error: 'RATE_LIMIT' },
+      { status: 429, headers: { 'Retry-After': String(rl.retryAfterSec) } },
+    );
+  }
+
   let body: unknown;
   try {
     body = await request.json();
