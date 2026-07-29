@@ -39,6 +39,7 @@ export default async function AdminPage({ params: { locale } }: { params: { loca
     pickupAt: b.pickupAt.toISOString(),
     passengers: b.passengers,
     luggage: b.luggage,
+    notes: b.notes,
     vehicleName: b.vehicle.name,
     priceCents: b.priceCents,
   }));

@@ -19,6 +19,7 @@ export interface AdminBooking {
   pickupAt: string; // ISO
   passengers: number;
   luggage: number;
+  notes: string | null;
   vehicleName: string;
   priceCents: number;
 }
@@ -164,6 +165,11 @@ export function BookingsTable({ bookings }: { bookings: AdminBooking[] }) {
                   <div className="text-ink">{b.pickupAddress}</div>
                   <div className="text-graphite">→ {b.dropoffAddress}</div>
                   <div className="mt-1 font-mono text-xs text-graphite">👤 {b.passengers} · 🧳 {b.luggage}</div>
+                  {b.notes && (
+                    <div className="mt-2 max-w-xs whitespace-pre-line border-l-2 border-gold/40 pl-2 text-xs text-ink">
+                      {b.notes}
+                    </div>
+                  )}
                 </td>
                 <td className="p-4 text-graphite">{b.vehicleName}</td>
                 <td className="p-4 font-mono font-semibold text-ink">{formatEuroCents(b.priceCents, locale)}</td>
