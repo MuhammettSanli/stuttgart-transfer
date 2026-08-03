@@ -77,10 +77,3 @@ prisma/schema.prisma + seed.ts
 ```
 
 Ana tablolar: `bookings`, `vehicles`, `pricing_rules`, `routes`, `rate_limits`.
-
-## Kurallar
-
-- **Para** her zaman tam sayı cent (EUR) — asla float.
-- **Bileşenlerde metin gömülü olmaz** — tüm yazılar `next-intl` kataloglarından gelir.
-- **İçerik statiktir** — blog yazıları ve hizmet metinleri repoda (CMS yok).
-- **Gizli anahtarlar** yalnızca `.env.local` / Vercel ortamında — asla repoya işlenmez.
